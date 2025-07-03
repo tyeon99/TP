@@ -1,0 +1,1489 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, 
+    user-scalable=0"">
+    <title>투자의 비책</title>
+    <!-- font -->
+    <link href='https://spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css' rel='stylesheet' type='text/css'>
+    <!-- swiper -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+    <!-- bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
+      integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+      <!-- 바닐라캘린더 -->
+      <link href="https://cdn.jsdelivr.net/npm/vanilla-calendar-pro/build/vanilla-calendar.min.css" rel="stylesheet">
+      <script src="https://cdn.jsdelivr.net/npm/vanilla-calendar-pro/build/vanilla-calendar.min.js" defer></script>
+      <!-- css -->
+    <link rel="stylesheet" href="../dist/output.css">
+  </head>
+<body>
+  
+  <div class="wrap">
+
+    <header class="header border-0">
+      <button>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+          <path d="M15.5 19L9.20711 12.7071C8.81658 12.3166 8.81658 11.6834 9.20711 11.2929L15.5 5" stroke="#141414"
+            stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+        </svg>
+      </button>
+      <div class="eventName">
+        <div class="nameBox">
+          <div class="name text-truncate">POCOS홀딩스</div>
+          <div class="code">361610</div>
+        </div>
+      </div>
+      <button id="searchBtn" class="search" data-bs-toggle="offcanvas" data-bs-target="#searchScreen" type="button">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+          <path d="M10.708 4C14.4128 4 17.4168 7.00323 17.417 10.708C17.417 12.2905 16.8668 13.7434 15.9502 14.8906L18.8994 17.8389L18.9502 17.8965C19.1905 18.1911 19.174 18.6258 18.8994 18.9004C18.6248 19.1746 18.1899 19.1913 17.8955 18.9512L17.8379 18.9004L14.8896 15.9512C13.7426 16.8673 12.29 17.417 10.708 17.417C7.00326 17.4167 4 14.4128 4 10.708C4.00023 7.00339 7.0034 4.00025 10.708 4ZM10.708 5.5C7.83182 5.50025 5.50023 7.83182 5.5 10.708C5.5 13.5844 7.83167 15.9167 10.708 15.917C13.5846 15.917 15.917 13.5845 15.917 10.708C15.9168 7.83167 13.5844 5.5 10.708 5.5Z" fill="#141414"/>
+        </svg>
+      </button>
+    </header>
+
+    <div class="container">
+
+      <div class="content">
+
+        <div class="eventHome">
+
+          <div class="eventBox">
+            <div class="top">
+              <div class="name">
+                <div class="dateBox">
+                  <span class="date">05월29일</span>
+                  <span class="time">02:18</span>
+                </div>
+                <div class="pri">187,000</div>
+                <div class="per up">
+                  <span>▲</span> 25.050  0.48%
+                </div>
+              </div>
+              <div class="chart">
+                <div id="main">
+                  <img src="../img/evtChart.png" alt="종목홈 메인 차트">
+                </div>
+              </div>
+            </div>
+            <div class="bottom">
+              <div class="title">종목 요약 : 산업용 및 지능형 로봇 생산업체</div>
+              <div class="txt">
+                <span>기계 장비</span>
+                <span>관련테마 : <em>로봇(산업용/협동로봇 등)</em><em>원자력발전소 해체</em><em>스마트팩토리</em></span>
+                <span>관련이슈 : <em>로봇</em><em>스마트팩토리</em><em>최문기</em></span>
+              </div>
+            </div>
+          </div>
+
+          <div class="bgg15"></div>
+
+          <!-- AI 스코어 -->
+          <div class="eventScore">
+            <div class="title">AI 스코어</div>
+            <div class="txt">
+              <div>스코어 &nbsp; <strong>87</strong>점</div>
+              <span>우수항목 : 재무 안정성</span>
+            </div>
+            <div class="scoreChart">
+              <div class="chart-box">
+                <img src="../img/evtScoreChart.png" alt="">
+              </div>
+            </div>
+            <div class="gaugeChart">
+              <div class="state">
+                <!-- 매우저평가 ~ 매우고평가 => 'state01' ~ 'state05' -->
+                기업가치추정 <span class="state01">매우저평가</span>
+              </div>
+              <!-- 매우저평가 ~ 매우고평가 => 'eventState01.png' ~ 'eventState05.png' -->
+              <img src="../img/eventState01.png" alt="매우저평가">
+            </div>
+          </div>
+          <!-- eventScore -->
+
+          <div class="bgg15"></div>
+
+          <!-- 차트분석 -->
+          <div class="chartAnalyze">
+            <div class="title">차트분석</div>
+            <div id="" class="pprn ct-range">
+              <input class="range-input" type="range" min="200000" max="413500" step="10000" id="range02" width="100%" value="300000" disabled>
+              <label for="range02" class="form-label ct-label">
+                현재가<br><strong>287,500</strong><span class="up">(1.2%)</span>
+              </label>
+          
+              <script>
+                const ctBullet = document.getElementById('range02'); // input 아이디값 가져오기
+                const ctLabel = document.querySelector('.ct-label'); // 현재가 가져오기
+                const ctBulletWidth = ctBullet.offsetWidth; // input 길이값
+                const labelPosition = (ctBulletWidth / (ctBullet.max - ctBullet.min)); // value 값 1 을 px로 환산
+                const labelLeft = Math.floor(labelPosition * (ctBullet.value - ctBullet.min)); // value 값을 px로 환산
+
+                if (labelLeft < ctLabel.offsetWidth / 2) { // 환산값이 현재가의 width 값 보다 작을경우 left 고정
+                  ctLabel.style.left = '16px';
+                } else if (labelLeft > ctBulletWidth - (ctLabel.offsetWidth / 2)) { // 환산값이 (총 길이 - 현재가의 width) 보다 큰경우 right 고정
+                  ctLabel.style.right = '16px';
+                } else { // 나머지 위치 
+                  ctLabel.style.left = labelLeft - ((ctLabel.offsetWidth / 2) - 15) + 'px';
+                }
+              </script>
+
+              <span class="min day">
+                1일 최저 <br>
+                200,000
+              </span>
+              <span class="max day">
+                1일 최고 <br>
+                413,500
+              </span>
+
+              <span class="min">
+                52주 최저 <br>
+                200,000
+              </span>
+              <span class="max">
+                52주 최고 <br>
+                413,500
+              </span>
+            </div>
+            <!-- // -->
+          
+            <div class="chartbox">
+              <ul class="nav nmg chart-tab" role="tablist">
+                <li class="nav-item" role="presentation">
+                  <button class="nav-link active ">일봉</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                  <button class="nav-link ">주봉</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                  <button class="nav-link ">월봉</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                  <button class="nav-link ">5분봉</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                  <button class="nav-link ">매물대</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                  <button class="nav-link ">주체별</button>
+                </li>
+              </ul>
+              <!-- //버튼탭 -->
+          
+              <div class="tab-content" id="chart-img">
+                <div class="tab-pane active">
+                  <!-- // -->
+          
+                  <div class="chart">
+                    <img src="../img/sigChart.png" alt="차트영역">
+                  </div>
+                </div>
+                <div class="tab-pane "></div>
+                <div class="tab-pane "></div>
+              </div>
+              <!-- //탭컨텐츠 -->
+            </div>
+            <!-- //chartbox -->
+
+            <div class="todaySummary">
+              <div class="title">오늘의 요약</div>
+              <div class="list">
+                <p class="text-truncate">외인+27.2만주/기관+3.6만주/개인-3.7만주/개인-3.7</p>
+                <p class="text-truncate">외인+27.2만주/기관+3.6만주/개인-3.7만주/개인-3.7</p>
+                <p class="text-truncate">외인+27.2만주/기관+3.6만주/개인-3.7만주/개인-3.7</p>
+                <p class="text-truncate">외인+27.2만주/기관+3.6만주/개인-3.7만주/개인-3.7</p>
+                <p class="text-truncate">외인+27.2만주/기관+3.6만주/개인-3.7만주/개인-3.7</p>
+              </div>
+            </div>
+          </div>
+          <!-- chartAnalyze -->
+
+          <div class="bgg15"></div>
+
+          <!-- 당일수급동향 -->
+          <div class="supplyDemandTrends">
+
+            <div class="title">
+              <strong>당일수급동향</strong>
+              <div class="date">
+                <span>12/12 09:22</span>
+                <button data-bs-toggle="modal" data-bs-target="#sdtModal">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                    <path d="M11.95 18C12.3 18 12.596 17.879 12.838 17.637C13.08 17.395 13.2007 17.0993 13.2 16.75C13.2 16.4 13.0793 16.104 12.838 15.862C12.5967 15.62 12.3007 15.4993 11.95 15.5C11.6 15.5 11.3043 15.621 11.063 15.863C10.8217 16.105 10.7007 16.4007 10.7 16.75C10.7 17.1 10.821 17.396 11.063 17.638C11.305 17.88 11.6007 18.0007 11.95 18ZM12 22C10.6167 22 9.31667 21.7373 8.1 21.212C6.88333 20.6867 5.825 19.9743 4.925 19.075C4.025 18.175 3.31267 17.1167 2.788 15.9C2.26333 14.6833 2.00067 13.3833 2 12C2 10.6167 2.26267 9.31667 2.788 8.1C3.31333 6.88333 4.02567 5.825 4.925 4.925C5.825 4.025 6.88333 3.31267 8.1 2.788C9.31667 2.26333 10.6167 2.00067 12 2C13.3833 2 14.6833 2.26267 15.9 2.788C17.1167 3.31333 18.175 4.02567 19.075 4.925C19.975 5.825 20.6877 6.88333 21.213 8.1C21.7383 9.31667 22.0007 10.6167 22 12C22 13.3833 21.7373 14.6833 21.212 15.9C20.6867 17.1167 19.9743 18.175 19.075 19.075C18.175 19.975 17.1167 20.6877 15.9 21.213C14.6833 21.7383 13.3833 22.0007 12 22ZM12 20C14.2333 20 16.125 19.225 17.675 17.675C19.225 16.125 20 14.2333 20 12C20 9.76667 19.225 7.875 17.675 6.325C16.125 4.775 14.2333 4 12 4C9.76667 4 7.875 4.775 6.325 6.325C4.775 7.875 4 9.76667 4 12C4 14.2333 4.775 16.125 6.325 17.675C7.875 19.225 9.76667 20 12 20ZM12.1 7.7C12.5167 7.7 12.8793 7.83333 13.188 8.1C13.4967 8.36667 13.6507 8.7 13.65 9.1C13.65 9.46667 13.5377 9.79167 13.313 10.075C13.0883 10.3583 12.834 10.625 12.55 10.875C12.1667 11.2083 11.8293 11.575 11.538 11.975C11.2467 12.375 11.1007 12.825 11.1 13.325C11.1 13.5583 11.1877 13.7543 11.363 13.913C11.5383 14.0717 11.7423 14.1507 11.975 14.15C12.225 14.15 12.4377 14.0667 12.613 13.9C12.7883 13.7333 12.9007 13.525 12.95 13.275C13.0167 12.925 13.1667 12.6127 13.4 12.338C13.6333 12.0633 13.8833 11.8007 14.15 11.55C14.5333 11.1833 14.8627 10.7833 15.138 10.35C15.4133 9.91667 15.5507 9.43333 15.55 8.9C15.55 8.05 15.2043 7.35433 14.513 6.813C13.8217 6.27167 13.0173 6.00067 12.1 6C11.4667 6 10.8627 6.13333 10.288 6.4C9.71333 6.66667 9.27567 7.075 8.975 7.625C8.85833 7.825 8.821 8.03767 8.863 8.263C8.905 8.48833 9.01733 8.659 9.2 8.775C9.43333 8.90833 9.675 8.95 9.925 8.9C10.175 8.85 10.3833 8.70833 10.55 8.475C10.7333 8.225 10.9627 8.03333 11.238 7.9C11.5133 7.76667 11.8007 7.7 12.1 7.7Z" fill="#CCCCCC"/>
+                  </svg>
+                </button>
+              </div>
+            </div>
+
+            <div class="sdtChart">
+              <div class="sdtNav nav">
+                <button class="active" data-bs-toggle="tab" data-bs-target="#sdt01" aria-selected="true">주제별 매매동향</button>
+                <button data-bs-toggle="tab" data-bs-target="#sdt02" aria-selected="false">누적순매매차트</button>
+                <button data-bs-toggle="tab" data-bs-target="#sdt03" aria-selected="false">표</button>
+              </div>
+              <div class="tab-content">
+                <div class="tab-pane fade show active" id="sdt01">
+                  <div class="sdt01-chart">
+                    <img src="../img/sdt01-chart.png" alt="주제별 매매동향 차트">
+                  </div>
+                  <div class="acTxt"><strong>기관</strong>이 주가에 <strong>강한 영향</strong>을 주고 있어요</div>
+                  <div class="sdt-etc"><span>수급 특이사항</span></div>
+                  <div class="txt">
+                    <div>
+                      2024/10/21  (20일 누적) 외국인 순매도 상위 8위<br>
+                      2024/10/18  사모펀드 순매도 상위 5위,투신 순매도 상위 6위,기관 순매도 상위 2위,외국인 순매도 상위 1위,(20일누적)외국인 순매도 상위 6위
+                    </div>
+                  </div>
+                </div>
+                <div class="tab-pane fade" id="sdt02">
+                  <div class="sdt_rdo">
+                    <div>
+                      <input type="radio" name="chnto" id="sdt-rdo01" class="custom-radio" checked>
+                      <label for="sdt-rdo01">1개월</label>
+                    </div>
+                    <div>
+                      <input type="radio" name="chnto" id="sdt-rdo02" class="custom-radio">
+                      <label for="sdt-rdo02">3개월</label>
+                    </div>
+                    <div>
+                      <input type="radio" name="chnto" id="sdt-rdo03" class="custom-radio">
+                      <label for="sdt-rdo03">1년</label>
+                    </div>
+                  </div>
+                  <div class="sdt-chart">
+                    <img src="../img/sigChart.png" alt="">
+                  </div>
+                  <div class="sdt-etc"><span>수급 특이사항</span></div>
+                  <div class="txt">
+                    2024/10/21  (20일 누적) 외국인 순매도 상위 8위<br>
+                    2024/10/18  사모펀드 순매도 상위 5위,투신 순매도 상위 6위,기관 순매도 상위 2위,외국인 순매도 상위 1위,(20일누적)외국인 순매도 상위 6위
+                  </div>
+                </div>
+                <div class="tab-pane fade" id="sdt03">
+                  <span class="pr">(단위 : 주)</span>
+                  <div class="sdt_tbl">
+                    <div>
+                      <div class="sdt_tbl_left">
+                        <table class="table table-custom-sdt">
+                          <colgroup>
+                            <col width="56">
+                            <col width="*">
+                          </colgroup>
+                          <thead>
+                            <tr>
+                              <th>날짜</th>
+                              <th>종가</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td class="text-center">05/09</td>
+                              <td class="text-end"><span class="up">
+                                  54,800<br>
+                                  ▲ 200
+                                </span></td>
+                            </tr>
+                            <tr>
+                              <td class="text-center">05/08</td>
+                              <td class="text-end"><span class="">
+                                  54,600<br>
+                                  0
+                                </span></td>
+                            </tr>
+                            <tr>
+                              <td class="text-center">05/07</td>
+                              <td class="text-end"><span class="up">
+                                  54,600<br>
+                                  ▲ 300
+                                </span></td>
+                            </tr>
+                            <tr>
+                              <td class="text-center">05/02</td>
+                              <td class="text-end"><span class="down">
+                                  54,300<br>
+                                  ▼ 1,200
+                                </span></td>
+                            </tr>
+                            <tr>
+                              <td class="text-center">04/30</td>
+                              <td class="text-end"><span class="down">
+                                  55,500<br>
+                                  ▼ 300
+                                </span></td>
+                            </tr>
+                            <tr>
+                              <td class="text-center">04/30</td>
+                              <td class="text-end"><span class="down">
+                                  55,500<br>
+                                  ▼ 300
+                                </span></td>
+                            </tr>
+                            <tr>
+                              <td class="text-center">04/30</td>
+                              <td class="text-end"><span class="down">
+                                  55,500<br>
+                                  ▼ 300
+                                </span></td>
+                            </tr>
+                            <tr>
+                              <td class="text-center">04/30</td>
+                              <td class="text-end"><span class="down">
+                                  55,500<br>
+                                  ▼ 300
+                                </span></td>
+                            </tr>
+                            <tr>
+                              <td class="text-center">04/30</td>
+                              <td class="text-end"><span class="down">
+                                  55,500<br>
+                                  ▼ 300
+                                </span></td>
+                            </tr>
+                            <tr>
+                              <td class="text-center">04/30</td>
+                              <td class="text-end"><span class="down">
+                                  55,500<br>
+                                  ▼ 300
+                                </span></td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div class="sdt_tbl_right">
+                        <div>
+                          <table class="table table-custom-sdt">
+                            <colgroup>
+                              <col width="72">
+                              <col width="72">
+                              <col width="72">
+                              <col width="72">
+                              <col width="72">
+                              <col width="72">
+                              <col width="72">
+                            </colgroup>
+                            <thead>
+                              <tr>
+                                <th>외국인</th>
+                                <th>기관</th>
+                                <th>개인</th>
+                                <th>금융투자</th>
+                                <th>투신</th>
+                                <th>연기금</th>
+                                <th>사모펀드</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <tr>
+                                <td class="text-end"><span class="down">
+                                    -4,300<br> 49.68% </span></td>
+                                <td class="text-end"><span class="down">-616,541</span></td>
+                                <td class="text-end"><span class="up">54,535</span></td>
+                                <td class="text-end"><span class="down">-820,384</span></td>
+                                <td class="text-end"><span class="up">85,082</span></td>
+                                <td class="text-end"><span class="up">272,068</span></td>
+                                <td class="text-end"><span class="down">-130,508</span></td>
+                              </tr>
+                              <tr>
+                                <td class="text-end"><span class="up">
+                                    86,547<br> 49.65% </span></td>
+                                <td class="text-end"><span class="down">-2,018,842</span></td>
+                                <td class="text-end"><span class="up">1,575,138</span></td>
+                                <td class="text-end"><span class="down">-1,837,706</span></td>
+                                <td class="text-end"><span class="down">-150,485</span></td>
+                                <td class="text-end"><span class="down">-10,851</span></td>
+                                <td class="text-end"><span class="down">-29,915</span></td>
+                              </tr>
+                              <tr>
+                                <td class="text-end"><span class="down">
+                                    -2,372,970<br> 49.68% </span></td>
+                                <td class="text-end"><span class="up">155,796</span></td>
+                                <td class="text-end"><span class="up">1,700,700</span></td>
+                                <td class="text-end"><span class="up">699,575</span></td>
+                                <td class="text-end"><span class="down">-142,556</span></td>
+                                <td class="text-end"><span class="down">-353,775</span></td>
+                                <td class="text-end"><span class="up">2,797</span></td>
+                              </tr>
+                              <tr>
+                                <td class="text-end"><span class="down">
+                                    -12,031,411<br> 49.89% </span></td>
+                                <td class="text-end"><span class="up">1,122,449</span></td>
+                                <td class="text-end"><span class="up">9,953,980</span></td>
+                                <td class="text-end"><span class="up">1,367,648</span></td>
+                                <td class="text-end"><span class="down">-36,645</span></td>
+                                <td class="text-end"><span class="up">19,744</span></td>
+                                <td class="text-end"><span class="down">-232,234</span></td>
+                              </tr>
+                              <tr>
+                                <td class="text-end"><span class="down">
+                                    -1,623,301<br> 49.95% </span></td>
+                                <td class="text-end"><span class="down">-668,116</span></td>
+                                <td class="text-end"><span class="up">1,748,391</span></td>
+                                <td class="text-end"><span class="down">-330,036</span></td>
+                                <td class="text-end"><span class="up">967</span></td>
+                                <td class="text-end"><span class="up">15,003</span></td>
+                                <td class="text-end"><span class="down">-260,465</span></td>
+                              </tr>
+                              <tr>
+                                <td class="text-end"><span class="down">
+                                    -1,623,301<br> 49.95% </span></td>
+                                <td class="text-end"><span class="down">-668,116</span></td>
+                                <td class="text-end"><span class="up">1,748,391</span></td>
+                                <td class="text-end"><span class="down">-330,036</span></td>
+                                <td class="text-end"><span class="up">967</span></td>
+                                <td class="text-end"><span class="up">15,003</span></td>
+                                <td class="text-end"><span class="down">-260,465</span></td>
+                              </tr>
+                              <tr>
+                                <td class="text-end"><span class="down">
+                                    -1,623,301<br> 49.95% </span></td>
+                                <td class="text-end"><span class="down">-668,116</span></td>
+                                <td class="text-end"><span class="up">1,748,391</span></td>
+                                <td class="text-end"><span class="down">-330,036</span></td>
+                                <td class="text-end"><span class="up">967</span></td>
+                                <td class="text-end"><span class="up">15,003</span></td>
+                                <td class="text-end"><span class="down">-260,465</span></td>
+                              </tr>
+                              <tr>
+                                <td class="text-end"><span class="down">
+                                    -1,623,301<br> 49.95% </span></td>
+                                <td class="text-end"><span class="down">-668,116</span></td>
+                                <td class="text-end"><span class="up">1,748,391</span></td>
+                                <td class="text-end"><span class="down">-330,036</span></td>
+                                <td class="text-end"><span class="up">967</span></td>
+                                <td class="text-end"><span class="up">15,003</span></td>
+                                <td class="text-end"><span class="down">-260,465</span></td>
+                              </tr>
+                              <tr>
+                                <td class="text-end"><span class="down">
+                                    -1,623,301<br> 49.95% </span></td>
+                                <td class="text-end"><span class="down">-668,116</span></td>
+                                <td class="text-end"><span class="up">1,748,391</span></td>
+                                <td class="text-end"><span class="down">-330,036</span></td>
+                                <td class="text-end"><span class="up">967</span></td>
+                                <td class="text-end"><span class="up">15,003</span></td>
+                                <td class="text-end"><span class="down">-260,465</span></td>
+                              </tr>
+                              <tr>
+                                <td class="text-end"><span class="down">
+                                    -1,623,301<br> 49.95% </span></td>
+                                <td class="text-end"><span class="down">-668,116</span></td>
+                                <td class="text-end"><span class="up">1,748,391</span></td>
+                                <td class="text-end"><span class="down">-330,036</span></td>
+                                <td class="text-end"><span class="up">967</span></td>
+                                <td class="text-end"><span class="up">15,003</span></td>
+                                <td class="text-end"><span class="down">-260,465</span></td>
+                              </tr>
+                            </tbody>
+                          </table>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- 당일 수급동향 팝업창 -->
+            <div class="modal sdtModal fade" id="sdtModal" aria-hidden="true">
+              <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <button data-bs-dismiss="modal">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="21" height="24" viewBox="0 0 21 24" fill="none">
+                        <path d="M3.32458 5L10.3246 12M17.3246 19L10.3246 12M10.3246 12L17.3246 5M10.3246 12L3.32458 19" stroke="#141414" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                      </svg>
+                    </button>
+                  </div>
+                  <div class="modal-body">
+                    당일수급동향 데이터 업데이트는<br>
+                    매일 2시간마다 업데이트 됩니다.
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+          <!-- supplyDemandTrends -->
+
+          <div class="bgg15"></div>
+
+          <!-- AI 이슈테마 -->
+          <div class="headLine">
+            <div class="title">
+              <strong>AI 이슈테마</strong>
+            </div>
+            <div class="tabContent">
+              <div class="swiper headLineSwiper">
+                <div class="swiper-pagination-tab"></div>
+                <div class="swiper-wrapper">
+                  <button class="swiper-slide">
+                    <div class="top">
+                      <div class="name text-truncate">전력반도체</div>
+                      <div class="per up">+221.23%</div>
+                    </div>
+                    <div class="bottom">
+                      <div class="txt text-truncate2">
+                        현대차, 자율주행 서비스 집중 운영…”노하우 노하우 노하우
+                      </div>
+                      <div class="keyword">
+                        <span>시큐센</span>
+                        <span>바이오로그디바이스</span>
+                        <span>한국첨단소재</span>
+                      </div>
+                    </div>
+                  </button>
+                  <button class="swiper-slide">
+                    <div class="top">
+                      <div class="name text-truncate">로봇</div>
+                      <div class="per up">+221.23%</div>
+                    </div>
+                    <div class="bottom">
+                      <div class="txt text-truncate2">
+                        현대차, 자율주행 서비스 집중 운영…”노하우 노하우 노하우
+                      </div>
+                      <div class="keyword">
+                        <span>시큐센</span>
+                        <span>바이오로그디바이스</span>
+                        <span>한국첨단소재</span>
+                      </div>
+                    </div>
+                  </button>
+                  <button class="swiper-slide">
+                    <div class="top">
+                      <div class="name text-truncate">신재생에너지</div>
+                      <div class="per up">+221.23%</div>
+                    </div>
+                    <div class="bottom">
+                      <div class="txt text-truncate2">
+                        현대차, 자율주행 서비스 집중 운영…”노하우 노하우 노하우
+                      </div>
+                      <div class="keyword">
+                        <span>시큐센</span>
+                        <span>바이오로그디바이스</span>
+                        <span>한국첨단소재</span>
+                      </div>
+                    </div>
+                  </button>
+                  <button class="swiper-slide">
+                    <div class="top">
+                      <div class="name text-truncate">태양광</div>
+                      <div class="per up">+221.23%</div>
+                    </div>
+                    <div class="bottom">
+                      <div class="txt text-truncate2">
+                        현대차, 자율주행 서비스 집중 운영…”노하우 노하우 노하우
+                      </div>
+                      <div class="keyword">
+                        <span>시큐센</span>
+                        <span>바이오로그디바이스</span>
+                        <span>한국첨단소재</span>
+                      </div>
+                    </div>
+                  </button>
+                  <button class="swiper-slide">
+                    <div class="top">
+                      <div class="name text-truncate">양자기술</div>
+                      <div class="per up">+221.23%</div>
+                    </div>
+                    <div class="bottom">
+                      <div class="txt text-truncate2">
+                        현대차, 자율주행 서비스 집중 운영…”노하우 노하우 노하우
+                      </div>
+                      <div class="keyword">
+                        <span>시큐센</span>
+                        <span>바이오로그디바이스</span>
+                        <span>한국첨단소재</span>
+                      </div>
+                    </div>
+                  </button>
+                </div>
+                <div class="swiper-pagination"></div>
+              </div>
+            </div>
+          
+            <script>
+              var swiper = new Swiper('.headLineSwiper', {
+                spaceBetween: 20,
+                pagination: {
+                  el: '.swiper-pagination',
+                  clickable: true,
+                  type: 'bullets',
+                },
+                autoplay: {
+                  delay: 2000,
+                  disableOnInteraction: false,
+                },
+                loop: false,
+              });
+
+              var tabName = ['전력반도체', '로봇', '신재생에너지', '태양광', '양자기술'];
+
+              var tabSwiper = new Swiper('.headLineSwiper', {
+                spaceBetween: 20,
+                pagination: {
+                  el: '.swiper-pagination-tab',
+                  clickable: true,
+                  renderBullet: function (index, className) {
+                    return '<div class="' + className + '">' + (tabName[index]) + "</div>";
+                  }
+                },
+                loop: false,
+                on: {
+                  slideChange: function () {
+                    setTimeout(() => {
+                      const container = document.querySelector('.swiper-pagination-tab');
+                      const activeBullet = container.querySelector('.swiper-pagination-bullet-active');
+
+                      if (activeBullet && container) {
+                        const containerRect = container.getBoundingClientRect();
+                        const bulletRect = activeBullet.getBoundingClientRect();
+
+                        if (bulletRect.left < containerRect.left) {
+                          // 왼쪽 밖에 있는 경우
+                          const offset = container.scrollLeft - (containerRect.left - bulletRect.left + 10);
+                          container.scrollTo({ left: offset, behavior: 'smooth' });
+                        } else if (bulletRect.right > containerRect.right) {
+                          // 오른쪽 밖에 있는 경우
+                          const offset = container.scrollLeft + (bulletRect.right - containerRect.right + 10);
+                          container.scrollTo({ left: offset, behavior: 'smooth' });
+                        }
+                      }
+                    }, 10);
+                  }
+                }
+              });
+
+              swiper.controller.control = tabSwiper;
+            </script>
+          </div>
+          <!-- headLine -->
+
+          <div class="bgg15"></div>
+
+          <!-- AI 속보 -->
+          <div class="breakingNews">
+            <div class="title">AI 속보</div>
+            <div class="breakingNewsNav">
+              <button class="active">AI 뉴스</button>
+              <button>주요공시</button>
+            </div>
+            <div class="tabContent">
+              <div class="newsList">
+                <button class="list">
+                  <div class="txt today">
+                    <p class="text-truncate">외인+27.2만주/기관+3.6만주/개인-3.7외인+27.2만주/기관+3.6만주/개인-3.7외인+27.2만주/기관+3.6만주/개인-3.7</p>
+                    <span>AI</span>
+                  </div>
+                  <div class="date">13:25</div>
+                </button>
+                <button class="list">
+                  <div class="txt today">
+                    <p class="text-truncate">외인+27.2만주/기관+3.6만주/개인-3.7</p>
+                    <span>AI</span>
+                  </div>
+                  <div class="date">13:25</div>
+                </button>
+                <button class="list">
+                  <div class="txt">
+                    <p class="text-truncate">외인+27.2만주/기관+3.6만주/개인-3.7</p>
+                    <span>AI</span>
+                  </div>
+                  <div class="date">2025/06/09 13:25</div>
+                </button>
+                <button class="list">
+                  <div class="txt">
+                    <p class="text-truncate">외인+27.2만주/기관+3.6만주/개인-3.7</p>
+                    <span>AI</span>
+                  </div>
+                  <div class="date">2025/06/09 13:25</div>
+                </button>
+                <button class="list">
+                  <div class="txt">
+                    <p class="text-truncate">외인+27.2만주/기관+3.6만주/개인-3.7</p>
+                    <span>AI</span>
+                  </div>
+                  <div class="date">2025/06/09 13:25</div>
+                </button>
+              </div>
+            </div>
+            <div class="more">
+              <button>더보기</button>
+            </div>
+          </div>
+          <!-- breakingNews -->
+
+          <div class="bgg15"></div>
+
+          <!-- 리포트분석 -->
+          <div class="reportAnalysis">
+            <div class="title">리포트분석</div>
+            <div class="reportAnalysisNav nav">
+              <button class="active" data-bs-toggle="tab" data-bs-target="#stats" aria-selected="true">통계</button>
+              <button data-bs-toggle="tab" data-bs-target="#recent" aria-selected="false">최신</button>
+            </div>
+            <div class="tab-content">
+
+              <div class="tab-pane fade show active" id="stats">
+                <div class="range">
+                  <img src="../img/report-range.png" alt="리포트분석">
+                </div>
+                <div class="chart-img">
+                  <img src="../img/sigChart.png" alt="차트이미지">
+                </div>
+                <div class="list">
+                  <button data-bs-toggle="modal" data-bs-target="#reportModal">
+                    <span>24.01.15</span>
+                    <p class="text-truncate">외인+27.2만주/기관+3.6만주/개인-3.7만주/개인-3.7</p>
+                  </button>
+                  <button data-bs-toggle="modal" data-bs-target="#reportModal">
+                    <span>24.01.15</span>
+                    <p class="text-truncate">외인+27.2만주/기관+3.6만주/개인-3.7만주/개인-3.7</p>
+                  </button>
+                  <button data-bs-toggle="modal" data-bs-target="#reportModal">
+                    <span>24.01.15</span>
+                    <p class="text-truncate">외인+27.2만주/기관+3.6만주/개인-3.7만주/개인-3.7</p>
+                  </button>
+                  <button data-bs-toggle="modal" data-bs-target="#reportModal">
+                    <span>24.01.15</span>
+                    <p class="text-truncate">외인+27.2만주/기관+3.6만주/개인-3.7만주/개인-3.7</p>
+                  </button>
+                  <button data-bs-toggle="modal" data-bs-target="#reportModal">
+                    <span>24.01.15</span>
+                    <p class="text-truncate">외인+27.2만주/기관+3.6만주/개인-3.7만주/개인-3.7</p>
+                  </button>
+                </div>
+              </div>
+
+              <div class="tab-pane fade" id="recent">
+                <div class="recent-list">
+                  <button data-bs-toggle="modal" data-bs-target="#reportModal">
+                    <p class="text-truncate">외인+27.2만주/기관+3.6만주/개인-3.7만주/개인-3.7</p>
+                    <div class="date">
+                      <span class="text-truncate">상상인증권</span>
+                      <span>01.15</span>
+                    </div>
+                  </button>
+                  <button data-bs-toggle="modal" data-bs-target="#reportModal">
+                    <p class="text-truncate">외인+27.2만주/기관+3.6만주/개인-3.7만주/개인-3.7</p>
+                    <div class="date">
+                      <span class="text-truncate">상상인증권</span>
+                      <span>01.15</span>
+                    </div>
+                  </button>
+                  <button data-bs-toggle="modal" data-bs-target="#reportModal">
+                    <p class="text-truncate">외인+27.2만주/기관+3.6만주/개인-3.7만주/개인-3.7</p>
+                    <div class="date">
+                      <span class="text-truncate">상상인증권</span>
+                      <span>01.15</span>
+                    </div>
+                  </button>
+                  <button data-bs-toggle="modal" data-bs-target="#reportModal">
+                    <p class="text-truncate">외인+27.2만주/기관+3.6만주/개인-3.7만주/개인-3.7</p>
+                    <div class="date">
+                      <span class="text-truncate">상상인증권</span>
+                      <span>01.15</span>
+                    </div>
+                  </button>
+                  <button data-bs-toggle="modal" data-bs-target="#reportModal">
+                    <p class="text-truncate">외인+27.2만주/기관+3.6만주/개인-3.7만주/개인-3.7</p>
+                    <div class="date">
+                      <span class="text-truncate">상상인증권</span>
+                      <span>01.15</span>
+                    </div>
+                  </button>
+                </div>
+                <div class="more">
+                  <button>더보기</button>
+                </div>
+              </div>
+
+            </div>
+
+            <!-- 리포트분석 상세 팝업 -->
+            <div class="modal reportModal fade" id="reportModal" aria-hidden="true">
+              <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <button data-bs-dismiss="modal">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="21" height="24" viewBox="0 0 21 24" fill="none">
+                        <path d="M3.32458 5L10.3246 12M17.3246 19L10.3246 12M10.3246 12L17.3246 5M10.3246 12L3.32458 19"
+                          stroke="#141414" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                      </svg>
+                    </button>
+                  </div>
+                  <div class="modal-body">
+
+                    <div class="modal-title">
+                      <h5 class="rmTitle text-truncate">
+                        요즘 넷플 뭐봄? SBS
+                      </h5>
+                      <div class="rmInfo">
+                        <span>KB증권</span>
+                        <div class="line"></div>
+                        <em>05/02</em>
+                      </div>
+                    </div>
+
+                    <div class="rmCont">
+                      <div class="sgn">
+                        <span>목표가 : 25,000원</span>
+                        <span>투자의견 : BUY</span>
+                      </div>
+                      <div class="text">
+                        투자의견 Buy를 유지하고, 목표주가를 25,000원으로 19% 상향 조정. SBS는 ① 넷플릭스 계약으로 콘텐츠 판매 확대, ② 희망퇴직 등 비용 효율화를 통한 고정비 축소, ③ 높아진 협상력을 활용한 출연료 절감을 통해 수익성 개선이 예상되어 25년 영업이익 추정치를 23% 상향 조정. 목표주가는 글로벌 콘텐츠 업체 평균 P/E 15배를 적용. SBS는 향후 안정적인 실적 우상향이 가능하다는 점에서 Valuation 할인 이유가 없다고 판단 4Q24 영업이익은 36억원으로 예상되는데 이는 컨센서스를 하회하는 수준. 광고 수요는 정치적 불확실성 확대되면서 다소 둔화되어 있고, 희망퇴직 시행으로 일회성 인건비 부담이 늘어날 가능성이 높다고 판단하기 때문
+                      </div>
+                    </div>
+
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+          <!-- reportAnalysis -->
+
+          <div class="bgg15"></div>
+
+          <!-- 최근 1년간 매매신호 -->
+          <div class="eventYearSignal">
+            <div class="title">최근 1년간 투자의 비책 매매신호</div>
+            <div class="yearSigNav nav">
+              <button class="active" data-bs-toggle="tab" data-bs-target="#S001" aria-selected="true">단기형</button>
+              <button data-bs-toggle="tab" data-bs-target="#S002" aria-selected="false">안정형</button>
+              <button data-bs-toggle="tab" data-bs-target="#S003" aria-selected="false">수익추구형</button>
+            </div>
+            <div class="tab-content">
+              <div class="tab-pane fade show active" id="S001">
+                <div class="ch_rdo">
+                  <div>
+                    <input type="radio" name="chnto" id="rdo01" class="custom-radio" checked>
+                    <label for="rdo01">최근 3개월</label>
+                  </div>
+
+                  <div>
+                    <input type="radio" name="chnto" id="rdo02" class="custom-radio">
+                    <label for="rdo02" class="rml-10">최근 1년</label>
+                  </div>
+                </div>
+
+                <!-- 매매신호 없을 때 -->
+                <div class="noSignal">
+                  <div class="noSignalTxt">
+                    매매신호 발생 내역이 없습니다.
+                  </div>
+                </div>
+
+                <div>
+                  <div class="sigChart">
+                    <img src="../img/sigChart.png" alt="">
+                  </div>
+                  <div class="shame">
+                    <div>
+                      <div class="txt">적중률</div>
+                      <div class="per up">+100%</div>
+                    </div>
+                    <div class="line"></div>
+                    <div>
+                      <div class="txt">최대수익률</div>
+                      <div class="per up">+28.3%</div>
+                    </div>
+                    <div class="line"></div>
+                    <div>
+                      <div class="txt">누적수익률</div>
+                      <div class="per up">+45.2%</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="box">
+                  <div class="boxTitle">
+                    <div class="headName">
+                      <div>단기형</div>
+                      <span>성공률 75%</span>
+                    </div>
+                    <div class="date">01월 05일 추천</div>
+                  </div>
+                  <div class="boxPri">
+                    <div>
+                      <div class="priTxt">추천가</div>
+                      <div class="pri">230,000</div>
+                    </div>
+                    <div>
+                      <div class="priTxt">목표가</div>
+                      <div class="pri up">178,000</div>
+                    </div>
+                    <div>
+                      <div class="priTxt">손절가</div>
+                      <div class="pri down">+32.02%</div>
+                    </div>
+                  </div>
+                  <div class="boxState">
+                    <div class="stateTxt">
+                      <span>추천가 대비</span>
+                      <span class="up">+7.5% 상승중</span>
+                    </div>
+                    <div class="state upbg">매수</div>
+                  </div>
+                  <div class="boxRecom">
+                    <div class="headName">추천사유</div>
+                    <div class="txt text-truncate">중국 지표 개선으로 1Q 말부터 철강 가격 반</div>
+                    <ul>
+                      <li>2년 후면 이익 천억원 시현</li>
+                      <li>피크아웃을 고민하기에 아직은 이른시기</li>
+                      <li>중국 조선소 EXPOSURE는 본격적으로 내년부터 수혜</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <div class="tab-pane fade" id="S002">
+                <div class="ch_rdo">
+                  <div>
+                    <input type="radio" name="chnto" id="rdo03" class="custom-radio" checked>
+                    <label for="rdo03">최근 3개월</label>
+                  </div>
+                
+                  <div>
+                    <input type="radio" name="chnto" id="rdo04" class="custom-radio">
+                    <label for="rdo04" class="rml-10">최근 1년</label>
+                  </div>
+                </div>
+                <div class="sigChart">
+                  <img src="../img/sigChart.png" alt="">
+                </div>
+                <div class="shame">
+                  <div>
+                    <div class="txt">적중률</div>
+                    <div class="per up">83%</div>
+                  </div>
+                  <div class="line"></div>
+                  <div>
+                    <div class="txt">최대수익률</div>
+                    <div class="per up">+28.3%</div>
+                  </div>
+                  <div class="line"></div>
+                  <div>
+                    <div class="txt">누적수익률</div>
+                    <div class="per up">+45.2%</div>
+                  </div>
+                </div>
+                <div class="box">
+                  <div class="boxTitle">
+                    <div class="headName">
+                      <div>안정형</div>
+                      <span>성공률 75%</span>
+                    </div>
+                    <div class="date">01월 05일 추천</div>
+                  </div>
+                  <div class="boxPri">
+                    <div>
+                      <div class="priTxt">추천가</div>
+                      <div class="pri">230,000</div>
+                    </div>
+                    <div>
+                      <div class="priTxt">매도가</div>
+                      <div class="pri up">178,000</div>
+                    </div>
+                    <div>
+                      <div class="priTxt">수익률</div>
+                      <div class="pri down">-32.02%</div>
+                    </div>
+                  </div>
+                  <div class="boxState">
+                    <div class="stateTxt">
+                      <span>보유기간</span>
+                      <span class="up">10일</span>
+                    </div>
+                    <div class="state downbg">매도완료</div>
+                  </div>
+                  <div class="boxRecom">
+                    <div class="headName">추천사유</div>
+                    <div class="txt text-truncate">중국 지표 개선으로 1Q 말부터 철강 가격 반</div>
+                    <ul>
+                      <li>2년 후면 이익 천억원 시현</li>
+                      <li>피크아웃을 고민하기에 아직은 이른시기</li>
+                      <li>중국 조선소 EXPOSURE는 본격적으로 내년부터 수혜</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <div class="tab-pane fade" id="S003">
+                <div class="ch_rdo">
+                  <div>
+                    <input type="radio" name="chnto" id="rdo05" class="custom-radio" checked>
+                    <label for="rdo05">최근 3개월</label>
+                  </div>
+                
+                  <div>
+                    <input type="radio" name="chnto" id="rdo06" class="custom-radio">
+                    <label for="rdo06" class="rml-10">최근 1년</label>
+                  </div>
+                </div>
+                <div class="sigChart">
+                  <img src="../img/sigChart.png" alt="">
+                </div>
+                <div class="shame">
+                  <div>
+                    <div class="txt">적중률</div>
+                    <div class="per up">83%</div>
+                  </div>
+                  <div class="line"></div>
+                  <div>
+                    <div class="txt">최대수익률</div>
+                    <div class="per up">+28.3%</div>
+                  </div>
+                  <div class="line"></div>
+                  <div>
+                    <div class="txt">누적수익률</div>
+                    <div class="per up">+45.2%</div>
+                  </div>
+                </div>
+                <div class="box">
+                  <div class="boxTitle">
+                    <div class="headName">
+                      <div>수익추구형</div>
+                      <span>성공률 75%</span>
+                    </div>
+                    <div class="date">01월 05일 추천</div>
+                  </div>
+                  <div class="boxPri">
+                    <div>
+                      <div class="priTxt">추천가</div>
+                      <div class="pri">230,000</div>
+                    </div>
+                    <div>
+                      <div class="priTxt">매도가</div>
+                      <div class="pri up">178,000</div>
+                    </div>
+                    <div>
+                      <div class="priTxt">수익률</div>
+                      <div class="pri down">-32.02%</div>
+                    </div>
+                  </div>
+                  <div class="boxState">
+                    <div class="stateTxt">
+                      <span>보유기간</span>
+                      <span class="up">10일</span>
+                    </div>
+                    <div class="state downbg">매도완료</div>
+                  </div>
+                  <div class="boxRecom">
+                    <div class="headName">추천사유</div>
+                    <div class="txt text-truncate">중국 지표 개선으로 1Q 말부터 철강 가격 반</div>
+                    <ul>
+                      <li>2년 후면 이익 천억원 시현</li>
+                      <li>피크아웃을 고민하기에 아직은 이른시기</li>
+                      <li>중국 조선소 EXPOSURE는 본격적으로 내년부터 수혜</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- eventYearSignal -->
+
+          <div class="bgg15"></div>
+
+          <!-- 매매신호 -->
+          <div class="eventSignal">
+            <div class="title">매매신호</div>
+            <div class="sigNav nav">
+              <button class="active" data-bs-toggle="tab" data-bs-target="#s001_signal" aria-selected="true">단기형</button>
+              <button data-bs-toggle="tab" data-bs-target="#s002_signal" aria-selected="false">안정형</button>
+              <button data-bs-toggle="tab" data-bs-target="#s003_signal" aria-selected="false">수익추구형</button>
+            </div>
+            <div class="tab-content">
+              <div class="tab-pane fade show active" id="s001_signal">
+                <div class="signalDate">
+                  <div class="txt">
+                    매매기간 <span>2023.01.14~2024.01.15</span>
+                  </div>
+                  <div class="all">
+                    <button class="allSel" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                      <span>전체</span>
+                      <span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                          <path d="M8 10L12 14L16 10" stroke="#141414" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                        </svg></span>
+                    </button>
+                    <div class="allCon dropdown-menu">
+                      <button class="dropdown-item">전체</button>
+                      <button class="dropdown-item">보유</button>
+                      <button class="dropdown-item">매도완료</button>
+                    </div>
+                  </div>
+                </div>
+                <div class="noSignal">
+                  <table class="signalTable mb-0">
+                    <colgroup>
+                      <col width="17.5%">
+                      <col width="27.5%">
+                      <col width="27.5%">
+                      <col width="27.5%">
+                    </colgroup>
+                    <thead>
+                      <tr>
+                        <th>날짜</th>
+                        <th>구분</th>
+                        <th>가격</th>
+                        <th>수익률</th>
+                      </tr>
+                    </thead>
+                  </table>
+                  <div class="noSignalTxt">
+                    매매신호 발생내역이 없습니다.
+                  </div>
+                </div>
+                <div class="beAlMore"><button>더보기</button></div>
+              </div>
+              <div class="tab-pane fade" id="s002_signal">
+                <div class="signalDate">
+                  <div class="txt">
+                    매매기간 <span>2023.01.14~2024.01.15</span>
+                  </div>
+                  <div class="all">
+                    <button class="allSel" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                      <span>전체</span>
+                      <span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                          <path d="M8 10L12 14L16 10" stroke="#141414" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                        </svg></span>
+                    </button>
+                    <div class="allCon dropdown-menu">
+                      <button class="dropdown-item">전체</button>
+                      <button class="dropdown-item">보유</button>
+                      <button class="dropdown-item">매도완료</button>
+                    </div>
+                  </div>
+                </div>
+                <table class="signalTable">
+                  <colgroup>
+                    <col width="17.5%">
+                    <col width="27.5%">
+                    <col width="27.5%">
+                    <col width="27.5%">
+                  </colgroup>
+                  <thead>
+                    <tr>
+                      <th>날짜</th>
+                      <th>구분</th>
+                      <th>가격</th>
+                      <th>수익률</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td><span>24.01.15</span></td>
+                      <td class="down">매도</td>
+                      <td>12,436,879</td>
+                      <td class="up">+2,436,879</td>
+                    </tr>
+                    <tr>
+                      <td><span>24.01.15</span></td>
+                      <td class="down">매도</td>
+                      <td>12,436,879</td>
+                      <td class="up">+2,436,879</td>
+                    </tr>
+                    <tr>
+                      <td><span>24.01.15</span></td>
+                      <td class="down">매도</td>
+                      <td>12,436,879</td>
+                      <td class="up">+2,436,879</td>
+                    </tr>
+                    <tr>
+                      <td><span>24.01.15</span></td>
+                      <td class="up">매수</td>
+                      <td>12,436,879</td>
+                      <td class="up">+2,436,879</td>
+                    </tr>
+                    <tr>
+                      <td><span>24.01.15</span></td>
+                      <td class="down">매도</td>
+                      <td>12,436,879</td>
+                      <td class="up">+2,436,879</td>
+                    </tr>
+                    <tr>
+                      <td><span>24.01.15</span></td>
+                      <td class="up">매수</td>
+                      <td>12,436,879</td>
+                      <td class="up">+2,436,879</td>
+                    </tr>
+                    <tr>
+                      <td><span>24.01.15</span></td>
+                      <td class="down">매도</td>
+                      <td>12,436,879</td>
+                      <td class="up">+2,436,879</td>
+                    </tr>
+                    <tr>
+                      <td><span>24.01.15</span></td>
+                      <td class="down">매도</td>
+                      <td>12,436,879</td>
+                      <td class="up">+2,436,879</td>
+                    </tr>
+                    <tr>
+                      <td><span>24.01.15</span></td>
+                      <td class="up">매수</td>
+                      <td>12,436,879</td>
+                      <td class="up">+2,436,879</td>
+                    </tr>
+                    <tr>
+                      <td><span>24.01.15</span></td>
+                      <td class="down">매도</td>
+                      <td>12,436,879</td>
+                      <td class="up">+2,436,879</td>
+                    </tr>
+                  </tbody>
+                </table>
+                <div class="beAlMore"><button>더보기</button></div>
+              </div>
+              <div class="tab-pane fade" id="s003_signal">
+                <div class="signalDate">
+                  <div class="txt">
+                    매매기간 <span>2023.01.14~2024.01.15</span>
+                  </div>
+                  <div class="all">
+                    <button class="allSel" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                      <span>전체</span>
+                      <span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                          <path d="M8 10L12 14L16 10" stroke="#141414" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                        </svg></span>
+                    </button>
+                    <div class="allCon dropdown-menu">
+                      <button class="dropdown-item">전체</button>
+                      <button class="dropdown-item">보유</button>
+                      <button class="dropdown-item">매도완료</button>
+                    </div>
+                  </div>
+                </div>
+                <table class="signalTable">
+                  <colgroup>
+                    <col width="17.5%">
+                    <col width="27.5%">
+                    <col width="27.5%">
+                    <col width="27.5%">
+                  </colgroup>
+                  <thead>
+                    <tr>
+                      <th>날짜</th>
+                      <th>구분</th>
+                      <th>가격</th>
+                      <th>수익률</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td><span>24.01.15</span></td>
+                      <td class="down">매도</td>
+                      <td>12,436,879</td>
+                      <td class="up">+2,436,879</td>
+                    </tr>
+                    <tr>
+                      <td><span>24.01.15</span></td>
+                      <td class="down">매도</td>
+                      <td>12,436,879</td>
+                      <td class="up">+2,436,879</td>
+                    </tr>
+                    <tr>
+                      <td><span>24.01.15</span></td>
+                      <td class="down">매도</td>
+                      <td>12,436,879</td>
+                      <td class="up">+2,436,879</td>
+                    </tr>
+                    <tr>
+                      <td><span>24.01.15</span></td>
+                      <td class="up">매수</td>
+                      <td>12,436,879</td>
+                      <td class="up">+2,436,879</td>
+                    </tr>
+                    <tr>
+                      <td><span>24.01.15</span></td>
+                      <td class="down">매도</td>
+                      <td>12,436,879</td>
+                      <td class="up">+2,436,879</td>
+                    </tr>
+                    <tr>
+                      <td><span>24.01.15</span></td>
+                      <td class="up">매수</td>
+                      <td>12,436,879</td>
+                      <td class="up">+2,436,879</td>
+                    </tr>
+                    <tr>
+                      <td><span>24.01.15</span></td>
+                      <td class="down">매도</td>
+                      <td>12,436,879</td>
+                      <td class="up">+2,436,879</td>
+                    </tr>
+                    <tr>
+                      <td><span>24.01.15</span></td>
+                      <td class="down">매도</td>
+                      <td>12,436,879</td>
+                      <td class="up">+2,436,879</td>
+                    </tr>
+                    <tr>
+                      <td><span>24.01.15</span></td>
+                      <td class="up">매수</td>
+                      <td>12,436,879</td>
+                      <td class="up">+2,436,879</td>
+                    </tr>
+                    <tr>
+                      <td><span>24.01.15</span></td>
+                      <td class="down">매도</td>
+                      <td>12,436,879</td>
+                      <td class="up">+2,436,879</td>
+                    </tr>
+                  </tbody>
+                </table>
+                <div class="beAlMore"><button>더보기</button></div>
+              </div>
+            </div>
+          </div>
+          <!-- eventSignal -->
+
+        </div>
+        <!-- eventHome -->
+
+
+      <!-- 종목검색 팝업창 -->
+      <div class="search-screen offcanvas offcanvas-bottom" id="searchScreen">
+        <div class="title">
+          <strong>종목검색</strong>
+          <button class="close" data-bs-dismiss="offcanvas">
+            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="24" viewBox="0 0 25 24" fill="none">
+              <path d="M5.5 5L12.5 12M19.5 19L12.5 12M12.5 12L19.5 5M12.5 12L5.5 19" stroke="#141414" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+        </div>
+        <div class="search-input">
+          <input id="searchInput" type="text" placeholder="종목검색(종목코드)">
+          <button class="search-btn">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+              <path d="M10.708 4C14.4128 4 17.4168 7.00323 17.417 10.708C17.417 12.2905 16.8668 13.7434 15.9502 14.8906L18.8994 17.8389L18.9502 17.8965C19.1905 18.1911 19.174 18.6258 18.8994 18.9004C18.6248 19.1746 18.1899 19.1913 17.8955 18.9512L17.8379 18.9004L14.8896 15.9512C13.7426 16.8673 12.29 17.417 10.708 17.417C7.00326 17.4167 4 14.4128 4 10.708C4.00023 7.00339 7.0034 4.00025 10.708 4ZM10.708 5.5C7.83182 5.50025 5.50023 7.83182 5.5 10.708C5.5 13.5844 7.83167 15.9167 10.708 15.917C13.5846 15.917 15.917 13.5845 15.917 10.708C15.9168 7.83167 13.5844 5.5 10.708 5.5Z" fill="#141414"/>
+            </svg>
+          </button>
+        </div>
+        <div class="search-item">
+          <div class="box">
+            <div class="title">나의 최근 검색 종목</div>
+            <div class="item-group">
+              <button class="text-truncate">브랜드엑스코퍼레이션</button>
+              <button class="text-truncate">브랜드엑스코퍼레이션</button>
+              <button class="text-truncate">브랜드엑스코퍼레이션</button>
+              <button class="text-truncate">브랜드엑스코퍼레이션</button>
+              <button class="text-truncate">브랜드엑스코퍼레이션</button>
+              <button class="text-truncate">브랜드엑스코퍼레이션</button>
+              <button class="text-truncate">브랜드엑스코퍼레이션</button>
+              <button class="text-truncate">브랜드엑스코퍼레이션</button>
+              <button class="text-truncate">브랜드엑스코퍼레이션</button>
+              <button class="text-truncate">브랜드엑스코퍼레이션</button>
+              <button class="text-truncate">브랜드엑스코퍼레이션</button>
+              <button class="text-truncate">브랜드엑스코퍼레이션</button>
+              <button class="text-truncate">브랜드엑스코퍼레이션</button>
+              <button class="text-truncate">브랜드엑스코퍼레이션</button>
+              <button class="text-truncate">브랜드엑스코퍼레이션</button>
+              <button class="text-truncate">브랜드엑스코퍼레이션</button>
+              <button class="text-truncate">브랜드엑스코퍼레이션</button>
+              <button class="text-truncate">브랜드엑스코퍼레이션</button>
+              <button class="text-truncate">브랜드엑스코퍼레이션</button>
+              <button class="text-truncate">브랜드엑스코퍼레이션</button>
+            </div>
+            <!-- 검색된 종목 없을 떄 -->
+            <!-- <div class="noItem">
+              검색된 종목이 없습니다.
+            </div> -->
+          </div>
+          <div class="box">
+            <div class="title">인기 검색 종목</div>
+            <div class="item-group">
+              <button class="text-truncate">브랜드엑스코퍼레이션</button>
+              <button class="text-truncate">브랜드엑스코퍼레이션</button>
+              <button class="text-truncate">브랜드엑스코퍼레이션</button>
+              <button class="text-truncate">브랜드엑스코퍼레이션</button>
+              <button class="text-truncate">브랜드엑스코퍼레이션</button>
+              <button class="text-truncate">브랜드엑스코퍼레이션</button>
+              <button class="text-truncate">브랜드엑스코퍼레이션</button>
+              <button class="text-truncate">브랜드엑스코퍼레이션</button>
+              <button class="text-truncate">브랜드엑스코퍼레이션</button>
+              <button class="text-truncate">브랜드엑스코퍼레이션</button>
+              <button class="text-truncate">브랜드엑스코퍼레이션</button>
+              <button class="text-truncate">브랜드엑스코퍼레이션</button>
+              <button class="text-truncate">브랜드엑스코퍼레이션</button>
+              <button class="text-truncate">브랜드엑스코퍼레이션</button>
+              <button class="text-truncate">브랜드엑스코퍼레이션</button>
+              <button class="text-truncate">브랜드엑스코퍼레이션</button>
+              <button class="text-truncate">브랜드엑스코퍼레이션</button>
+              <button class="text-truncate">브랜드엑스코퍼레이션</button>
+              <button class="text-truncate">브랜드엑스코퍼레이션</button>
+              <button class="text-truncate">브랜드엑스코퍼레이션</button>
+            </div>
+            <!-- 검색된 종목 없을 떄 -->
+            <!-- <div class="noItem">
+              검색된 종목이 없습니다.
+            </div> -->
+          </div>
+        </div>
+      </div>
+
+      <!-- <script>
+        document.addEventListener("DOMContentLoaded", function () {
+          const searchBtn = document.getElementById("searchBtn");
+          const searchScreen = document.querySelector(".search-screen");
+          const searchPopupInput = document.getElementById("searchInput");
+      
+          searchBtn.addEventListener("click", function () {
+            // 팝업 보이기
+            searchScreen.style.display = "block";
+            document.body.style.overflow = "hidden";
+      
+            setTimeout(() => {
+              searchPopupInput.focus();
+            }, 0);
+          });
+      
+          document.querySelector(".search-screen .close").addEventListener("click", function () {
+            searchScreen.style.display = "none";
+            document.body.style.overflow = "";
+          });
+        });
+      </script> -->
+
+        <div class="bottomMenu">
+          <div class="menuList">
+            <button class="menulistBox active">
+              <div class="menuIcon01"></div>
+              <span>홈</span>
+            </button>
+            <button class="menulistBox">
+              <div class="menuIcon02"></div>
+              <span>종목추천</span>
+            </button>
+            <button class="menulistBox">
+              <div class="menuIcon-chat"></div>
+              <span>채팅</span>
+            </button>
+            <button class="menulistBox">
+              <div class="menuIcon03"></div>
+              <span>서비스소개</span>
+            </button>
+            <button class="menulistBox">
+              <div class="menuIcon04"></div>
+              <span>구독하기</span>
+            </button>
+          </div>
+        </div>
+
+      </div>
+      <!-- content -->
+
+      <div class="pt55"></div>
+
+    </div>
+    <!-- container -->
+
+  </div>
+  <!-- wrap -->
+
+  <!-- bootstrap -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+  integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+  crossorigin="anonymous"></script>
+
+</body>
+</html>

@@ -1,0 +1,3153 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* { font-family: 'Spoqa Han Sans Neo', 'sans-serif' !important; }
+
+em{
+  @apply not-italic;
+}
+
+.wrap{
+  @apply w-full h-full max-w-[720px] m-[0_auto];
+}
+
+.container{
+  @apply w-full h-full max-w-[720px] m-[0_auto] !p-0;
+}
+
+.header{
+  @apply sticky bg-white z-[999] w-full h-[50px] max-w-[720px] p-[0px_12px] top-0 border-b-[1px] border-[rgba(0,0,0,0.05)];
+}
+
+.header button{
+  @apply absolute top-[12px];
+}
+
+.header .title{
+  @apply w-full h-[50px] leading-[50px] text-center text-black text-[16px] font-bold;
+}
+
+.header button.alarm{
+  @apply w-[72px] h-[28px] text-center rounded-[8px] border border-black bg-white text-black text-[14px] font-normal right-[20px];
+}
+
+.header button.search{
+  @apply right-[12px];
+}
+
+.header .eventName{
+  @apply w-full h-[50px] flex justify-center items-center;
+}
+
+.header .nameBox{
+  @apply w-[calc(100%-60px)] h-[50px] text-center flex justify-center items-center gap-[5px];
+}
+
+.header .nameBox .name{
+  @apply w-auto max-w-[calc(100%-50px)] text-black text-[16px] font-bold leading-[24px];
+}
+
+.header .nameBox .code{
+  @apply text-[#999] text-[12px] font-normal leading-[24px] mt-[5px];
+}
+
+.dropdown-menu{
+  @apply p-0 m-0;
+}
+
+.dropdown-item{
+  @apply p-0 m-0 hover:bg-inherit active:text-black rounded-[6px];
+}
+
+.modal-dialog{
+  @apply max-w-[720px] m-[0px_auto] p-[20px];
+}
+
+.modal-content{
+  @apply relative border-none rounded-[25px] bg-white;
+}
+
+.modal-header{
+  @apply p-0 m-0 border-none;
+}
+
+.modal-header button{
+  @apply absolute right-[20px] top-[20px];
+}
+
+.modal-body{
+  @apply p-0 m-0 overflow-auto;
+}
+
+.modal-body::-webkit-scrollbar{
+  @apply hidden;
+}
+
+.offcanvas.offcanvas-bottom{
+  @apply h-fit max-h-[70%] border-none rounded-t-[25px] w-full max-w-[720px] m-[0_auto];
+}
+
+.offcanvas-header{
+  @apply p-[20px_20px_10px] justify-end;
+}
+
+.offcanvas-body{
+  @apply p-[0_20px_40px] m-0;
+}
+
+.collapse{
+  @apply !visible;
+}
+
+.text-truncate{
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.text-truncate2{
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box !important;
+  -webkit-line-clamp: 2 !important; 
+  -webkit-box-orient: vertical !important;
+}
+
+.tag{
+  @apply !inline-block !p-[1px_3px] !min-w-[38px] !text-[11px] !font-normal !leading-[14px] !rounded-[3px] !text-center;
+}
+
+.alName span{
+  @apply !inline-block !w-[20px] !h-[20px] !leading-[20px] !rounded-[5px] bg-[#f7f7f8] !text-white !text-[12px] !font-normal !text-center;
+}
+
+.bgGray{
+  @apply !bg-[#f5f5f5];
+}
+
+.high{
+  @apply !text-mainColor;
+}
+
+.low{
+  @apply !text-[#5886FE];
+}
+
+.avg{
+  @apply !text-[#477E2D];
+}
+
+.somehigh{
+  @apply !text-[#A62929];
+}
+
+.avgbg{
+  @apply !bg-[#DEF4C8];
+}
+
+.somehighbg{
+  @apply !bg-[#F9B5A0];
+}
+
+.somelow{
+  @apply !text-[#5688B6];
+}
+
+.highbg{
+  @apply !bg-[#FFDADA];
+}
+
+.lowbg{
+  @apply !bg-[#D6DAFC];
+}
+
+.somelowbg{
+  @apply !bg-[#D2EEEC];
+}
+
+.up{
+  @apply !text-mainColor;
+}
+
+.down{
+  @apply !text-[#5886FE];
+}
+
+.upbg{
+  @apply !bg-mainColor;
+}
+
+.downbg{
+  @apply !bg-[#5886FE];
+}
+
+.buybg{
+  @apply !bg-[#FFF3F3];
+}
+
+.sellbg{
+  @apply !bg-[#ECF1FF];
+}
+
+.type01{
+  @apply !bg-[#65D27D];
+}
+
+.type02{
+  @apply !bg-[#F99474];
+}
+
+.type03{
+  @apply !bg-[#929DFB];
+}
+
+.state01{
+  @apply text-[#11D73F];
+}
+
+.state02{
+  @apply text-[#36B49A];
+}
+
+.state03{
+  @apply text-[#5886FE];
+}
+
+.state04{
+  @apply text-[#B059BB];
+}
+
+.state05{
+  @apply text-[#FE2676];
+}
+
+.mb-78{
+  @apply !mb-[78px];
+}
+
+.fz-14{
+  @apply !text-[14px];
+}
+
+.bgg15{
+  @apply w-full h-[15px] bg-[#f3f3f4];
+}
+
+.pt55{
+  @apply w-full pt-[58px];
+}
+
+.pt35{
+  @apply w-full pt-[35px];
+}
+
+.mt-18{
+  @apply mt-[18px];
+}
+
+.pt-27{
+  @apply pt-[27px];
+}
+
+.flexsb{
+  @apply w-full flex justify-between items-center;
+}
+
+.flexend{
+  @apply flex justify-end items-start gap-[4px];
+}
+
+.hidden{
+  @apply !hidden;
+}
+
+.minbr{
+  @apply hidden ;
+}
+
+@media (max-width: 360px){
+  .minbr{
+    @apply !block;
+  }
+}
+
+/* index / 로그인 */
+.mainLoading, .logIn{
+  @apply w-full h-[100dvh] bg-[#ebf0ff] flex flex-col justify-center items-center gap-[110px] pt-[100px];
+}
+
+.logo{
+  @apply w-full flex justify-center items-center mb-[30px];
+}
+
+.mainTxt{
+  @apply text-center;
+}
+
+.mainTxt span{
+  @apply block text-black text-[16px] font-[300] mb-[4px] leading-[20px];
+}
+
+.mainTxt strong{
+  @apply block text-[32px] font-bold text-mainColor leading-[40px];
+}
+
+.mainImg{
+  @apply flex justify-center items-center;
+}
+
+.mainImg img{
+  @apply block w-full max-w-[220px];
+}
+
+.subTxt{
+  @apply text-center text-black text-[16px] font-[300] mb-[35px];
+}
+
+.startBtn{
+  @apply w-full text-center mb-[40px];
+}
+
+.startBtn button{
+  @apply w-[273px] h-[40px] rounded-[18px] bg-mainColor text-white text-[16px] font-normal leading-[22px];
+}
+
+.guideTxt{
+  @apply text-center text-[#7e8bae] text-[14px] font-normal leading-[18px] mb-[35px];
+}
+/* ////////////////////////// */
+
+/* 마이페이지 */
+.myPageCon{
+  @apply p-[25px_20px_40px];
+}
+
+.userIcon{
+  @apply w-full flex justify-center items-center mb-[23px]; 
+}
+
+.userIcon img{
+  @apply w-[62px] h-[62px];
+}
+
+.userTxt{
+  @apply w-full text-center text-black text-[20px] font-normal mb-[8px]; 
+}
+
+.logOut, .main-logIn{
+  @apply w-full flex justify-center mb-[24px];
+}
+
+.logOut button, .main-logIn button{
+  @apply flex justify-center items-center gap-[2px];
+}
+
+.main-logIn button{
+  @apply gap-[5px];
+}
+
+.logOut button span, .main-logIn button span{
+  @apply block text-[#999] text-[14px] font-normal leading-[17px];
+}
+
+.myPageCon .box{
+  @apply relative w-full rounded-[12px] border border-[#d2d2d2] bg-white p-[20px_15px] text-left mb-[15px] last:mb-[0];
+}
+
+.myPageCon .box .boxTitle{
+  @apply text-mainColor text-[12px] font-bold leading-[21px] mb-[3px];
+}
+
+.myPageCon .box .boxTxt{
+  @apply text-black text-[16px] font-normal leading-[21px];
+}
+
+.myPageCon .box span{
+  @apply absolute top-[15px] right-[15px];
+}
+
+.point{
+  @apply w-full mt-[40px] flex justify-between items-start;
+}
+
+.pointTitle{
+  @apply text-[16px] text-black font-normal leading-[21px];
+}
+
+.pointNum{
+  @apply flex flex-col justify-center items-end gap-[8px];
+}
+
+.pointNum span{
+  @apply block text-black text-[16px] font-normal leading-[21px];
+}
+
+.pointNum button{
+  @apply w-[37px] h-[16px] rounded-[3px] bg-black text-white text-center text-[11px] font-normal;
+}
+
+.pageMenu{
+  @apply w-full p-[25px_20px] bg-mainColor flex flex-col gap-[35px];
+}
+
+.menuTitle{
+  @apply text-white text-[16px] font-normal mb-[20px];
+}
+
+.menuBtn{
+  @apply flex flex-row gap-[30px] justify-start items-center pl-[15px];
+}
+
+.menuBtn button{
+  @apply flex flex-col gap-[5px] justify-center items-center text-white text-[12px] font-normal;
+}
+
+.terms{
+  @apply w-full p-[40px_20px] bg-white text-center text-[#8c8c8c] text-[14px] font-normal leading-[17.53px];
+}
+
+.myPageFooter{
+  @apply w-full p-[25px_20px] text-center bg-[#F5F5F5] text-[#8c8c8c] text-[14px] font-normal leading-[17.53px];
+}
+/* ////////////////// */
+
+/* 회원정보관리 */
+.userMan button{
+  @apply w-full p-[15px_20px] flex justify-between items-center text-black text-[16px] font-normal border-b-[1px] border-[rgba(0,0,0,0.05)];
+}
+/* ///////////////// */
+
+/* 정기결제관리 */
+.regularPayment{
+  @apply w-full p-[25px_20px];
+}
+
+.paymentTitle{
+  @apply w-full text-black text-[16px] font-bold mb-[15px] flex justify-between items-center;
+}
+
+.regularPayment .box{
+  @apply w-full p-[20px_15px] mb-[20px] rounded-[12px] border border-[#d2d2d2];
+}
+
+.regularPayment .box .txt{
+  @apply text-black text-[16px] font-normal leading-[23px] mb-[15px];
+}
+
+.expected{
+  @apply w-full p-[15px_0] text-center rounded-[8px] bg-[#f5f5f5];
+}
+
+.expected span{
+  @apply block text-black text-[16px] font-normal leading-[20px] mb-[10px];
+}
+
+.expected button{
+  @apply text-mainColor text-[14px] font-normal leading-[18px] underline;
+}
+
+.paymentExp{
+  @apply w-full text-[#666] text-[14px] font-normal leading-[17.53px];
+}
+
+.box.noPayment{
+  @apply w-full h-[184px] flex justify-center items-center text-black text-[16px] font-normal;
+}
+/* //////////////// */
+
+/* 결제내역 */
+.payment{
+  @apply w-full p-[25px_20px];
+}
+
+.years, .all{
+  @apply relative w-[140px];
+}
+
+.yearsSel, .allSel{
+  @apply w-[140px] flex justify-between items-center rounded-[6px] border border-[#d2d2d2] bg-white p-[3px_3px_3px_8px];
+}
+
+.yearsSel span, .allSel span{
+  @apply text-black text-[14px] font-medium leading-[20px];
+}
+
+.yearsCon, .allCon{
+  @apply absolute z-[99] min-w-[140px] w-[140px] bg-white right-0 top-[25px] border border-[#d2d2d2] rounded-[6px] border-t-0 pt-[10px] rounded-t-none !translate-y-[25px];
+}
+
+.yearsCon button, .allCon button{
+  @apply block w-[138px] text-black text-[14px] font-medium leading-[20px] pl-[8px] text-left pb-[6px];
+}
+
+.payment .box{
+  @apply relative w-full p-[20px] mb-[15px] rounded-[12px] shadow-[0px_2px_10px_rgba(0,0,0,0.15)] last:mb-0;
+}
+
+.payment .box .use{
+  @apply absolute p-[1px_3px] rounded-[3px] bg-mainColor text-[11px] font-normal text-white text-center leading-[16px] top-[20px] right-[20px];
+}
+
+.payment .box .noUse{
+  @apply absolute p-[1px_3px] rounded-[3px] bg-[#F5F5F5] text-[11px] font-normal text-[#999999] text-center leading-[16px] top-[20px] right-[20px];
+}
+
+.payment .box .txt{
+  @apply w-full flex justify-start items-center gap-[10px] mb-[5px] last:mb-0;
+}
+
+.payment .box .txt strong{
+  @apply block min-w-[75px] text-black text-[16px];
+}
+
+.payment .box .txt span{
+  @apply block text-[16px] text-black;
+}
+
+.payment .noPayment{
+  @apply h-[123px];
+}
+
+.more{
+  @apply w-full text-center;
+}
+
+.more button{
+  @apply w-[164px] h-[36px] bg-white border border-[#d2d2d2] mt-[25px] rounded-[18px] text-black text-[12px] font-normal;
+}
+/* ///////////// */
+
+/* 알림설정 */
+.setting{
+  @apply w-full p-[15px_20px] border-b border-[rgba(0,0,0,0.05)];
+}
+
+.alarmTxt{
+  @apply flex justify-between items-center mb-[25px];
+}
+
+.alarmTxt span{
+  @apply text-black text-[16px] font-normal;
+}
+
+.radio-button{
+  @apply relative;
+}
+
+.radio-button input[type=checkbox]{
+  @apply absolute hidden;
+}
+
+.switch_label{
+  @apply relative cursor-pointer block w-[40px] h-[13px] bg-[#e9e9e9] rounded-[99px] transition-[0.2s];
+}
+
+.radio-button input[type=checkbox]:checked + .switch_label{
+  @apply bg-mainColor;
+}
+
+.onf_btn{
+  @apply absolute top-[-3px] left-[0px] inline-block w-[20px] h-[20px] rounded-[22px] bg-white transition-[0.2s] border border-[#ccc];
+}
+
+.radio-button input[type=checkbox]:checked + .switch_label .onf_btn{
+  @apply left-[20px] border-mainColor;
+}
+
+.detail{
+  @apply text-[#999] text-[14px] font-normal leading-[17.53px];
+}
+
+.alarmExp{
+  @apply w-full p-[20px_20px_30px] flex flex-col gap-[20px];
+}
+
+.alarmExp span{
+  @apply block text-[#666] text-[14px] font-normal leading-[17.53px];
+}
+
+.alarmSave{
+  @apply w-full text-center;
+}
+
+.alarmSave button{
+  @apply w-[190px] h-[40px] rounded-[18px] bg-mainColor text-white text-[14px] font-normal;
+}
+
+.alarmModal .modal-content{
+  @apply p-[55px_35px_40px];
+}
+
+.alarmModal .modal-body .title{
+  @apply text-center text-black text-[18px] font-bold mb-[35px];
+}
+
+.alarmModal .modal-body .txt{
+  @apply text-center text-black text-[16px] font-normal mb-[25px];
+}
+
+.alarmModal .modal-body .check{
+  @apply w-full text-center;
+}
+
+.alarmModal .modal-body .check button{
+  @apply w-[190px] h-[40px] rounded-[18px] bg-mainColor text-white text-[14px] font-normal;
+}
+
+.alarmModal .modal-body .period{
+  @apply w-full py-[10px] rounded-[10px] bg-[#F3F3F4] text-center text-[#000] text-[16px] font-normal leading-[20px];
+}
+/* ///////////// */
+
+/* 1:1문의 */
+.inquiry{
+  @apply w-full p-[25px_20px];
+}
+
+.inqReg{
+  @apply w-full mb-[30px];
+}
+
+.inqReg button{
+  @apply w-full h-[40px] rounded-[12px] bg-mainColor text-white text-[14px] font-bold leading-[21px];
+}
+
+.q_list .title{
+  @apply text-black text-[16px] font-bold leading-[21px] mb-[10px];
+}
+
+.q_list .box{
+  @apply w-full p-[20px_15px] rounded-[12px] border border-[#d2d2d2] bg-white mb-[15px] last:mb-0 flex justify-between items-center text-left;
+}
+
+.q_list .box.noQbox{
+  @apply h-[200px] flex justify-center items-center text-black text-[16px] font-normal leading-[21px];
+}
+
+.q_list .box .txt em{
+  @apply block text-[#999] text-[14px] font-normal leading-[21px] not-italic mb-[3px];
+}
+
+.q_list .box .txt span{
+  @apply block text-black text-[16px] font-normal leading-[21px];
+}
+
+.q_list .box .state{
+  @apply text-[#999] text-[16px] font-normal leading-[21px];
+}
+
+.q_list .box .state.end{
+  @apply text-mainColor;
+}
+
+.q_listMore{
+  @apply w-full text-center mt-[25px];
+}
+
+.q_listMore button{
+  @apply w-[164px] h-[36px] rounded-[18px] border border-[#d2d2d2] text-black text-[12px] font-normal leading-[20px];
+}
+
+.inqOff .offcanvas-body .title{
+  @apply text-black text-[18px] font-bold mb-[15px] leading-[22px];
+}
+
+.inqOff .offcanvas-body .date{
+  @apply text-[#999] text-[14px] font-normal leading-[21px] mb-[3px];
+}
+
+.inqOff .offcanvas-body .question{
+  @apply mb-[30px];
+}
+
+.inqOff .offcanvas-body .question span{
+  @apply block text-black text-[16px] font-normal leading-[21px] mb-[10px];
+}
+
+.inqOff .offcanvas-body .question em{
+  @apply block not-italic pl-[17px] text-black text-[16px] font-normal leading-[21px];
+}
+
+.inqOff .offcanvas-body .answer{
+  @apply w-full min-h-[142px] rounded-[8px] bg-[#f5f5f5] p-[15px] mb-[15px] last:mb-0 flex justify-start items-start gap-[10px];
+}
+
+.inqOff .offcanvas-body .answer strong{
+  @apply block text-black text-[16px] font-bold leading-[21px];
+}
+
+.inqOff .offcanvas-body .answer span{
+  @apply block text-[#666] text-[16px] font-normal leading-[21px];
+}
+
+.inqOff .offcanvas-body .check{
+  @apply w-full text-center mt-[25px];
+}
+
+.inqOff .offcanvas-body .check button{
+  @apply w-[130px] h-[40px] rounded-[18px] bg-mainColor text-white text-[16px] font-normal;
+}
+
+.inquiry .headName{
+  @apply w-full text-black text-[16px] font-bold leading-[21px] mb-[10px];
+}
+
+.inquiry .titleTextBox, .inquiry .detailTextBox{
+  @apply w-full mb-[25px];
+}
+
+.inquiry .titleTextBox textarea{
+  @apply w-full h-[40px] resize-none rounded-[8px] bg-[#f5f5f5] p-[11px_13px] text-[#666] text-[14px] font-normal leading-[17.53px] placeholder:text-[#666] placeholder:text-[14px] placeholder:font-normal placeholder:leading-[17.53px];
+}
+
+.inquiry .detailTextBox textarea{
+  @apply w-full h-[250px] resize-none rounded-[8px] bg-[#f5f5f5] p-[11px_13px] text-[#666] text-[14px] font-normal leading-[17.53px] placeholder:text-[#666] placeholder:text-[14px] placeholder:font-normal placeholder:leading-[17.53px];
+}
+
+.inqBtnGroup{
+  @apply w-full flex justify-center items-center gap-[15px];
+}
+
+.inqBtnGroup button{
+  @apply w-[140px] h-[40px] bg-white border border-mainColor rounded-[18px] text-mainColor text-[16px] font-normal leading-[22px];
+}
+
+.inqBtnGroup button.active{
+  @apply bg-mainColor text-white;
+}
+/* /////////////// */
+
+/* Q&A */
+.qAndA{
+  @apply w-full p-[25px_20px_30px];
+}
+
+.qAndA_title{
+  @apply w-full flex flex-col justify-center items-center gap-[15px] mb-[30px];
+}
+
+.qAndA_title div{
+  @apply text-center text-black text-[16px] font-bold leading-[20px];
+}
+
+.qAndAFooter{
+  @apply w-full p-[25px_20px] bg-[#f5f5f5] text-[#8c8c8c] text-center text-[14px] font-normal leading-[17.53px];
+}
+
+.qAndAFooter a{
+  @apply hover:text-[#8c8c8c];
+}
+
+.accordion{
+  --bs-accordion-btn-focus-border-color: none;
+  --bs-accordion-btn-focus-box-shadow: none;
+}
+
+.accordion.qAndAacc{
+  @apply w-full flex flex-col gap-[15px] pb-[20px];
+}
+
+.accordion.qAndAacc .accordion-item{
+  @apply w-full p-0 border border-[#d2d2d2] !rounded-[12px];
+}
+
+.accordion .accordion-item + .accordion-item{
+  border-top: 1px solid #d2d2d2;
+}
+
+.accordion.qAndAacc .accordion-button{
+  @apply p-[20px_15px] border border-[#d2d2d2] !rounded-[12px] text-black text-[16px] font-normal leading-[20px] flex justify-between items-start gap-[20px];
+}
+
+.accordion-button::after, .accordion-button:not(.collapsed)::after {
+  width: 14px;
+  height: 14px;
+  background-image: url(../img/arrow-up.png);
+  background-size: 14px 14px;
+}
+
+.accordion-button:not(.collapsed){
+  @apply bg-white shadow-none;
+}
+
+.accordion-body{
+  @apply w-full p-[0px_15px_20px];
+}
+
+.accordion-body .txt{
+  @apply text-[#666] text-[16px] font-normal leading-[20px] mb-[30px] last:mb-0;
+}
+
+.accordion-body .txt a{
+  @apply underline;
+}
+
+.accordion-body .txt .title{
+  @apply block text-black text-[16px] font-normal leading-[20px] mb-[10px];
+}
+
+.accordion-body .txt ul li{
+  @apply relative pl-[12px] mb-[7px] last:mb-0;
+}
+
+.accordion-body .txt ul li::before{
+  @apply absolute inline-block left-0 top-[8px] content-[''] w-[4px] h-[4px] bg-[#d9d9d9] rounded-full;
+}
+/* //////////////// */
+
+/* 투자의비책 메인 */
+.main{
+  @apply relative;
+}
+
+.gradientBg{
+  background: linear-gradient(129deg, #EBF0FF 56.76%, #FFE4E4 100%);
+  @apply w-full h-[280px] absolute top-0 z-[-99];
+}
+
+.mainHeader{
+  @apply relative p-[20px_20px_0];
+}
+
+.mainMenu{
+  @apply absolute flex justify-center items-center mt-[2px] top-[20px] left-[20px];
+}
+
+.mainTitle{
+  @apply w-full flex justify-center items-center gap-[5px];
+}
+
+.mainTitle span{
+  @apply block text-mainColor text-[20px] font-bold leading-[20px];
+}
+
+.mainHeader .logOut, .mainHeader .main-logIn{
+  @apply absolute top-[24px] right-[20px] w-[auto];
+}
+
+.user{
+  @apply absolute ;
+}
+
+.mainIntro{
+  @apply relative w-full p-[50px_24px_15px] text-black text-[20px] font-[300] leading-[25px];
+}
+
+.mainIntro b{
+  @apply relative font-[300] after:content-[''] after:absolute after:w-[4px] after:h-[4px] after:inline-block after:bg-mainColor after:rounded-full after:top-[-6px] after:right-[7px];
+}
+
+.mainIntro span{
+  @apply block font-bold;
+}
+
+.introImg{
+  @apply absolute right-[34px] bottom-[-28px];
+}
+
+.introImg img{
+  @apply w-[128px];
+}
+
+.introSearch{
+  @apply relative w-full h-[50px] mt-[32px] bg-[#fff] z-[99] rounded-[50px] gradient-border01;
+}
+
+.gradient-border01{
+  border: 2px solid transparent;
+  background-image: linear-gradient(#fff, #fff),
+    linear-gradient(64.54deg, #FF537E 32.29%, #325BFF 83.48%);
+  background-origin: border-box;
+  background-clip: padding-box, border-box;
+}
+
+.introSearch button{
+  @apply w-full;
+}
+
+.introSearch button p{
+  @apply w-full h-[46px] rounded-[50px] pl-[18px] pr-[50px] text-[#999] text-[14px] font-light text-left leading-[46px];
+}
+
+.introSearch .search-btn{
+  @apply absolute right-[13px] top-[12px];
+}
+
+.offcanvas.offcanvas-bottom.search-screen{
+  @apply h-full max-h-full rounded-none;
+}
+
+.search-screen{
+  @apply fixed top-0 left-0 right-0 bottom-0 bg-[#fff] p-[30px_20px] max-w-[720px] m-[0_auto];
+}
+
+.search-screen .title{
+  @apply w-full flex justify-between items-center mb-[20px];
+}
+
+.search-screen .title strong{
+  @apply font-bold text-[18px] text-[#000] leading-[21px];
+}
+
+.search-input{
+  @apply relative w-full h-[40px] bg-[#fff] z-[99] rounded-[50px] gradient-border02 mb-[40px];
+}
+
+.gradient-border02{
+  border: 1px solid transparent;
+  background-image: linear-gradient(#fff, #fff),
+    linear-gradient(64.54deg, #FF537E 32.29%, #325BFF 83.48%);
+  background-origin: border-box;
+  background-clip: padding-box, border-box;
+}
+
+.search-input input{
+  @apply w-full h-[38px] rounded-[50px] p-[12px_16px_13px] pr-[44px] text-[#141414] text-[14px] leading-[18px] font-normal placeholder:text-[#999] placeholder:text-[14px] placeholder:font-light placeholder:leading-[18px]
+}
+
+.search-input button{
+  @apply absolute right-[13px] top-[7px];
+}
+
+.search-item{
+  @apply w-full h-[calc(100dvh-182px)] flex flex-col justify-start items-start gap-[40px] overflow-y-auto;
+}
+
+.search-item .box{
+  @apply w-full flex flex-col justify-start items-start gap-[30px];
+}
+.search-item .box .title{
+  @apply w-full font-bold text-[#141414] text-[16px] leading-[20px] mb-0;
+}
+
+.search-item .box .item-group{
+  @apply w-full flex justify-start items-center gap-[12px_20px] flex-wrap
+}
+
+.search-item .box .item-group button{
+  @apply w-[150px] text-[#141414] font-normal text-[16px] leading-[20px] text-left;
+}
+
+.search-item .box .noItem{
+  @apply w-full h-[150px] flex justify-center items-center rounded-[16px] border border-[#d2d2d2] bg-[#fff] font-normal text-[#141414] text-[16px]  leading-[20px];
+}
+
+.mainCon{
+  @apply w-full bg-white rounded-t-[20px];
+}
+
+.calendar{
+  @apply w-full h-full shadow-[0px_6px_8px_0px_rgba(0,0,0,0.10)] rounded-b-[20px];
+}
+
+.vanilla-calendar {
+  @apply !w-full !bg-white !p-[35px_20px_10px] !rounded-t-[20px];
+}
+
+.vanilla-calendar-header{
+  @apply !justify-center !gap-[25px];
+}
+
+.vanilla-calendar-header__content{
+  @apply !flex !flex-grow-0 !p-0;
+}
+
+.vanilla-calendar-days{
+  row-gap: .8rem !important;
+}
+
+.vanilla-calendar-day__btn, .vanilla-calendar-years__year, .vanilla-calendar-months__month{
+  @apply !bg-white !text-black !text-center !text-[14px] !font-normal;
+}
+
+.vanilla-calendar-week__day_weekend, .vanilla-calendar-week__day, 
+.vanilla-calendar-day__btn_prev, .vanilla-calendar-day__btn_next{
+  @apply !text-[#CDCDCD] !font-normal;
+}
+
+.vanilla-calendar-header {
+  @apply !mb-[30px];
+}
+
+.vanilla-calendar-month, .vanilla-calendar-year{
+  @apply !text-black !text-[20px] !font-normal !leading-[25px];
+}
+
+.vanilla-calendar-week{
+  @apply !mb-4;
+}
+
+.vanilla-calendar-day__btn_today{
+  @apply relative !text-white !bg-mainColor !w-[27px] !h-[27px] !rounded-full after:content-['Today'] after:inline-block after:w-[40px] after:h-[16px] after:bg-[#fbda73] after:rounded-[20px] after:text-black after:text-[11px] after:font-normal after:leading-[16px] after:text-center after:absolute after:top-[-10px] after:right-[-25px] after:z-[998];
+}
+
+.vanilla-calendar-years__year.vanilla-calendar-years__year_selected, 
+.vanilla-calendar-months__month.vanilla-calendar-months__month_selected{
+  @apply !text-white !bg-mainColor !rounded-full
+}
+
+.vanilla-calendar-arrow {
+  @apply !w-[18px] !h-[18px];
+}
+
+.vanilla-calendar-arrow:before {
+  background-image: url(../img/arrow-side.png) !important;
+  background-size: 18px 18px !important;
+  background-repeat: no-repeat !important;
+}
+
+.vanilla-calendar-day__btn_selected{
+  @apply relative !bg-mainColor !w-[27px] !h-[27px] !rounded-full !text-white after:content-['Pick'] after:inline-block after:w-[30px] after:h-[14px] after:bg-[#fbda73] after:rounded-[20px] after:text-black after:text-[11px] after:font-normal after:leading-[14px] after:text-center after:absolute after:top-[-8px] after:right-[-15px] after:z-[999];
+}
+
+.vanilla-calendar-day__btn_today span, .vanilla-calendar-day__btn_selected span{
+  @apply absolute text-[10px] font-normal bottom-[-15px] left-[-10px] leading-[12px]  before:content-[''] before:inline-block before:w-[10px] before:h-[10px] before:bg-[url(../img/buy.png)] before:bg-[length:10px_10px] before:align-middle;
+}
+
+.vanilla-calendar-day__btn_today em, .vanilla-calendar-day__btn_selected em{
+  @apply absolute text-[10px] font-normal bottom-[-15px] right-[-5px] leading-[12px] before:content-[''] before:inline-block before:w-[10px] before:h-[10px] before:bg-[url(../img/sell.png)] before:bg-[length:10px_10px] before:align-middle;
+}
+
+.rotate{
+  @apply rotate-[180deg];
+}
+
+.calendarMore{
+  @apply w-full h-[35px] bg-white flex justify-center items-center rounded-b-[20px];
+}
+
+.todayItem{
+  @apply w-full p-[35px_20px_30px] border-b-[15px] border-[#F3F3F4];
+}
+
+.todayItem .title{
+  @apply flex justify-between items-center mb-[15px];
+}
+
+.todayItem .title strong{
+  @apply block text-black text-[18px] font-bold;
+}
+
+.todayItem .title span{
+  @apply flex justify-end items-center gap-[4px] text-black text-[14px] font-normal leading-[20px];
+}
+
+.todayItem .title span button{
+  @apply flex justify-center items-center gap-[2px];
+}
+
+.todayItem .title span button strong{
+  @apply text-[14px] font-bold leading-[20px] text-black;
+}
+
+.itemList{
+  @apply w-full flex flex-col gap-[15px];
+}
+
+.itemlistBox{
+  @apply w-full p-[15px] border border-[#d2d2d2] rounded-[12px] flex justify-between items-center gap-[30px];
+}
+
+.itemlistBox.noItem{
+  @apply h-[125px] flex justify-center items-center; 
+}
+
+.itemlistBox.noItem span{
+  @apply block text-black text-[16px] font-normal;
+}
+
+.itemlistBox .name{
+  @apply flex flex-col gap-[8px] w-[52%];
+}
+
+.itemlistBox .alName{
+  @apply flex justify-normal items-center gap-[5px];
+}
+
+.itemlistBox .itemName{
+  @apply w-full flex justify-normal items-end;
+}
+
+.itemlistBox .itemName span{
+  @apply block mr-[6px] text-black text-[16px] font-normal leading-[20px] w-auto max-w-[calc(100%-55px)];
+}
+
+.itemlistBox .itemName em{
+  @apply block text-[#999] text-[12px] font-normal leading-[15px];
+}
+
+.itemlistBox .numGraph{
+  @apply w-[40%] flex justify-end items-center gap-[15px];
+}
+
+.itemlistBox .itemNum{
+  @apply text-[16px] font-normal;
+}
+
+.itemlistBox .itemGraph{
+  @apply w-[70px];
+}
+
+/* aiIssue */
+.aiIssue{
+  @apply w-full p-[30px_20px];
+}
+
+.aiIssue .title{
+  @apply text-black text-[16px] font-bold mb-[16px];
+}
+
+.aiIssue .date{
+  @apply w-full flex justify-end items-center gap-[3px];
+}
+
+.aiIssue .date span{
+  @apply flex justify-center items-center;
+}
+
+.aiIssue .date em{
+  @apply font-normal text-[#999] text-[11px] leading-[14px];
+}
+
+.aiIssue .bubble-chart{
+  @apply w-full h-full max-w-[400px] m-[0_auto];
+}
+
+.bubbleModal .modal-content{
+  @apply w-full p-[30px_20px];
+}
+
+.bubbleModal .modal-header{
+  @apply w-full flex justify-between items-center mb-[30px];
+}
+
+.bubbleModal .modal-header span{
+  @apply font-bold text-[18px] leading-[21px] text-[#000];
+}
+
+.bubbleModal .state{
+  @apply flex justify-end items-center mb-[10px];
+}
+
+.bubbleModal .state span{
+  @apply flex justify-center items-center gap-[3px] p-[1px_5px] rounded-[20px] bg-[#CCCCCC]; 
+}
+
+.bubbleModal .state span.down{
+  @apply bg-[#5886FE];
+}
+
+.bubbleModal .state span.up{
+  @apply bg-[#FF5050];
+}
+
+.bubbleModal .state span.up svg{
+  @apply rotate-180;
+}
+
+.bubbleModal .state span em{
+  @apply font-normal text-[11px] leading-[14px] text-[#fff];
+}
+
+.bubbleModal .title{
+  @apply w-full font-bold text-[18px] leading-[23px] text-[#141414] mb-[15px];
+}
+
+.bubbleModal .modal-issue-tab{
+  @apply w-full flex justify-start items-center gap-[10px] mb-[15px] text-[#141414] text-[16px] font-bold leading-[20px];
+}
+
+.bubbleModal .modal-issue-tabContent{
+  @apply w-full mb-[30px];
+}
+
+.chart-img{
+  @apply w-full h-full;
+}
+
+.chart_ex{
+  @apply w-full flex justify-start items-center flex-wrap gap-[0px_15px] bg-[#f6f6f7] mt-[15px] p-[10px];
+}
+
+.chart_ex > div > span{
+  @apply block h-[23px] leading-[23px] text-[13px] text-[#999] float-left;
+}
+
+.chart_ex > div::before{
+  @apply content-[''] block w-[14px] h-[3px] mt-[10px] mr-[10px] float-left;
+}
+
+.chart_ex > div.cht01::before{
+  @apply bg-[#fb6b77];
+}
+
+.chart_ex > div.cht02::before{
+  @apply bg-[#1d5bcd];
+}
+
+.chart_ex > div.cht03::before{
+  @apply bg-[#1d5bcd];
+}
+
+.chart_ex > div.cht04::before{
+  @apply bg-[#72b7fc];
+}
+
+.chart_ex > div.cht05::before{
+  @apply bg-[#a1d2fd];
+}
+
+.chart_ex > div.cht06::before{
+  @apply bg-[#c2def4];
+}
+
+.chart_ex2{
+  @apply w-full flex justify-center items-center gap-[0px_15px] mt-[15px];
+}
+
+.chart_ex2 > div > span{
+  @apply block h-[24px] leading-[24px] text-[13px] text-[#999] float-left;
+}
+
+.chart_ex2 > div::before{
+  @apply content-[''] block w-[8px] h-[8px] rounded-full float-left mt-[8px] mr-[5px];
+}
+
+.chart_ex2 > div.cht01::before{
+  @apply bg-[#fb4755];
+}
+
+.chart_ex2 > div.cht02::before{
+  @apply bg-[#568bfb];
+}
+
+.chart_ex2 > div.cht03::before{
+  @apply w-[20px] h-[12px] border border-[#c3cdee] rounded-none bg-[#f3f7ff] mt-[6px];
+}
+
+.bubbleModal .issue-list{
+  @apply w-full flex flex-col justify-start items-center mb-[30px];
+}
+
+.bubbleModal .issue-list .list{
+  @apply w-full flex justify-between items-center py-[10px] border-b border-[#D2D2D2];
+}
+
+.bubbleModal .issue-list .list .name{
+  @apply w-[calc(100%-170px)] text-left text-[#141414] font-normal text-[14px] leading-[16px];
+}
+
+.bubbleModal .issue-list .list .numPer{
+  @apply flex justify-end items-center gap-[20px];
+}
+
+.bubbleModal .issue-list .list .numPer .num{
+  @apply text-[#141414] font-normal text-[14px] leading-[16px];
+}
+
+.bubbleModal .issue-list .list .numPer .per{
+  @apply min-w-[70px] rounded-[6px] p-[3px_5px] font-normal text-[14px] leading-[21px] text-[#141414] bg-[#F5F5F5];
+}
+
+.bubbleModal .issue-list .list .numPer .per.up{
+  @apply bg-[#FFE9E9];
+}
+
+.bubbleModal .issue-list .list .numPer .per.down{
+  @apply bg-[#E6EDFF];
+}
+
+.bubbleModal .detail{
+  @apply w-full flex justify-center items-center;
+}
+
+.bubbleModal .detail button{
+  @apply w-[156px] h-[30px] rounded-[20px] border border-[#d2d2d2] bg-[#fff] text-[#141414] text-[12px] font-normal leading-[20px];
+}
+/* ///////////////////////////////// */
+
+/* 이슈 상세보기 */
+.issueDetail{
+  @apply w-full p-[30px_20px];
+}
+
+.issueDetail .title{
+  @apply w-full flex justify-between items-center mb-[30px];
+}
+
+.issueDetail .title strong{
+  @apply text-[#141414] font-bold text-[16px] leading-[20px];
+}
+
+.issueDetail .state span{
+  @apply flex justify-center items-center gap-[3px] p-[1px_5px] rounded-[20px] bg-[#CCCCCC]; 
+}
+
+.issueDetail .state span.down{
+  @apply bg-[#5886FE];
+}
+
+.issueDetail .state span.up{
+  @apply bg-[#FF5050];
+}
+
+.issueDetail .state span.up svg{
+  @apply rotate-180;
+}
+
+.issueDetail .state span em{
+  @apply font-normal text-[11px] leading-[14px] text-[#fff];
+}
+
+.issueDetail .issueBox{
+  @apply w-full mb-[30px];
+}
+
+.issueDetail .issueHeader{
+  @apply w-full flex flex-col justify-start items-start gap-[10px] pb-[20px] border-b border-[#d2d2d2] mb-[20px];
+}
+
+.issueDetail .issueHeader h1{
+  @apply w-full text-[#141414] text-[16px] font-bold leading-[20px];
+}
+
+.issueDetail .issueHeader .date{
+  @apply w-full text-[#999] text-[12px] font-normal leading-[21px];
+}
+
+.issueDetail .issueTxt{
+  @apply w-full mb-[30px];
+}
+
+.issueDetail .issueTxt p{
+  @apply text-[#141414] text-[15px] font-normal leading-[20px];
+}
+
+.issueDetail .issueTxt p a{
+  @apply text-[#999];
+}
+
+.issueDetail .issueChart{
+  @apply w-full flex flex-col justify-start items-start gap-[15px];
+}
+
+.issueDetail .issueChart .title{
+  @apply m-0 text-[#141414] text-[16px] font-bold leading-[20px];
+}
+
+.issueDetail .issueList{
+  @apply w-full mb-[30px];
+}
+
+.issueDetail .issueList .title{
+  @apply mb-[15px];
+}
+
+.issueDetail .issueList .title span{
+  @apply font-normal text-[12px] text-[#999] leading-[18px];
+}
+
+.issueDetail .issueList .listBox{
+  @apply w-full flex flex-col justify-start items-center gap-[15px];
+}
+
+.issueDetail .issueList .listBox .list{
+  @apply w-full flex flex-col justify-start items-start gap-[10px] p-[15px_12px] rounded-[16px] bg-[#fff] shadow-[0px_0px_8px_0px_rgba(0,0,0,0.1)];
+}
+
+.issueDetail .issueList .listBox .list .top{
+  @apply w-full flex justify-between items-center;
+}
+
+.issueDetail .issueList .listBox .list .top .name{
+  @apply w-[calc(100%-100px)] text-left text-[#141414] text-[16px] font-bold leading-[20px];
+}
+
+.issueDetail .issueList .listBox .list .top .per{
+  @apply min-w-[70px] rounded-[6px] p-[3px_5px] font-normal text-[14px] leading-[21px] text-[#141414] bg-[#F5F5F5];
+}
+
+.issueDetail .issueList .listBox .list .top .per.up{
+  @apply bg-[#FFE9E9];
+}
+
+.issueDetail .issueList .listBox .list .top .per.down{
+  @apply bg-[#E6EDFF];
+}
+
+.issueDetail .issueList .listBox .list .bottom{
+  @apply w-full text-left text-[#333] text-[15px] font-normal leading-[20px];
+}
+
+.issueDetail .detail{
+  @apply w-full flex justify-center items-center;
+}
+
+.issueDetail .detail button{
+  @apply w-[156px] h-[30px] rounded-[20px] border border-[#d2d2d2] bg-[#fff] text-[#141414] text-[12px] font-normal leading-[20px];
+}
+/* /////////////////////////////////////// */
+
+/* 주요 이슈 헤드라인 */
+.headLine{
+  @apply w-full p-[30px_20px_20px];
+}
+
+.headLine .title{
+  @apply w-full flex justify-between items-center mb-[15px];
+}
+
+.headLine .title strong{
+  @apply text-[#141414] text-[16px] font-bold leading-[24px];
+}
+
+.headLine .title button{
+  @apply font-normal text-[#999] text-[14px] leading-[18px];
+}
+
+.headLine .headLineNav{
+  @apply w-full flex justify-center items-center mb-[15px];
+}
+
+.headLine .headLineNav button{
+  @apply w-[calc(100%/2)] p-[8px_0] text-[#999] text-[14px] font-normal leading-[17px] border-b-[1px] border-[#d2d2d2];
+}
+
+.headLine .headLineNav button.active{
+  @apply text-black font-bold border-b-[2px] border-black ;
+}
+
+.headLine .headLineSwiper{
+  @apply w-full relative;
+}
+
+.headLine .headLineSwiper .swiper-slide{
+  @apply w-full flex flex-col justify-start items-start gap-[8px] p-[24px] rounded-[16px] bg-[#f9f9f9] text-left;
+}
+
+.headLine .headLineSwiper .swiper-slide .top{
+  @apply w-full flex justify-between items-center;
+}
+
+.headLine .headLineSwiper .swiper-slide .top .name{
+  @apply w-auto max-w-[calc(100%-70px)] text-[#141414] text-[18px] leading-[22px] font-bold;
+}
+
+.headLine .headLineSwiper .swiper-slide .top .per{
+  @apply text-[12px] font-normal leading-[16px] text-[#141414];
+}
+
+.headLine .headLineSwiper .swiper-slide .bottom{
+  @apply w-full flex flex-col justify-start items-start gap-[8px];
+}
+
+.headLine .headLineSwiper .swiper-slide .bottom .txt{
+  @apply w-full text-[#8c8c8c] text-[15px] font-normal leading-[20px];
+}
+
+.headLine .headLineSwiper .swiper-slide .bottom .keyword{
+  @apply w-full flex justify-start items-center gap-[0px_8px] flex-wrap;
+}
+
+.headLine .headLineSwiper .swiper-slide .bottom .keyword span{
+  @apply text-[#5886FE] text-[12px] font-normal leading-[20px];
+}
+
+.headLine .headLineSwiper .swiper-pagination{
+  @apply block mt-[20px];
+}
+
+.headLine .headLineSwiper .swiper-pagination-tab{
+  @apply relative w-full flex justify-start items-center gap-[10px] mb-[10px] pt-[8px] flex-wrap;
+  scrollbar-width: none;
+}
+
+.headLine .headLineSwiper .swiper-pagination-tab .swiper-pagination-bullet{
+  @apply w-auto h-[36px] !block opacity-100 m-0 rounded-[20px] border border-[#d9d9d9] bg-[#fff] p-[9px_15px] text-[#8c8c8c] text-[14px] font-normal leading-[18px] whitespace-nowrap;
+}
+
+.headLine .headLineSwiper .swiper-pagination-tab .swiper-pagination-bullet-active{
+  @apply border-[#141414] text-[#141414];
+}
+/* //////////////////////////////////// */
+
+.bestItem{
+  @apply w-full p-[30px_20px_20px];
+}
+
+.bestItem .title{
+  @apply flex justify-between items-center mb-[30px];
+}
+
+.bestItem .title strong{
+  @apply text-black text-[16px] font-bold;
+}
+
+.bestItem .title span{
+  @apply text-[#999] text-[12px] font-normal;
+}
+
+.bestItemList .bestListBox{
+  @apply w-full text-left flex justify-between items-center p-[19px_0px_17px] first:pt-0 border-b-[1px] border-[#d2d2d2];
+}
+
+.bestItemList .bestListBox .bestItemName{
+  @apply w-[calc(100%-80px)] flex flex-col gap-[5px];
+}
+
+.bestItemList .bestListBox .listName{
+  @apply w-full flex justify-normal items-center gap-[5px];
+}
+
+.bestItemList .bestListBox .listName .name{
+  @apply w-auto max-w-[calc(100%-85px)] text-black text-[16px] font-normal leading-[20px];
+}
+
+.bestItemList .bestListBox .listName .code{
+  @apply text-[#999] text-[12px] font-normal leading-[15px];
+}
+
+.bestItemList .bestListBox .listNum{
+  @apply flex justify-normal items-center gap-[5px];
+}
+
+.bestItemList .bestListBox .listNum span{
+  @apply text-black text-[13px] font-normal leading-[20px];
+}
+
+.bestItemList .bestListBox .bestItemPer{
+  @apply w-[79px] h-[25px] leading-[25px] rounded-[4px] text-white text-[15px] font-normal text-center;
+}
+
+.swiper-pagination{
+  @apply relative mt-[25px]; 
+}
+
+.swiper-pagination .swiper-pagination-bullet{
+  @apply bg-[#ebeced] opacity-100;
+}
+
+.swiper-pagination .swiper-pagination-bullet-active{
+  @apply bg-[#434343];
+}
+
+.itemSwiper .swiper-pagination .swiper-pagination-bullet-active{
+  @apply bg-mainColor;
+}
+
+.beAlItem{
+  @apply w-full p-[30px_20px];
+}
+
+.beAlItem .title{
+  @apply w-full text-black text-[16px] font-bold mb-[15px];
+}
+
+.beAlCon .beAlNav {
+  @apply w-full flex justify-center items-center mb-[20px];
+}
+
+.beAlCon .beAlNav button{
+  @apply w-[50%] p-[10px_0px] border-b-[1px] border-[#d2d2d2] text-black text-[14px] font-bold;
+}
+
+.beAlCon .beAlNav button.active{
+  @apply border-b-[2px] border-black;
+}
+
+.beAlList{
+  @apply w-full flex flex-col gap-[15px];
+}
+
+.beAlList .beAlListBox{
+  @apply text-left w-full p-[20px_15px] rounded-[12px] bg-white shadow-[0px_2px_10px_rgba(0,0,0,0.15)]
+}
+
+.beAlName{
+  @apply flex justify-between items-center mb-[10px];
+}
+
+.beAlName .name{
+  @apply flex justify-start items-center gap-[5px] w-[calc(100%-50px)];
+}
+
+.beAlName .name .beAlItemName{
+  @apply block text-black text-[16px] font-normal leading-[20px] w-auto max-w-[calc(100%-65px)];
+}
+
+.beAlName .state{
+  @apply block w-[43px] h-[25px] leading-[25px] rounded-[4px] text-white text-[14px] font-normal text-center;
+}
+
+.beAlTxt{
+  @apply w-full text-[#999] text-[14px] font-normal leading-[17px] mb-[15px];
+}
+
+.beAlGoal{
+  @apply w-full flex justify-between items-center mb-[10px];
+}
+
+.beAlGoal span{
+  @apply block text-black text-[16px] font-normal leading-[24px] last:text-right;
+}
+
+.beAlPri{
+  @apply w-full p-[10px] bg-[#f3f3f4] rounded-[10px];
+}
+
+.beAlPri div{
+  @apply flex justify-between items-center mb-[5px] last:mb-0;
+}
+
+.beAlPriFlex{
+  @apply flex justify-between items-center !mb-[10px] last:!mb-0;
+}
+
+.beAlPriFlex .flexGroup{
+  @apply flex justify-normal items-start gap-[10px];
+}
+
+.beAlPriFlex .date{
+  @apply flex flex-col gap-[5px];
+}
+
+.beAlPri div span{
+  @apply block text-[14px] font-normal leading-[20px] text-black last:text-right;
+}
+
+.beAlMore{
+  @apply w-full text-center;
+}
+
+.beAlMore button{
+  @apply rounded-[18px] w-[164px] h-[36px] border border-[#d2d2d2] bg-white text-black text-[12px] font-normal leading-[20px] mt-[10px];
+}
+/* /////////////////// */
+
+/* AI 주오속보 */
+.aiNews{
+  @apply w-full p-[30px_20px_0];
+}
+
+.aiNews .title{
+  @apply w-full mb-[15px] text-[#141414] text-[16px] font-bold leading-[24px];
+}
+
+.aiNews .aiNews-tab{
+  @apply w-full flex justify-start items-center gap-[10px] mb-[20px];
+}
+
+.aiNews .aiNews-tab button{
+  @apply p-[8px_9px] rounded-[20px] border border-[#141414] bg-[#fff] text-[#141414] font-normal leading-[18px] text-[14px];
+}
+
+.aiNews .aiNews-tab button.active{
+  @apply bg-[#FF5050] text-[#fff] border-0;
+}
+
+.aiNews .explanation{
+  @apply w-full flex justify-start items-start gap-[5px] px-[5px] pb-[10px] border-b border-[#d2d2d2];
+}
+
+.aiNews .explanation span{
+  @apply inline-block rounded-[5px] p-[2px_5px] bg-[#8B7EFF] text-[#fff] font-normal text-[12px] leading-[16px] mt-[2px];
+}
+
+.aiNews .explanation p{
+  @apply text-[#141414] text-[14px] font-normal leading-[23px];
+}
+
+.aiNews .newsList{
+  @apply w-full flex flex-col justify-start items-start;
+}
+
+.aiNews .newsList .list{
+  @apply w-full flex flex-col justify-start items-start gap-[10px] text-left py-[10px] border-b border-[#d2d2d2];
+}
+
+.aiNews .newsList .list .listTitle{
+  @apply w-full text-[#141414] text-[16px] font-normal leading-[24px];
+}
+
+.aiNews .newsList .list .listTitle em{
+  @apply inline-block rounded-[5px] bg-[#FF7A52] p-[2px_5px] text-[#fff] font-normal mr-[3px] text-[12px] leading-[16px] align-middle mb-[2px];
+}
+
+.aiNews .newsList .list .listTitle span{
+  @apply inline-block rounded-[5px] p-[2px_5px] bg-[#8B7EFF] text-[#fff] font-normal text-[12px] leading-[16px] mr-[3px] align-middle mb-[3px];
+}
+
+.aiNews .newsList .list .listDate{
+  @apply text-[#999] text-[14px] font-normal leading-[18px];
+}
+
+.aiNews .newsList .list .listDate span{
+  @apply inline-block leading-[12px] ml-[6px] pl-[6px] border-l border-[#999];
+}
+
+.aiNews .newsMore{
+  @apply w-full text-center mt-[30px];
+}
+
+.aiNews .newsMore button{
+  @apply rounded-[18px] w-[164px] h-[36px] border border-[#d2d2d2] bg-white text-black text-[12px] font-normal leading-[20px];
+}
+/* //////////////////////////// */
+
+/* AI 주요속보 상세보기 */
+.newsDetail{
+  @apply w-full p-[30px_20px];
+}
+
+.newsDetail .title{
+  @apply w-full flex justify-between items-center mb-[30px];
+}
+
+.newsDetail .title strong{
+  @apply text-[#141414] font-bold text-[16px] leading-[20px];
+}
+
+.newsDetail .board{
+  @apply w-full mb-[30px];
+}
+
+.newsDetail .board-header{
+  @apply w-full flex flex-col justify-start items-start gap-[10px] pb-[20px] border-b border-[#d2d2d2];
+}
+
+.newsDetail .board-header strong{
+  @apply w-full text-[#141414] text-[16px] font-bold leading-[20px];
+}
+
+.newsDetail .board-header .board-date{
+  @apply w-full text-[#999] text-[12px] font-normal leading-[21px];
+}
+
+.newsDetail .board-item .viewContent{
+  @apply w-full p-[10px_0] text-[16px] text-[#141414] leading-[26px];
+}
+
+.newsDetail .board-item .viewContent img{
+  @apply max-w-[100%];
+}
+
+.newsDetail .share{
+  @apply w-full pt-[20px] border-t border-[#d2d2d2] flex flex-col justify-center items-center gap-[10px];
+}
+
+.newsDetail .share button{
+  @apply flex justify-center items-center gap-[10px] w-[186px] h-[45px] rounded-[50px] border border-[#d2d2d2] bg-[#fff] text-[#141414] text-[16px] leading-[20px] font-normal;
+}
+
+.shareModal .modal-content{
+  @apply w-full max-w-[300px] m-[0_auto] p-[45px_20px_25px];
+}
+
+.shareModal .modal-body{
+  @apply w-full flex flex-col justify-start items-center gap-[32px];
+}
+
+.shareModal .modal-body .modal-title{
+  @apply text-[#141414] text-[18px] font-bold leading-[21px];
+}
+
+.shareModal .modal-body .icon-group{
+  @apply w-full flex justify-center items-center gap-[31px];
+}
+
+.shareModal .modal-body .link{
+  @apply w-full flex justify-start items-center gap-[6px];
+}
+
+.shareModal .modal-body .link input{
+  @apply w-[calc(100%-65px)] h-[32px] p-[6px_8px] rounded-[6px] bg-[#f3f3f3] text-[#8c8c8c] text-[14px] font-normal leading-[20px];
+}
+
+.shareModal .modal-body .link button{
+  @apply w-[59px] h-[32px] flex justify-center items-center rounded-[6px] border border-[#d2d2d2] bg-[#fff] text-[#141414] text-[12px] font-normal leading-[20px];
+}
+/* //////////////////////////// */
+
+/* 이슈 모아보기 */
+.issueCollect{
+  @apply w-full p-[20px_20px_30px];
+}
+
+.issueCollect .title{
+  @apply w-full flex justify-between items-center mb-[15px];
+}
+
+.issueCollect .title .date{
+  @apply text-[#141414] text-[16px] font-bold leading-[20px];
+}
+
+.issueCollect .title .num{
+  @apply text-[#999] text-[12px] font-normal leading-[18px];
+}
+
+.issueCollect .issueList{
+  @apply w-full flex flex-col justify-start items-start gap-[15px];
+}
+
+.issueCollect .issueList .list{
+  @apply w-full p-[15px_12px] flex flex-col gap-[10px] justify-start items-start rounded-[16px] bg-[#fff] shadow-[0px_0px_8px_0px_rgba(0,0,0,0.1)];
+}
+
+.issueCollect .issueList .list .name{
+  @apply w-full flex justify-between items-center
+}
+
+.issueCollect .issueList .list .name strong{
+  @apply block w-[calc(100%-60px)] text-left text-[#141414] text-[16px] font-bold leading-[20px];
+}
+
+.issueCollect .issueList .list .txt{
+  @apply w-full flex justify-start items-center gap-[10px]
+}
+
+.issueCollect .issueList .list .txt p{
+  @apply w-[calc(100%-60px)] text-left text-[#333] text-[15px] font-normal leading-[20px];
+}
+
+.issueCollect .issueList .list .perBox{
+  @apply w-full p-[10px] flex justify-start items-start gap-[10px] flex-wrap rounded-[6px] bg-[#f7f7f8];
+}
+
+.issueCollect .issueList .list .perBox .per{
+  @apply flex justify-start items-center gap-[5px];
+}
+
+.issueCollect .issueList .list .perBox .per span, .issueCollect .issueList .list .perBox .per em{
+  @apply  text-[#606569] text-[14px] font-normal leading-[18px];
+}
+
+.issueCollect .state{
+  @apply flex justify-end items-center;
+}
+
+.issueCollect .state span{
+  @apply flex justify-center items-center gap-[3px] p-[1px_5px] rounded-[20px] bg-[#CCCCCC]; 
+}
+
+.issueCollect .state span.down{
+  @apply bg-[#5886FE];
+}
+
+.issueCollect .state span.up{
+  @apply bg-[#FF5050];
+}
+
+.issueCollect .state span.up svg{
+  @apply rotate-180;
+}
+
+.issueCollect .state span em{
+  @apply font-normal text-[11px] leading-[14px] text-[#fff];
+}
+/* ///////////////////////// */
+
+/* 종목추천 */
+.recomNav{
+  @apply w-full p-[15px_20px_0] mb-[15px] flex justify-between items-center gap-[10px];
+}
+
+.recomNav button{
+  @apply w-[24%] h-[36px] rounded-[20px] border border-black bg-white text-black text-[14px] font-normal leading-[17.53px] last:w-[28%];
+}
+
+.recomNav button.active{
+  @apply bg-mainColor text-white border-none;
+}
+
+.recomTxt{
+  @apply w-full p-[0px_20px] text-black text-[14px] font-normal leading-[18px];
+}
+
+.beRecom .title{
+  @apply w-full p-[30px_20px_15px] flex justify-start items-center gap-[5px];
+}
+
+.beRecom .title span{
+  @apply text-black text-[18px] font-bold leading-[22px] flex justify-center items-center;
+}
+
+.bestPer{
+  @apply w-full pt-[20px] bg-[#f5f5f5];
+}
+
+.bestPer .headname{
+  @apply w-full pl-[20px] text-black text-[16px] font-bold leading-[20px];
+}
+
+.bestPer .itemSwiper{
+  @apply p-[20px_20px_10px];
+}
+
+.bestPer .itemSwiper .swiper-slide{
+  @apply w-auto;
+}
+
+.bestPer .itemSwiper .itemBox{
+  @apply min-w-[108px] max-w-[108px] h-[107px] p-[15px_8px_13px] rounded-[16px] bg-white shadow-[0px_2px_10px_rgba(0,0,0,0.15)];
+}
+
+.bestPer .itemSwiper .itemBox .alName{
+  @apply w-full text-center mb-[15px];
+}
+
+.bestPer .itemSwiper .itemBox .per{
+  @apply text-center text-[18px] font-bold leading-[22px];
+}
+
+.bestPer .itemSwiper .itemBox .name{
+  @apply text-center text-black text-[16px] font-normal leading-[20px];
+}
+
+.recomItem{
+  @apply w-full p-[25px_20px_10px];
+}
+
+.recomItemNav{
+  @apply w-full flex justify-center items-center mb-[15px];
+}
+
+.recomItemNav button{
+  @apply w-[50%] p-[8px_0] text-[#999] text-[16px] font-bold border-b-[1px] border-[#d2d2d2];
+}
+
+.recomItemNav button.active{
+  @apply text-black border-b-[2px] border-black
+}
+
+.todayTime{
+  @apply flex justify-end items-center gap-[6px] mb-[15px];
+}
+
+.todayTime span{
+  @apply block text-[#999] text-[12px] font-normal leading-[18px];
+}
+
+.todayTitle{
+  @apply w-full flex justify-between items-center mb-[12px];
+}
+
+.todayTitle strong{
+  @apply text-black text-[18px] font-bold leading-[22px];
+}
+
+.todayTitle span{
+  @apply text-[#999] text-[12px] font-normal leading-[15px];
+}
+
+.todayEvent{
+  @apply flex flex-col gap-[15px] pb-[15px];
+}
+
+.todayEvent .noRecom{
+  @apply w-full h-[125px] flex justify-center items-center border-[1px] border-[#d2d2d2] rounded-[12px] text-black text-[16px] font-normal;
+}
+
+.todayEventBox{
+  @apply w-full rounded-[16px] shadow-[0px_2px_10px_rgba(0,0,0,0.15)] text-left;
+}
+
+.todayEventBox .top{
+  @apply w-full p-[20px_15px_15px] rounded-t-[16px];
+}
+
+.todayEventBox .top .flexsb{
+  @apply w-full mb-[5px] last:mb-0;
+}
+
+.todayEventBox .top .name{
+  @apply w-[calc(100%-65px)] text-black text-[16px] font-normal leading-[20px];
+}
+
+.todayEventBox .top .pri{
+  @apply text-black text-[20px] font-normal leading-[25px];
+}
+
+.todayEventBox .top .txt{
+  @apply text-black text-[14px] font-normal leading-[17px];
+}
+
+.todayEventBox .top .per{
+  @apply text-[16px] font-bold leading-[20px];
+}
+
+.todayEventBox .bot{
+  @apply w-full bg-white p-[15px_15px_20px] rounded-b-[16px];
+}
+
+.todayEventBox .bot .list{
+  @apply w-full pt-[17px] pb-[16px] border-b-[1px] border-[#d2d2d2] first:pt-0 last:pb-0 last:border-none;
+}
+
+.todayEventBox .bot .listTxt{
+  @apply w-full flex justify-start items-center gap-[10px] mb-[6px];
+}
+
+.todayEventBox .bot .txt{
+  @apply w-full text-black text-[16px] font-normal leading-[19px];
+}
+
+.bot .listNum{
+  @apply w-full flex justify-between items-center;
+}
+
+.todayEventBox .bot .numPri{
+  @apply block text-black text-[14px] font-normal leading-[17px];
+}
+
+.todayEventBox .bot .per{
+  @apply text-[14px] font-bold leading-[18px];
+}
+
+.listNum .txt2{
+  @apply text-center text-black text-[14px] font-normal leading-[17px] mb-[5px];
+}
+
+.listNum .num{
+  @apply h-[35px] flex flex-col justify-center items-center;
+}
+
+.listNum .num strong{
+  @apply block text-black text-[16px] text-center leading-[19.36px] mb-[1px];
+}
+
+.listNum .num span{
+  @apply block text-[#999] text-[12px] font-normal leading-[15.02px];
+}
+
+.buyAll{
+  @apply w-full pt-[40px];
+}
+
+.buyAll .title{
+  @apply w-full text-black text-[16px] font-bold mb-[20px];
+}
+
+.buyAll .select{
+  @apply w-full flex justify-end items-center gap-[10px] mb-[20px];
+}
+
+.buyAllItem{
+  @apply flex flex-col gap-[15px] pb-[15px];
+}
+
+.buyAllItemBox{
+  @apply w-full rounded-[16px] shadow-[0px_2px_10px_rgba(0,0,0,0.15)] text-left;
+}
+
+.buyAllItemBox .top{
+  @apply w-full bg-white p-[20px_15px_12px] flex justify-between items-center rounded-t-[16px];
+}
+
+.buyAllItemBox .top .itemName{
+  @apply w-[calc(100%-55px)] flex justify-normal items-center gap-[5px];
+}
+
+.buyAllItemBox .top .itemName .name{
+  @apply w-auto max-w-[calc(100%-50px)] text-black text-[16px] font-normal leading-[20px];
+}
+
+.buyAllItemBox .top .itemName .code{
+  @apply text-[#999] text-[12px] font-normal leading-[15px];
+}
+
+.buyAllItemBox .bot{
+  @apply w-full rounded-b-[16px] bg-[#f5f5f5] p-[15px_20px] flex flex-col gap-[5px];
+}
+
+.buyAllItemBox .bot .txt{
+  @apply text-black text-[14px] font-normal leading-[17px];
+}
+
+.buyAllItemBox .bot .num{
+  @apply text-black text-[16px] font-normal leading-[19px];
+}
+
+.sModal .modal-content{
+  @apply w-full p-[40px_20px_35px];
+}
+
+.sModal .modal-body .titleTag{
+  @apply w-full text-center mb-[20px];
+}
+
+.sModal .modal-body .titleTag span{
+  @apply inline-block w-[150px] h-[30px] rounded-[20px] bg-mainColor text-white text-[14px] font-bold leading-[30px] text-center;
+}
+
+.sModal .modal-body .txt{
+  @apply w-full text-center mb-[20px] text-black text-[18px] font-normal leading-[22px];
+}
+
+.sModal .modal-body .txt2{
+  @apply w-full text-center mt-[20px] mb-[25px];
+}
+
+.sModal .modal-body .txt2 span{
+  @apply block text-mainColor text-[16px] font-normal leading-[20px];
+}
+
+.sModal .modal-body .txt2 em{
+  @apply block text-[#999] text-[12px] font-normal leading-[20px];
+}
+
+.sModal .img {
+  @apply w-full flex justify-center items-center;
+}
+
+.sModal .img img{
+  @apply max-w-[320px];
+}
+
+.sModal .modal-body .conTxtBox{
+  @apply w-full h-[145px] rounded-[16px] bg-[#f5f5f5] p-[15px_15px_25px];
+}
+
+.sModal .modal-body .conTxtBox strong{
+  @apply block mb-[15px] text-black text-center text-[14px] font-bold leading-[17px];
+}
+
+.sModal .modal-body .conTxtBox span{
+  @apply block text-center text-[#999] text-[14px] font-normal leading-[17px];
+}
+
+.sModal .modal-body .conTxtBox ul{
+  @apply w-full flex justify-center items-center;
+}
+
+.sModal .modal-body .conTxtBox ul li{
+  @apply relative text-[#999] text-[14px] font-normal leading-[17px] mb-[5px] pl-[11px] last:mb-0 before:content-[''] before:inline-block before:absolute before:w-[4px] before:h-[4px] before:rounded-full before:bg-[#d9d9d9] before:top-[7px] before:left-0 text-left;
+}
+
+.todayEventBox .top .itemName{
+  @apply flex justify-start items-center gap-[7px] w-[calc(100%-50px)];
+}
+
+.todayEventBox .top .itemName .eventName{
+  @apply block text-black text-[16px] font-normal leading-[20px] w-auto max-w-[calc(100%-62px)];
+}
+
+.todayEventBox .top .state{
+  @apply w-[54px] h-[28px] leading-[28px] rounded-[8px] text-white text-center text-[14px] font-normal;
+}
+
+.todayEventBox .todayEventPri{
+  @apply w-full flex justify-start items-center gap-[15px];
+}
+
+.todayEventBox .todayEventPri span{
+  @apply block text-black text-[14px] font-normal leading-[17px];
+}
+
+.line{
+  @apply w-[1px] h-[12px] bg-[#d2d2d2];
+}
+
+.todayEventBox .bot .txtPri{
+  @apply text-black text-[14px] font-normal leading-[17px];
+}
+
+.todayEventBox .bot .flexsb{
+  @apply mb-[5px] last:mb-0;
+}
+
+.todayEventBox .bot .txtPri span{
+  @apply text-[16px] font-bold;
+}
+
+.buyAllItemBox .top .date{
+  @apply flex flex-col justify-normal items-end;
+}
+
+.buyAllItemBox .top .date span{
+  @apply block text-black text-[14px] font-normal leading-[17px];
+}
+
+.buyAllItemBox .top .date em{
+  @apply block text-[#999] text-[12px] font-normal leading-[15px];
+}
+
+.buyAllItemBox .bot .listNum .pri{
+  @apply text-black text-[16px] font-bold leading-[18px];
+}
+
+/* 비가입자 팝업 */
+.joinModal .modal-content{
+  @apply w-full p-[55px_40px_50px];
+}
+
+.joinModal .modal-body .txt{
+  @apply text-black text-[16px] font-normal leading-[20px] mb-[60px] text-center;
+}
+
+.joinModal .modal-body .btn{
+  @apply w-full flex justify-center items-center gap-[10px] p-0;
+}
+
+.joinModal .modal-body .btn button{
+  @apply w-[90px] h-[40px] leading-[40px] border border-black rounded-[20px] text-black text-[16px] font-normal;
+}
+
+.joinModal .modal-body .btn button.active{
+  @apply border-none bg-mainColor text-white;
+}
+/* 비가입자 팝업 */
+/* //////////////// */
+
+/* 종목홈 */
+.eventHome{
+  @apply w-full;
+}
+
+.eventBox{
+  @apply w-full flex flex-col justify-start items-start gap-[20px] p-[30px_20px];
+}
+
+.eventBox .top{
+  @apply w-full flex justify-between items-start gap-[10px];
+}
+
+.eventBox .top .dateBox{
+  @apply flex justify-start items-center gap-[5px] mb-[5px];
+}
+
+.eventBox .top .dateBox .date{
+  @apply text-[14px] text-black font-normal leading-[18px];
+}
+
+.eventBox .top .dateBox .time{
+  @apply text-[12px] text-[#999] font-normal leading-[16px];
+}
+
+.eventBox .top .pri{
+  @apply text-black text-[32px] font-bold leading-[40px] mb-[5px];
+}
+
+.eventBox .top .per{
+  @apply text-[16px] font-normal leading-[20px];
+}
+
+.eventBox .top .per span{
+  @apply text-[13px] leading-[16px];
+}
+
+.eventBox .top .chart img{
+  @apply w-full;
+}
+
+.eventBox .bottom{
+  @apply w-full p-[25px_20px] rounded-[16px] bg-[#f9f9f9];
+}
+
+.eventBox .bottom .title{
+  @apply w-full mb-[8px] text-[#141414] text-[16px] font-bold leading-[20px];
+}
+
+.eventBox .bottom .txt{
+  @apply w-full flex justify-start items-start gap-[8px] flex-col;
+}
+
+.eventBox .bottom .txt span{
+  @apply pl-[14px] text-[#8c8c8c] text-[15px] font-normal leading-[20px] relative block before:content-[''] before:absolute before:w-[2.5px] before:h-[2.5px] before:rounded-full before:bg-[#8c8c8c] before:left-[6px] before:top-[8px];
+}
+
+.eventBox .bottom .txt span em{
+  @apply inline-block mr-[4px] before:content-['#']
+}
+
+.eventScore{
+  @apply w-full p-[30px_20px];
+}
+
+.eventScore .title{
+  @apply w-full text-black text-[18px] font-bold leading-[22px] mb-[15px];
+}
+
+.eventScore .txt{
+  @apply w-full flex justify-between items-center text-black text-[17px] font-normal leading-[18px] mb-[15px];
+}
+
+.eventScore .txt span{
+  @apply text-[15px];
+}
+
+.eventScore .scoreChart{
+  @apply w-full flex justify-center items-center bg-[#f7f7f8] p-[20px] mb-[25px];
+}
+
+.eventScore .scoreChart .chart-box{
+  @apply  max-w-[400px];
+}
+
+.eventScore .gaugeChart{
+  @apply w-full flex flex-col justify-start items-start gap-[20px];
+}
+
+.eventScore .gaugeChart .state{
+  @apply w-full text-center text-[#141414] text-[18px] font-normal leading-[22px];
+}
+
+.eventScore .gaugeChart .state span{
+  @apply font-bold;
+}
+
+.eventScore .gaugeChart img{
+  @apply w-full max-w-[450px] m-[0_auto];
+}
+
+/* 차트분석 */
+.chartAnalyze{
+  @apply w-full p-[30px_20px];
+}
+
+.chartAnalyze .title{
+  @apply w-full mb-[20px] text-black text-[18px] font-bold leading-[22px];
+}
+
+.chartAnalyze .pprn.ct-range{
+  @apply relative h-[142px] p-[16px] pt-[66px] rounded-[6px] bg-[#f7f7f8] mb-[20px];
+}
+
+.chartAnalyze .pprn input[type=range] {
+  @apply w-full h-[9px] rounded-[20px] bg-[#E3E3E9];
+  outline: none;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+.chartAnalyze .pprn input[type=range][disabled]{
+  @apply opacity-100;
+}
+
+.chartAnalyze .pprn input[type=range]::-webkit-slider-thumb{
+  width: 19px;
+  height: 19px;
+  transform: translateY(2px);
+  background: url('https://img.thinkpool.com/secret/img/range-thumb.png') no-repeat;
+  background-position: center;
+  background-size: cover;
+  -webkit-appearance: none;
+  appearance: none;
+  border: none;
+}
+
+.chartAnalyze .pprn label{
+  @apply p-[7px] bg-[#5A5B6C] rounded-[8px] absolute top-[26px] inline-block leading-[16px] !m-0 text-[12px] text-[#fff] text-center font-normal z-[2];
+}
+
+.chartAnalyze .pprn label span{
+  @apply font-bold;
+}
+
+.chartAnalyze .pprn.ct-range .min{
+  @apply absolute bottom-[24px] left-[18px] text-[10px] text-[#999] font-normal leading-[11px];
+}
+
+.chartAnalyze .pprn.ct-range .min.day{
+  @apply bottom-auto top-[40px] z-[1];
+}
+
+.chartAnalyze .pprn.ct-range .max{
+  @apply absolute bottom-[24px] right-[18px] text-[10px] text-[#999] font-normal text-right leading-[11px];
+}
+
+.chartAnalyze .pprn.ct-range .max.day{
+  @apply bottom-auto top-[40px] z-[1];
+}
+
+.chartAnalyze .chartbox{
+  @apply w-full mb-[20px];
+}
+
+.chartAnalyze .chartbox .chart-tab{
+  @apply w-full flex justify-center items-center gap-[6px] mb-[20px];
+}
+
+.chartAnalyze .chartbox .chart-tab li{
+  @apply w-[calc(100%/6.7)] h-[30px];
+}
+
+.chartAnalyze .chartbox .chart-tab li button{
+  @apply w-full h-[30px] p-0 text-[#999] text-[12px] font-medium leading-[20px] rounded-[20px] border border-[#d2d2d2] bg-[#f5f5f5];
+}
+
+.chartAnalyze .chartbox .chart-tab li button.active{
+  @apply bg-[#fff] text-[#141414]
+}
+
+.chartAnalyze .todaySummary{
+  @apply w-full;
+}
+
+.chartAnalyze .todaySummary .list{
+  @apply w-full flex flex-col justify-start items-start gap-[12px];
+}
+
+.chartAnalyze .todaySummary .list p{
+  @apply text-[#141414] text-[13px] font-normal leading-[26px];
+}
+
+/* 당일수급동향 */
+.supplyDemandTrends{
+  @apply w-full p-[30px_20px];
+}
+
+.supplyDemandTrends .title{
+  @apply w-full flex justify-between items-center mb-[20px];
+}
+
+.supplyDemandTrends .title strong{
+  @apply text-black text-[18px] font-bold leading-[22px];
+}
+
+.supplyDemandTrends .title .date{
+  @apply flex justify-end items-center gap-[5px];
+}
+
+.supplyDemandTrends .title .date span{
+  @apply text-[#999] text-[12px] font-normal leading-[18px];
+}
+
+.supplyDemandTrends .sdtModal .modal-content{
+  @apply w-full max-w-[300px] m-[0_auto] p-[54px_20px_30px];
+}
+
+.supplyDemandTrends .sdtModal .modal-body{
+  @apply text-[#141414] text-[16px] font-normal leading-[20px] text-center;
+}
+
+.supplyDemandTrends .sdtNav{
+  @apply w-full flex justify-center items-center mb-[15px];
+}
+
+.supplyDemandTrends .sdtNav button{
+  @apply w-[calc(100%/3)] p-[8px_0] text-[#999] text-[14px] font-normal leading-[17px] border-b-[1px] border-[#d2d2d2];
+}
+
+.supplyDemandTrends .sdtNav button.active{
+  @apply text-black font-bold border-b-[2px] border-black ;
+}
+
+.supplyDemandTrends .sdt01-chart{
+  @apply w-full rounded-[16px] p-[20px] flex justify-center items-center bg-[#f7f7f8] mb-[15px];
+}
+
+.supplyDemandTrends .acTxt{
+  @apply w-full mb-[20px] text-center text-[#141414] text-[16px] font-bold leading-[20px];
+}
+
+.supplyDemandTrends .sdt-etc{
+  @apply w-full flex justify-normal items-center mb-[8px];
+}
+
+.supplyDemandTrends .sdt-etc span{
+  @apply inline-block p-[5px_10px] border border-[#d9d9d9] rounded-[50px] text-[#666] text-[12px] leading-[15px] font-normal;
+}
+
+.supplyDemandTrends .acTxt strong{
+  @apply text-[#FF5050];
+}
+
+.supplyDemandTrends .txt{
+  @apply w-full text-[#141414] text-[15px] font-normal leading-[23px];
+}
+
+.supplyDemandTrends .sdt-chart{
+  @apply w-full mb-[15px];
+}
+
+.supplyDemandTrends .sdt_tbl{
+  @apply relative block w-full pt-[15px];
+}
+
+.supplyDemandTrends .pr{
+  @apply w-full flex justify-end items-center text-[14px] text-[#999] leading-[18px] font-normal;
+}
+
+.supplyDemandTrends .sdt_tbl > div{
+  @apply block w-full overflow-hidden;
+}
+
+.supplyDemandTrends .sdt_tbl .sdt_tbl_left{
+  @apply w-[144px] block float-left;
+}
+
+.supplyDemandTrends .sdt_tbl table{
+  @apply m-0;
+}
+
+.supplyDemandTrends .sdt_tbl thead tr th{
+  @apply h-[35px] border-b border-b-[#dcdcdc] bg-[#f5f5f5] text-center border-t border-t-[#999] text-[#999] text-[14px] font-normal leading-[18px];
+}
+
+.supplyDemandTrends .sdt_tbl tbody tr td{
+  @apply p-[4px_12px] text-[#999] text-[12px] font-normal leading-[16px] border-b border-r border-[#f0f0f0] bg-[#F9FAFA];
+}
+
+.supplyDemandTrends .sdt_tbl .sdt_tbl_left tbody tr td{
+  @apply first:py-[10px];
+}
+
+.supplyDemandTrends .sdt_tbl .sdt_tbl_right tbody tr td{
+  @apply bg-[#fff] align-middle last:border-r-0;
+}
+
+.supplyDemandTrends .sdt_tbl .sdt_tbl_right{
+  @apply w-[calc(100%-144px)] block overflow-x-auto float-left;
+}
+
+/* AI속보 */
+.breakingNews{
+  @apply w-full p-[30px_20px];
+}
+
+.breakingNews .title{
+  @apply w-full text-[#141414] text-[18px] font-bold leading-[24px] mb-[15px];
+}
+
+.breakingNews .title button{
+  @apply font-normal text-[#999] text-[14px] leading-[18px];
+}
+
+.breakingNews .breakingNewsNav{
+  @apply w-full flex justify-center items-center mb-[20px];
+}
+
+.breakingNews .breakingNewsNav button{
+  @apply w-[calc(100%/2)] p-[8px_0] text-[#999] text-[14px] font-normal leading-[17px] border-b-[1px] border-[#d2d2d2];
+}
+
+.breakingNews .breakingNewsNav button.active{
+  @apply text-black font-bold border-b-[2px] border-black ;
+}
+
+.breakingNews .newsList{
+  @apply w-full flex flex-col justify-start items-start gap-[12px];
+}
+
+.breakingNews .newsList .list{
+  @apply w-full flex justify-between items-center;
+}
+
+.breakingNews .newsList .list .txt{
+  @apply w-[calc(100%-105px)] flex justify-start items-center gap-[5px];
+}
+
+.breakingNews .newsList .list .txt p{
+  @apply w-auto max-w-[calc(100%-25px)] text-[#141414] text-[14px] font-normal leading-[20px] text-left;
+}
+
+.breakingNews .newsList .list .txt.today{
+  @apply w-[calc(100%-40px)];
+}
+
+.breakingNews .newsList .list .txt span{
+  @apply w-[20px] h-[20px] flex justify-center items-center rounded-[5px] bg-[#8B7EFF] text-[#fff] text-[12px] font-normal leading-[14px];
+}
+
+.breakingNews .newsList .list .date{
+  @apply text-[#999] text-[12px] font-normal leading-[15px] whitespace-nowrap;
+}
+
+.reportAnalysis{
+  @apply w-full p-[30px_20px];
+}
+
+.reportAnalysis .title{
+  @apply w-full mb-[17px] text-black text-[18px] font-bold leading-[22px];
+}
+
+.reportAnalysis .reportAnalysisNav{
+  @apply w-full flex justify-center items-center mb-[15px];
+}
+
+.reportAnalysis .reportAnalysisNav button{
+  @apply w-[calc(100%/2)] p-[8px_0] text-[#999] text-[14px] font-normal leading-[17px] border-b-[1px] border-[#d2d2d2];
+}
+
+.reportAnalysis .reportAnalysisNav button.active{
+  @apply text-black font-bold border-b-[2px] border-black ;
+}
+
+.reportAnalysis .range{
+  @apply w-full mb-[20px];
+}
+
+.reportAnalysis .list{
+  @apply w-full flex flex-col justify-start items-start gap-[12px] mt-[20px];
+}
+
+.reportAnalysis .list button{
+  @apply w-full flex justify-start items-center gap-[8px];
+}
+
+.reportAnalysis .list button span{
+  @apply text-[#999] text-[12px] font-normal leading-[12px];
+}
+
+.reportAnalysis .list button p{
+  @apply w-[calc(100%-60px)] text-[#141414] text-[14px] font-normal leading-[20px] text-left;
+}
+
+.reportAnalysis .recent-list{
+  @apply w-full flex flex-col justify-start items-start gap-[12px];
+}
+
+.reportAnalysis .recent-list button{
+  @apply w-full flex justify-between items-center;
+}
+
+.reportAnalysis .recent-list button p{
+  @apply w-[calc(100%-100px)] text-[#141414] text-[14px] font-normal leading-[20px] text-left;
+}
+
+.reportAnalysis .recent-list button .date{
+  @apply flex justify-end items-center gap-[8px];
+}
+
+.reportAnalysis .recent-list button .date span{
+  @apply text-left inline-block text-[#999] text-[12px] font-normal leading-[12px] first:max-w-[60px];
+}
+
+.reportAnalysis .reportModal .modal-content{
+  @apply w-full p-[60px_20px_30px];
+}
+
+.reportAnalysis .reportModal .modal-title{
+  @apply w-full flex flex-col justify-start items-start gap-[10px] pb-[20px] border-b border-[#d2d2d2] mb-[20px];
+}
+
+.reportAnalysis .reportModal .modal-title h5{
+  @apply w-full text-[#141414] text-[16px] font-bold leading-[20x];
+}
+
+.reportAnalysis .reportModal .modal-title .rmInfo{
+  @apply w-full flex justify-start items-center gap-[8px];
+}
+
+.reportAnalysis .reportModal .modal-title .rmInfo span{
+  @apply text-[#141414] text-[12px] font-normal leading-[21px];
+}
+
+.reportAnalysis .reportModal .modal-title .rmInfo em{
+  @apply text-[#999] text-[12px] font-normal leading-[21px];
+}
+
+.reportAnalysis .reportModal .modal-title .rmInfo .line{
+  @apply w-[1px] h-[10px] bg-[#999];
+}
+
+.reportAnalysis .reportModal .rmCont{
+  @apply w-full flex flex-col justify-start items-start gap-[30px];
+}
+
+.reportAnalysis .reportModal .rmCont .sgn{
+  @apply w-full flex flex-col justify-start items-start;
+}
+
+.reportAnalysis .reportModal .rmCont .sgn span{
+  @apply text-[#141414] text-[16px] font-normal leading-[24px];
+}
+
+.reportAnalysis .reportModal .rmCont .text{
+  @apply text-[#141414] text-[16px] font-normal leading-[24px];
+}
+
+.eventYearSignal{
+  @apply w-full p-[30px_20px];
+}
+
+.eventYearSignal .title, .eventSignal .title{
+  @apply w-full mb-[17px] text-black text-[18px] font-bold leading-[22px];
+}
+
+.eventYearSignal .yearSigNav, .eventSignal .sigNav{
+  @apply w-full flex justify-center items-center mb-[15px];
+}
+
+.eventYearSignal .yearSigNav button, .eventSignal .sigNav button{
+  @apply w-[calc(100%/3)] p-[8px_0] text-[#999] text-[16px] font-normal leading-[19px] border-b-[1px] border-[#d2d2d2];
+}
+
+.eventYearSignal .yearSigNav button.active, .eventSignal .sigNav button.active{
+  @apply text-black font-bold border-b-[2px] border-black ;
+}
+
+.eventYearSignal .ch_rdo, .supplyDemandTrends .sdt_rdo{
+  @apply w-full mb-[15px] flex;
+}
+
+input[type=radio].custom-radio{
+  @apply hidden;
+}
+
+input[type=radio].custom-radio + label {
+  display: inline-block;
+  padding-left: 30px;
+  height: 24px;
+  line-height: 24px;
+  background: url(../img/bg_rdo.png) no-repeat 0 0;
+  background-size: 24px auto;
+  margin-right: 15px;
+  @apply text-black text-[16px] font-normal leading-[20px];
+}
+
+input[type=radio].custom-radio:checked + label {
+  display: inline-block;
+  padding-left: 30px;
+  height: 24px;
+  line-height: 24px;
+  background: url(../img/bg_rdo_on.png) no-repeat 0 0;
+  background-size: 24px auto;
+  margin-right: 15px;
+  @apply text-black text-[16px] font-normal leading-[20px];
+}
+
+.eventYearSignal .sigChart{
+  @apply w-full mb-[25px];
+}
+
+.eventYearSignal .shame{
+  @apply w-full flex justify-evenly items-center gap-[10px] mb-[40px];
+}
+
+.eventYearSignal .shame .txt{
+  @apply mb-[9px] text-black text-[14px] font-normal leading-[17px] text-center;
+}
+
+.eventYearSignal .shame .per{
+  @apply text-[22px] font-normal leading-[30px] text-center;
+}
+
+.eventYearSignal .shame .line{
+  @apply h-[50px];
+}
+
+.eventYearSignal .box{
+  @apply w-full p-[20px] rounded-[16px] shadow-[0px_2px_10px_rgba(0,0,0,0.15)] mb-[20px] last:mb-0;
+}
+
+.eventYearSignal .box .boxTitle{
+  @apply w-full flex justify-between items-center mb-[12px];
+}
+
+.eventYearSignal .box .headName{
+  @apply flex justify-start items-center gap-[6px] text-black text-[16px] font-bold leading-[20px];
+}
+
+.eventYearSignal .box .headName span{
+  @apply inline-block p-[3px_5px] rounded-[5px] border border-mainColor text-mainColor text-[12px] font-normal leading-[15px];
+}
+
+.eventYearSignal .box .date{
+  @apply text-[#999] text-[12px] font-normal leading-[15px];
+}
+
+.eventYearSignal .box .boxPri{
+  @apply w-full rounded-[16px] bg-[#f5f5f5] flex justify-evenly items-center gap-[25px] p-[20px_15px] mb-[10px];
+}
+
+.eventYearSignal .box .boxPri .priTxt{
+  @apply text-black text-center text-[14px] font-normal leading-[17px] mb-[10px];
+}
+
+.eventYearSignal .box .boxPri .pri{
+  @apply text-black text-[16px] font-bold leading-[19px] text-center;
+}
+
+.eventYearSignal .box .boxState{
+  @apply w-full flex justify-between items-center pb-[15px] mb-[15px] border-b-[1px] border-[#d2d2d2];
+}
+
+.eventYearSignal .box .boxState .stateTxt{
+  @apply flex justify-start items-center gap-[10px];
+}
+
+.eventYearSignal .box .boxState .stateTxt span{
+  @apply block text-[16px] font-normal leading-[18px];
+}
+
+.eventYearSignal .box .boxState .state{
+  @apply w-[66px] h-[28px] leading-[28px] rounded-[8px] text-white text-[14px] font-normal text-center;
+}
+
+.eventYearSignal .box .boxRecom{
+  @apply w-full flex flex-col gap-[10px];
+}
+
+.eventYearSignal .box .boxRecom .headName{
+  @apply w-full text-black text-[16px] font-normal leading-[20px];
+}
+
+.eventYearSignal .box .boxRecom .txt{
+  @apply w-full text-[16px] font-normal text-black leading-[20px];
+}
+
+.eventYearSignal .box .boxRecom ul li{
+  @apply relative text-[#999] text-[14px] font-normal leading-[17px] mb-[5px] pl-[11px] last:mb-0 before:content-[''] before:inline-block before:absolute before:w-[4px] before:h-[4px] before:rounded-full before:bg-[#d9d9d9] before:top-[7px] before:left-0;
+}
+
+.eventSignal{
+  @apply w-full p-[30px_20px];
+}
+
+.eventSignal .signalDate{
+  @apply w-full flex justify-between items-center mb-[15px];
+}
+
+.eventSignal .signalDate .txt{
+  @apply text-black text-[14px] font-normal leading-[18px];
+}
+
+.eventSignal .signalDate .txt span{
+  @apply text-[#999];
+}
+
+.eventSignal .signalTable{
+  @apply w-full mb-[15px];
+}
+
+.eventSignal .signalTable thead{
+  @apply w-full border-t-[1px] border-[#999];
+}
+
+.eventSignal .signalTable thead tr th{
+  @apply border-b-[1px] border-[#dcdcdc] bg-[#f5f5f5] text-center p-[9px_0_8px] text-[#999] text-[14px] font-normal leading-[18px];
+}
+
+.eventSignal .signalTable tbody tr td{
+  @apply p-[11px_0] text-black text-[14px] text-center font-normal leading-[18px] border-b-[1px] border-[#f0f0f0];
+}
+
+.eventSignal .signalTable tbody tr td span{
+  @apply text-[#999] text-[12px] leading-[12px];
+}
+
+.noSignal{
+  @apply mb-[20px];
+}
+
+.noSignal .noSignalTxt{
+  @apply py-[65px] text-center text-[#999] text-[14px] font-normal leading-[18px];
+}
+/* /////////////////// */
+/* 구독 */
+.subscribe{
+  @apply w-full p-[25px_20px_0px];
+}
+
+.subscribe .txt{
+  @apply w-full mb-[25px] text-black text-[16px] font-normal leading-[20px];
+}
+
+.subscribe .title{
+  @apply w-full pt-[15px] pb-[30px] text-black text-[16px] font-bold leading-[20px];
+}
+
+.subscribe .box{
+  @apply relative w-full p-[20px_15px] rounded-[16px] border border-[#d2d2d2] mb-[15px];
+}
+
+.subscribe .box .saleBg{
+  @apply absolute w-[122px] right-[15px] top-[15px];
+}
+
+.subscribe .box .payList{
+  @apply w-full flex justify-between items-center p-[20px_0_15px] last:pb-0;
+}
+
+.subscribe .box .payList .checkLabel{
+  @apply w-[calc(100%-24px)];
+}
+
+.subscribe .box .payList .payTxt{
+  @apply inline-block p-[3px_12px] rounded-[16px] bg-[#f5f5f5] text-black text-center text-[14px] font-normal leading-[17px] mb-[10px];
+}
+
+.subscribe .box .payList .num{
+  @apply flex justify-start items-center gap-[10px] w-full;
+}
+
+.subscribe .box .payList .num span{
+  @apply block text-black text-[16px] font-normal leading-[20px] line-through
+}
+
+.subscribe .box .payList .num strong{
+  @apply block text-[20px] font-bold leading-[20px];
+}
+
+input[type=radio].checkPay{
+  @apply hidden;
+}
+
+input[type=radio].checkPay + label {
+  display: inline-block;
+  padding-left: 24px;
+  height: 24px;
+  line-height: 24px;
+  background: url(../img/bg_check.png) no-repeat 0 0;
+  background-size: 24px auto;
+}
+
+input[type=radio].checkPay:checked + label {
+  display: inline-block;
+  padding-left: 24px;
+  height: 24px;
+  line-height: 24px;
+  background: url(../img/bg_check_on.png) no-repeat 0 0;
+  background-size: 24px auto;
+}
+
+.subscribe .checkTxt{
+  @apply w-full text-black text-[16px] font-normal leading-[20px] m-[10px_0_40px];
+}
+
+.subscribe .infoForm{
+  @apply w-full flex flex-col gap-[25px] mb-[55px];
+}
+
+.subscribe .infoForm label{
+  @apply block text-black text-[16px] font-normal leading-[20px] mb-[3px];
+}
+
+.subscribe .infoForm .checkInfo{
+  @apply block w-full border-b-[1px] border-[#d2d2d2] p-[11px_13px] text-[#666] text-[14px] leading-[18px];
+}
+
+.subscribe .guide{
+  @apply w-full p-[15px_0_40px] text-[#666] text-[14px] font-normal leading-[17px];
+}
+
+.subscribe .compared{
+  @apply w-full flex flex-col justify-start items-center gap-[20px] mb-[40px];
+}
+
+.subscribe .compared p{
+  @apply text-[#000] text-center text-[20px] font-normal leading-[25px];
+}
+
+.subscribe .compared .cmp-table{
+  @apply w-full flex justify-center items-start rounded-[16px];
+}
+
+.subscribe .compared .cmp-table .column{
+  @apply w-[30%] first:w-[35%] last:w-[35%] flex flex-col justify-start items-center;
+}
+
+.subscribe .compared .cmp-table .column .table-th{
+  @apply w-full h-[40px] flex justify-center items-center bg-[#BCBCC2] text-[#fff] text-[16px] font-normal leading-[20px];
+}
+
+.subscribe .compared .cmp-table .column:first-child .table-th{
+  @apply rounded-tl-[16px];
+}
+
+.subscribe .compared .cmp-table .column .table-td{
+  @apply w-full h-[53px] flex justify-center items-center text-center text-[#000] text-[16px] font-normal leading-[20px] border-l border-r border-[#eee] last:border-b last:rounded-bl-[16px];
+}
+
+.subscribe .compared .cmp-table .column .table-td:nth-child(2){
+  @apply pt-[12px];
+}
+
+.subscribe .compared .cmp-table .column:nth-child(2) .table-td{
+  @apply border-none bg-[#f5f5f5] rounded-none;
+}
+
+.subscribe .compared .cmp-table .column.premium .table-th{
+  @apply bg-[#FF5050];
+}
+
+.subscribe .compared .cmp-table .column.premium .table-th{
+  @apply rounded-tr-[16px];
+}
+
+.subscribe .compared .cmp-table .column.premium .table-td{
+  @apply bg-[#FFE0E0] border-[#ff5050] last:rounded-bl-none last:rounded-br-[16px];
+}
+/* //////////////////////// */
+
+/* 서비스소개 */
+.serIntro .section{
+  @apply w-full p-[40px_20px_35px] text-center;
+}
+
+.serIntro .section .title{
+  @apply w-full mb-[15px] text-black text-[20px] font-bold leading-[25px];
+}
+
+.serIntro .section .txt{
+  @apply w-full text-black text-[16px] font-normal leading-[20px];
+}
+
+.serIntro .section .section1_img{
+  @apply w-full flex justify-center items-center mt-[72px] mb-[28px];
+}
+
+.serIntro .section .section1_img img{
+  @apply w-[169px];
+}
+
+.serIntro .section .section2_img{
+  @apply w-full flex justify-center items-center mt-[45px] mb-[35px];
+}
+
+.serIntro .section .section2_img img{
+  @apply w-[275px];
+}
+
+.serIntro .section .section4_img{
+  @apply w-full mt-[40px] flex justify-center items-center;
+}
+
+.serIntro .section .section4_img img{
+  @apply max-w-[320px];
+}
+
+.evtSwiper{
+  @apply mt-[40px];
+}
+
+.evtSwiper .swiper-slide {
+  @apply w-full flex justify-center items-center;
+}
+
+.evtSwiper .swiper-slide img{
+  @apply max-w-[320px];
+}
+/* ////////////////// */
+
+/* 배너 및 하단 메뉴 */
+.footerTxt{
+  @apply w-full p-[25px_20px_30px] text-left text-[#666] text-[14px] font-normal leading-[18px];
+}
+
+.contentBanner{
+  @apply w-full p-[30px_20px_0px];
+}
+
+.contentBanner img{
+  @apply w-full;
+}
+
+.bottomMenu{
+  @apply w-full h-[58px] max-w-[720px] bg-white z-[999] fixed bottom-0 shadow-[0px_-5px_6px_0px_rgba(0,0,0,0.05)];
+}
+
+.menuList{
+  @apply w-full h-[58px] px-[10px] flex justify-between items-center;
+}
+
+.menulistBox{
+  @apply w-[calc(100%/5)] flex flex-col gap-[5px] justify-center items-center;
+}
+
+.menulistBox span{
+  @apply block text-black text-[12px] font-normal;
+}
+
+.menulistBox.active span{
+  @apply text-mainColor;
+}
+
+.menulistBox .menuIcon01{
+  width: 20px;
+  height: 20px;
+  background: url(../img/menuIcon01.png);
+  background-size: 20px 20px;
+  background-position: center;
+}
+
+.menulistBox .menuIcon02{
+  width: 20px;
+  height: 20px;
+  background: url(../img/menuIcon02.png);
+  background-size: 20px 20px;
+  background-position: center;
+}
+
+.menulistBox .menuIcon03{
+  width: 20px;
+  height: 20px;
+  background: url(../img/menuIcon03.png);
+  background-size: 20px 20px;
+  background-position: center;
+}
+
+.menulistBox .menuIcon04{
+  width: 20px;
+  height: 20px;
+  background: url(../img/menuIcon04.png);
+  background-size: 20px 20px;
+  background-position: center;
+}
+
+.menulistBox .menuIcon-chat{
+  width: 20px;
+  height: 20px;
+  background: url(../img/menuIcon-chat.png);
+  background-size: 20px 20px;
+  background-position: center;
+}
+
+.menulistBox.active .menuIcon01{
+  width: 20px;
+  height: 20px;
+  background: url(../img/menuIcon01_on.png);
+  background-size: 20px 20px;
+  background-position: center;
+}
+
+.menulistBox.active .menuIcon02{
+  width: 20px;
+  height: 20px;
+  background: url(../img/menuIcon02_on.png);
+  background-size: 20px 20px;
+  background-position: center;
+}
+
+.menulistBox.active .menuIcon03{
+  width: 20px;
+  height: 20px;
+  background: url(../img/menuIcon03_on.png);
+  background-size: 20px 20px;
+  background-position: center;
+}
+
+.menulistBox.active .menuIcon04{
+  width: 20px;
+  height: 20px;
+  background: url(../img/menuIcon04_on.png);
+  background-size: 20px 20px;
+  background-position: center;
+}
+
+.menulistBox.active .menuIcon-chat{
+  width: 20px;
+  height: 20px;
+  background: url(../img/menuIcon-chat_on.png);
+  background-size: 20px 20px;
+  background-position: center;
+}
+
+.footer .mainFooter{
+  @apply p-[25px_30px] bg-white border-t-[1px] border-[#d2d2d2] text-[#8c8c8c] text-[12px] font-normal leading-[15px] text-center;
+}
+
+.joinBanner{
+  @apply w-full max-w-[720px] h-[55px] fixed bottom-0 text-center z-[9999];
+}
+
+.joinBanner button{
+  @apply w-full max-w-[720px] h-[55px] bg-mainColor text-white text-[16px] font-normal leading-[22px];
+}
+
+.fixBanner{
+  @apply fixed z-[9999] top-[50%] right-[-10px] w-[100px] h-[100px];
+}
+/* /////////////////// */

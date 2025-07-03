@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=360px">
+  <title>키움 미국주식</title>
+  <!-- font -->
+  <link href='https://spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css' rel='stylesheet' type='text/css'>
+  <!-- bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+  <!-- swiper -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+  <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+  <!-- css -->
+  <link rel="stylesheet" href="css/common.css">
+  <!-- <script>
+    window.addEventListener('DOMContentLoaded', function () {
+      document.querySelector("openPopup").click();
+    });
+  </script> -->
+</head>
+
+<body>
+
+  <div id="wrap" class="kiwoom_usa">
+
+    <div id="container">
+
+      <div class="open_popup">
+        <button type="button" class="btn none" id="openPopup" data-bs-toggle="modal" data-bs-target="#popup-modal">open
+          popup</button>
+
+        <div class="popup modal fade" id="popup-modal" tabindex="-1" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+              <div class="us_modal-txt">
+                <div class="modal-mtxt">회원 전용 메뉴입니다.</div>
+                <div class="modal-stxt">상단 [가입하기]를 통해 가입 후 이용가능합니다.</div>
+              </div>
+              <div class="modal-btn">
+                <button class="" data-bs-dismiss="modal" type="button">다음에</button>
+                <button class="btn-bg white bold modal-btn_right" type="button">서비스 신청</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <div id="content">
+
+        <div class="content-header">
+          <button class="back-btn"><img src="img/ai/icon_back.png" alt="icon_back"></button>
+          <div class="header-txt">안정추구</div>
+        </div> <!--class="content-header"-->
+
+        <div class="pt-48"></div>
+
+        <div class="header-tab nav nav-tabs">
+          <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#aiIntro" type="button"
+            aria-selected="true">AI소개</button>
+          <button class="nav-link" data-bs-toggle="tab" data-bs-target="#trading" type="button"
+            aria-selected="false">매매이력</button>
+        </div>
+
+        <div class="pt-48"></div>
+
+        <div class="tab-content mt-0">
+
+          <!-- ai소개 -->
+          <div class="tab-pane fade show active sec-bg" id="aiIntro">
+            <div class="ai-intro">
+
+              <!-- ai 메인 -->
+              <div style="padding: 0px 16px;">
+                <div class="us_ai-intro_main ai_sta-main">
+                  <span class="us_aiintro-main_icn ai_sta-icn">안정추구형 AI</span>
+                  <div class="us_aiintro-txt">
+                    성장성 높은 우량주로<br>
+                    <span>안정적인 수익을 추구한다!!</span>
+                  </div>
+                  <div class="us_aiintro-bot">
+                    <div class="us_aiintro-stxt">
+                      실적 성장속도가 가파른  <br>
+                      종목 중 저평가된 종목을 <br>
+                      학습하여 추천합니다.
+                    </div>
+                    <div style="width: 143px;" class="us_aiintro-main_img">
+                      <img src="img/ai/aiIntro_sta.png" alt="">
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- ai 메인 -->
+
+              <!-- ai-section1 -->
+              <div class="us_aiintro-con01">
+
+                <div class="swiper us_rec-swiper us_box-style">
+                  <div class="us_rec-box_top">
+                    <span class="us_box-icn us_sta-box_icn">최근 종목 매매성과</span>
+                  </div>
+                  <div class="swiper-wrapper">
+                    <div class="swiper-slide us_rec-slide">
+                      
+                      <div class="us_rec-slide_name text-truncate"><span>TSLA</span>테**</div>
+                      <div class="us_rec-slide_num">
+                        <div class="us_rec-num_txt">수익률 : <span class="us_up">**,**%</span></div>
+                        <div class="us_rec-num_txt">보유기간 : <span class="us_up">*일</span></div>
+                      </div>
+                      <div class="us_rec-slide_img">
+                        <img src="img/ai/aiintro-con01-1.png" alt="">
+                        <!-- 매도부분 -->
+                        <div class="us_text-box sell-position">
+                          매도가 : ***.** <br>
+                          보유기간 : *일 <br> 
+                          수익률 : <span class="us_up">+**.**%</span> <br>
+                          매도사유 :  <br>
+                            - 단기 주가 급등으로 목표가 근접 
+                        </div>
+                        <!-- 매수부분 -->
+                        <div class="us_text-box buy-position">
+                          <strong>투자포인트</strong> <br>
+                          주가는 연초 이후 37% 상승. 견조한 사이버 <br>
+                          보안 업황과 차별화된 실적 증가흐름 <br>
+                          보여주며 시장 대비 아웃퍼폼하는 모습
+                        </div>
+                      </div>
+                    </div>
+                    <div class="swiper-slide us_rec-slide">
+                      <div class="us_rec-slide_name text-truncate"><span>MSFT</span>마**</div>
+                      <div class="us_rec-slide_num">
+                        <div class="us_rec-num_txt">수익률 : <span class="us_up">**.**%</span></div>
+                        <div class="us_rec-num_txt">보유기간 : <span class="us_up">*일</span></div>
+                      </div>
+                      <div class="us_rec-slide_img">
+                        <img src="img/ai/aiintro-con01-1.png" alt="">
+                        <!-- 매도부분 -->
+                        <div class="us_text-box sell-position">
+                          매도가 : ***.** <br>
+                          보유기간 : *일 <br> 
+                          수익률 : <span class="us_up">+**.**%</span> <br>
+                          매도사유 :  <br>
+                            - 단기 주가 급등으로 목표가 근접 
+                        </div>
+                        <!-- 매수부분 -->
+                        <div class="us_text-box buy-position">
+                          <strong>투자포인트</strong> <br>
+                          주가는 연초 이후 37% 상승. 견조한 사이버 <br>
+                          보안 업황과 차별화된 실적 증가흐름 <br>
+                          보여주며 시장 대비 아웃퍼폼하는 모습
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="swiper-pagination us_sta-pgn"></div>
+                </div>
+
+                <script>
+                  var swiper = new Swiper('.us_rec-swiper', {
+                    spaceBetween: 20,
+                    pagination: {
+                      el: '.swiper-pagination',
+                      clickable : true,
+                      renderBullet: function (index, className) {
+                        return '<span class="' + className + '">' + (index + 1) + "</span>";
+                      },
+                    },
+                    autoplay: {
+                      delay: 2500,
+                      disableOnInteraction: false,
+                    },
+                    loop: true,
+                  });
+                </script>
+
+              </div>
+              <!-- ai-section1 -->
+
+              <!-- ai-section2 -->
+              <div class="us_aiintro-con02">
+
+                <div class="us_box-style">
+                  <span class="us_box-icn us_sta-box_icn mb-20">안정추구형 투자대상</span>
+                  <div class="us_ai-box_maintxt mb-30">
+                    안정적인 수익을 추구하는 <br>
+                    <span>시가총액 100위의 대형주</span> 중에, <br>
+                    투자팩터 기반 상승 확률 높은 종목 선정
+                  </div>
+                  <div class="us_ai-box_img">
+                    <img src="img/ai/aiintro-stacon01.png" alt="">
+                  </div>
+                </div>
+
+                <div class="us_box-style">
+                  <span class="us_box-icn us_sta-box_icn mb-20">안정추구형 종목선별</span>
+                  <div class="us_ai-box_img">
+                    <img style="margin-bottom: 30px;" src="img/ai/aiintro-stacon02.png" alt="">
+                    <div class="center"><img style="width: 219px;" src="img/ai/aiintro-stacon03.png" alt=""></div>
+                  </div>
+                </div>
+
+                <div class="us_box-style">
+                  <span class="us_box-icn us_sta-box_icn mb-20">수익추구 매매시점</span>
+                  <div class="us_ai-box_maintxt mb-30">
+                    장중 <span>실시간 매매 타이밍</span> 포착 <br>
+                    실시간 주가 감시를 통해 최종매매시점 확정
+                  </div>
+                  <div class="us_ai-box_img">
+                    <img src="img/ai/aiintro-stacon04.png" alt="">
+                  </div>
+                </div>
+
+              </div>
+              <!-- ai-section2 -->
+
+            </div>
+          </div>
+          <!-- ai소개 -->
+
+          <!-- 매매이력 -->
+          <div class="tab-pane fade sec-bg" id="trading">
+
+            <!-- 주간 하이라이트 -->
+            <!-- 주간 하이라이트 -->
+
+            <!-- 매수/매도 탭 -->
+            <div class="bs-tab">
+              <div class="buysell-tab nav nav-tabs">
+                <button class="bs-nav nav-link active" data-bs-toggle="tab" data-bs-target="#buy" type="button"
+                  aria-selected="true">매수</button>
+                <button class="bs-nav nav-link" data-bs-toggle="tab" data-bs-target="#sell" type="button"
+                  aria-selected="false">매도</button>
+              </div>
+            </div>
+
+            <div class="tab-content">
+
+              <!-- 매수 -->
+              <div class="tab-pane fade show active" id="buy">
+
+                <div class="buy-head jcend">
+                  <div class="offcan-btn">
+                    <button class="btn" type="button" data-bs-toggle="modal" data-bs-target="#popup-modal">
+                      <div>최근매수일</div>
+                      <div><img src="img/ai/offcan-btn.png" alt="offcan-btn"></div>
+                    </button>
+                  </div>
+                  <div class="offcanvas-order offcanvas offcanvas-bottom" id="order">
+                    <div class="order-header">
+                      <div class="order-headertxt">AI매도종목</div>
+                      <button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
+                    </div>
+                    <div class="order-con">
+                      <button class="order-con_list active">최근 매수일</button>
+                      <button class="order-con_list">1년 수익률순</button>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="join h-vh">
+                  <div class="join-con">
+                    <div class="join-txt">매매이력은<br> 서비스 가입 후 확인 가능합니다.</div>
+                    <div class="join-btn"><button class="stab-join-btn">가입하기</button></div>
+                  </div>
+                </div>
+
+              </div>
+              <!-- 매수 -->
+
+              <!-- 매도 -->
+              <div class="tab-pane fade" id="sell">
+
+                <div class="buy-head jcend">
+                  <div class="offcan-btn">
+                    <button class="btn" type="button" data-bs-toggle="modal" data-bs-target="#popup-modal">
+                      <div>최근매도일</div>
+                      <div><img src="img/ai/offcan-btn.png" alt="offcan-btn"></div>
+                    </button>
+                  </div>
+                  <div class="offcanvas-order offcanvas offcanvas-bottom" id="order2">
+                    <div class="order-header">
+                      <div class="order-headertxt">AI매도종목</div>
+                      <button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
+                    </div>
+                    <div class="order-con">
+                      <button class="order-con_list active">최근 매도일</button>
+                      <button class="order-con_list">1년 수익률순</button>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="join h-vh">
+                  <div class="join-con">
+                    <div class="join-txt">매매이력은<br> 서비스 가입 후 확인 가능합니다.</div>
+                    <div class="join-btn"><button class="stab-join-btn">가입하기</button></div>
+                  </div>
+                </div>
+
+              </div>
+              <!-- 매도 -->
+
+            </div>
+            <!-- 매수/매도 탭 -->
+          </div>
+          <!-- 매매이력 -->
+
+        </div>
+
+
+
+      </div> <!--id="content"-->
+
+    </div> <!--id="container"-->
+
+  </div> <!--id="wrap"-->
+
+  <!-- bootstrap -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+    crossorigin="anonymous"></script>
+</body>
+
+</html>
