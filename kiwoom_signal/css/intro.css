@@ -918,7 +918,7 @@ table{
   bottom: 0;
   left: 0;
   right: 0;
-  z-index: 99999999;
+  z-index: 999;
 }
 
 button.ban-btn{
@@ -956,3 +956,139 @@ button.close-btn img{
 
 
 /* banner */
+
+/* 자문사 전환 팝업 */
+.alarmModal .modal-dialog{
+  max-width: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+}
+
+.alarmModal .modal-content{
+  width: 440px;
+  border-radius: 0;
+  border: none;
+}
+
+.alarmModal.mobile .modal-content{
+  width: 328px;
+  border-radius: 16px;
+}
+
+.alarmModal .modal-body{
+  width: 100%;
+  padding: 25px 30px;
+}
+
+.alarmModal.mobile .modal-body{
+  padding: 25px 20px;
+}
+
+.alarmModal .modal-body .title{
+  width: 100%;
+  text-align: center;
+  font-weight: 400;
+  font-size: 26px;
+  line-height: 33px;
+  color: #333;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #D0D0D0;
+  margin-bottom: 25px;
+}
+
+.alarmModal.mobile .modal-body .title{
+  font-size: 22px;
+  line-height: 28px;
+}
+
+.alarmModal .modal-body .txt{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 25px;
+  margin-bottom: 20px;
+}
+
+.alarmModal .modal-body .txt img{
+  width: 90px;
+}
+
+.alarmModal.mobile .modal-body .txt img{
+  width: 65px;
+}
+
+.alarmModal .modal-body .txt p{
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 26px;
+}
+
+.alarmModal.mobile .modal-body .txt p{
+  font-size: 14px;
+  line-height: 20px;
+}
+
+.alarmModal .modal-body .txt p strong{
+  font-weight: 700;
+}
+
+.alarmModal .modal-body .txt p span{
+  color: #7675F7;
+  font-weight: 700;
+}
+
+.alarmModal .modal-body .sub-txt{
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 22px;
+  color: #333;
+}
+
+.alarmModal.mobile .modal-body .sub-txt{
+  font-size: 14px;
+  line-height: 20px;
+}
+
+.alarmModal .modal-footer{
+  padding: 0;
+  margin: 0;
+  border: none;
+}
+
+.alarmModal .modal-footer .btn-group{
+  margin: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0;
+}
+
+.alarmModal .modal-footer .btn-group button{
+  width: 50%;
+  height: 48px;
+  border: none;
+  background: #DEE2E6;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 20px;
+  color: #666;
+}
+
+.alarmModal.mobile .modal-footer .btn-group button{
+  border-bottom-left-radius: 16px;
+}
+
+.alarmModal .modal-footer .btn-group button.fill{
+  background: #7675F7;
+  font-weight: 700;
+  color: #fff;
+}
+
+.alarmModal.mobile .modal-footer .btn-group button.fill{
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 16px;
+}
