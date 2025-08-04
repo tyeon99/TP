@@ -114,7 +114,11 @@
 
 .main-footer span{
   color: #E4E81A;
-  opacity: 0.6;
+}
+
+.main-footer strong{
+  color: #E4E81A;
+  font-weight: 700;
 }
 
 /* section1 */
