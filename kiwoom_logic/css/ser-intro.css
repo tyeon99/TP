@@ -1934,10 +1934,12 @@ button.close-btn img{
 
 /* 자문사 전환 팝업 */
 .alarmModal .modal-dialog{
+  max-width: 100%;
   width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
+  margin: 0;
 }
 
 .alarmModal .modal-content{
@@ -1978,51 +1980,43 @@ button.close-btn img{
 }
 
 .alarmModal .modal-body .txt{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 25px;
-  margin-bottom: 20px;
+  padding: 0px 10px;  
+  color: #333;
 }
 
-.alarmModal .modal-body .txt img{
-  width: 90px;
+.alarmModal.mobile .modal-body .txt{
+  padding: 0;
 }
 
-.alarmModal.mobile .modal-body .txt img{
-  width: 65px;
+.alarmModal .modal-body .txt strong{
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 20px;  
+}
+
+.alarmModal.mobile .modal-body .txt strong{
+  font-size: 16px;
 }
 
 .alarmModal .modal-body .txt p{
+  margin: 0;
   font-weight: 400;
-  font-size: 18px;
-  line-height: 26px;
+  font-size: 16px;
+  line-height: 20px;
 }
 
 .alarmModal.mobile .modal-body .txt p{
   font-size: 14px;
-  line-height: 20px;
 }
 
-.alarmModal .modal-body .txt p strong{
-  font-weight: 700;
-}
-
-.alarmModal .modal-body .txt p span{
-  color: #4F3FC6;
-  font-weight: 700;
-}
-
-.alarmModal .modal-body .sub-txt{
+.alarmModal .modal-body .txt span{
   font-weight: 400;
-  font-size: 16px;
-  line-height: 22px;
-  color: #333;
+  font-size: 14px;
+  line-height: 20px;  
 }
 
-.alarmModal.mobile .modal-body .sub-txt{
-  font-size: 14px;
-  line-height: 20px;
+.alarmModal.mobile .modal-body .txt span{
+  letter-spacing: -0.1px;
 }
 
 .alarmModal .modal-footer{
@@ -2056,7 +2050,7 @@ button.close-btn img{
 }
 
 .alarmModal .modal-footer .btn-group button.fill{
-  background: #4F3FC6;
+  background: #7675F7;
   font-weight: 700;
   color: #fff;
 }
