@@ -399,51 +399,27 @@ p.guide_p{
 }
 
 .alarmModal .modal-body .txt{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 25px;
-  margin-bottom: 20px;
-}
-
-.alarmModal .modal-body .txt img{
-  width: 90px;
-}
-
-.alarmModal.mobile .modal-body .txt img{
-  width: 65px;
-}
-
-.alarmModal .modal-body .txt p{
-  font-weight: 400;
-  font-size: 18px;
-  line-height: 26px;
-}
-
-.alarmModal.mobile .modal-body .txt p{
-  font-size: 14px;
-  line-height: 20px;
-}
-
-.alarmModal .modal-body .txt p strong{
-  font-weight: 700;
-}
-
-.alarmModal .modal-body .txt p span{
-  color: #7675F7;
-  font-weight: 700;
-}
-
-.alarmModal .modal-body .sub-txt{
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 22px;
+  padding: 0px 10px;  
   color: #333;
 }
 
-.alarmModal.mobile .modal-body .sub-txt{
-  font-size: 14px;
+.alarmModal .modal-body .txt strong{
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 20px;  
+}
+
+.alarmModal .modal-body .txt p{
+  margin: 0;
+  font-weight: 400;
+  font-size: 16px;
   line-height: 20px;
+}
+
+.alarmModal .modal-body .txt span{
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;  
 }
 
 .alarmModal .modal-footer{
