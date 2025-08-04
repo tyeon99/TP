@@ -221,6 +221,11 @@ img{
   color: #FEC6DB;  
 }
 
+.main-stxt strong{
+  color: #FEC6DB;
+  font-weight: 700;
+}
+
 
 
 /* header */
