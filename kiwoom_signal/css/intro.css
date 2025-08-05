@@ -964,22 +964,33 @@ button.close-btn img{
 
 /* 자문사 전환 팝업 */
 .alarmModal .modal-dialog{
-  max-width: 100%;
   width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.alarmModal.mobile .modal-dialog{
   margin: 0;
 }
 
 .alarmModal .modal-content{
+  width: 440px;
+  border-radius: 0;
+  border: none;
+}
+
+.alarmModal.mobile .modal-content{
   width: 328px;
   border-radius: 16px;
-  border: none;
 }
 
 .alarmModal .modal-body{
   width: 100%;
+  padding: 25px 30px;
+}
+
+.alarmModal.mobile .modal-body{
   padding: 25px 20px;
 }
 
@@ -987,36 +998,65 @@ button.close-btn img{
   width: 100%;
   text-align: center;
   font-weight: 400;
-  font-size: 22px;
-  line-height: 28px;
+  font-size: 26px;
+  line-height: 33px;
   color: #333;
   padding-bottom: 20px;
   border-bottom: 1px solid #D0D0D0;
   margin-bottom: 25px;
 }
 
-.alarmModal .modal-body .txt{
-  color: #333;
+.alarmModal.mobile .modal-body .title{
+  font-size: 22px;
+  line-height: 28px;
 }
 
-.alarmModal .modal-body .txt strong{
-  font-weight: 500;
-  font-size: 16px;
-  line-height: 20px;  
+.alarmModal .modal-body .txt{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 25px;
+  margin-bottom: 20px;
+}
+
+.alarmModal .modal-body .txt img{
+  width: 90px;
+}
+
+.alarmModal.mobile .modal-body .txt img{
+  width: 65px;
 }
 
 .alarmModal .modal-body .txt p{
-  margin: 0;
   font-weight: 400;
+  font-size: 18px;
+  line-height: 26px;
+}
+
+.alarmModal.mobile .modal-body .txt p{
   font-size: 14px;
   line-height: 20px;
 }
 
-.alarmModal .modal-body .txt span{
+.alarmModal .modal-body .txt p strong{
+  font-weight: 700;
+}
+
+.alarmModal .modal-body .txt p span{
+  color: #4F3FC6;
+  font-weight: 700;
+}
+
+.alarmModal .modal-body .sub-txt{
   font-weight: 400;
+  font-size: 16px;
+  line-height: 22px;
+  color: #333;
+}
+
+.alarmModal.mobile .modal-body .sub-txt{
   font-size: 14px;
   line-height: 20px;
-  letter-spacing: -0.1px;
 }
 
 .alarmModal .modal-footer{
@@ -1050,7 +1090,7 @@ button.close-btn img{
 }
 
 .alarmModal .modal-footer .btn-group button.fill{
-  background: #7675F7;
+  background: #4F3FC6;
   font-weight: 700;
   color: #fff;
 }

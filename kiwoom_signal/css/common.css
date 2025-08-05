@@ -353,12 +353,10 @@ p.guide_p{
 
 /* 자문사 전환 팝업 */
 .alarmModal .modal-dialog{
-  max-width: 100%;
   width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 0;
 }
 
 .alarmModal .modal-content{
@@ -399,27 +397,51 @@ p.guide_p{
 }
 
 .alarmModal .modal-body .txt{
-  padding: 0px 10px;  
-  color: #333;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 25px;
+  margin-bottom: 20px;
 }
 
-.alarmModal .modal-body .txt strong{
-  font-weight: 500;
-  font-size: 18px;
-  line-height: 20px;  
+.alarmModal .modal-body .txt img{
+  width: 90px;
+}
+
+.alarmModal.mobile .modal-body .txt img{
+  width: 65px;
 }
 
 .alarmModal .modal-body .txt p{
-  margin: 0;
   font-weight: 400;
-  font-size: 16px;
+  font-size: 18px;
+  line-height: 26px;
+}
+
+.alarmModal.mobile .modal-body .txt p{
+  font-size: 14px;
   line-height: 20px;
 }
 
-.alarmModal .modal-body .txt span{
+.alarmModal .modal-body .txt p strong{
+  font-weight: 700;
+}
+
+.alarmModal .modal-body .txt p span{
+  color: #4F3FC6;
+  font-weight: 700;
+}
+
+.alarmModal .modal-body .sub-txt{
   font-weight: 400;
+  font-size: 16px;
+  line-height: 22px;
+  color: #333;
+}
+
+.alarmModal.mobile .modal-body .sub-txt{
   font-size: 14px;
-  line-height: 20px;  
+  line-height: 20px;
 }
 
 .alarmModal .modal-footer{
@@ -453,7 +475,7 @@ p.guide_p{
 }
 
 .alarmModal .modal-footer .btn-group button.fill{
-  background: #7675F7;
+  background: #4F3FC6;
   font-weight: 700;
   color: #fff;
 }
