@@ -431,7 +431,7 @@
 }
 
 .chart-tab .note{
-  @apply font-normal text-[12px] leading-[15px] text-[#B5B5B6] max-md:text-[11px];
+  @apply font-normal text-[12px] leading-[15px] text-[#B5B5B6] max-md:text-[11px] max-md:w-full max-md:text-right;
 }
 
 .bubble-chart{
@@ -594,8 +594,16 @@
   @apply text-black w-full text-left font-normal text-[14px] leading-[18px] max-md:text-[#B5B5B6];
 }
 
+.bri-bottom{
+  @apply overflow-hidden rounded-b-[20px];
+}
+
 .bri-bottom img{
-  @apply w-full rounded-b-[20px];
+  @apply w-full rounded-b-[20px] transition-transform duration-200;
+}
+
+.sec07-con_box:hover .bri-bottom img{
+  @apply scale-125
 }
 /* section7 */
 

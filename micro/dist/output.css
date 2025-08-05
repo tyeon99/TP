@@ -1757,6 +1757,8 @@ video {
 
 @media not all and (min-width: 801px) {
   .chart-tab .note {
+    width: 100%;
+    text-align: right;
     font-size: 11px;
   }
 }
@@ -2286,10 +2288,25 @@ video {
   }
 }
 
+.bri-bottom {
+  overflow: hidden;
+  border-bottom-right-radius: 20px;
+  border-bottom-left-radius: 20px;
+}
+
 .bri-bottom img {
   width: 100%;
   border-bottom-right-radius: 20px;
   border-bottom-left-radius: 20px;
+  transition-property: transform;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 200ms;
+}
+
+.sec07-con_box:hover .bri-bottom img {
+  --tw-scale-x: 1.25;
+  --tw-scale-y: 1.25;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
 /* section7 */
