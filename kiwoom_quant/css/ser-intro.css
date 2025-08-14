@@ -106,9 +106,9 @@
   background: #363636;;
   font-weight: 400;
   font-size: 10px;
-  line-height: 13px;
+  line-height: 14px;
   text-align: center;
-  padding: 20px 15px;
+  padding: 20px 10px;
   color: rgb(255, 255, 255, 0.6);
 }
 
@@ -740,7 +740,7 @@ button.splide__arrow{
 /* section7 */
 
 .ser-guide{
-  padding: 40px 20px 75px;
+  padding: 40px 18px 75px;
 }
 
 .accordion{
