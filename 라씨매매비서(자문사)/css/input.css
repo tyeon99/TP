@@ -1,0 +1,416 @@
+@import url(https://spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css);
+@import "tailwindcss";
+
+@theme {
+  --font-spoqa: "Spoqa Han Sans Neo", sans-serif;
+}
+
+* {
+  @apply font-spoqa;
+}
+html,
+body {
+  @apply w-full h-full overflow-auto;
+}
+::-webkit-scrollbar {
+  display: none;
+}
+em {
+  @apply not-italic;
+}
+#wrap {
+  @apply w-full relative flex flex-col;
+}
+header {
+  @apply h-[50px] fixed inset-0 w-full z-30 flex items-center  px-5 bg-white;
+}
+footer {
+  @apply bg-[#E9ECF2] w-full p-[40px_20px_130px] min-h-[250px] snap-start clear-both;
+}
+main {
+  @apply relative block w-full h-full overflow-auto;
+}
+main > section {
+  @apply flex flex-col w-full justify-center items-center;
+}
+#sec01 {
+  @apply pb-10 h-full;
+}
+#sec01.newSection{
+  @apply bg-[#F0F6FF]
+}
+#sec01.dark {
+  @apply bg-[#252525];
+}
+#sec0101{
+  @apply bg-[#f9f9f9] px-5
+}
+#sec02 {
+  @apply py-10 bg-[#F0F6FF];
+}
+#sec03 {
+  @apply p-[40px_20px];
+}
+#sec04 {
+  @apply p-[40px_0] bg-[#F9F9F9];
+}
+#sec05 {
+  @apply p-[40px_0] px-5;
+}
+#sec0502{
+  @apply !mt-[45px]
+}
+.tit {
+  @apply flex flex-col w-full justify-center items-center text-center gap-2.5;
+}
+.tit > strong {
+  @apply leading-[30px] text-[24px] text-[#141414] font-bold;
+}
+.dark .tit > strong {
+  background: linear-gradient(90deg, #ffbc3a 0%, #ff6088 56.25%, #b570ff 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.tit > em {
+  @apply leading-[28px] text-[14px] text-[#557CFF];
+}
+.dark .tit > em, .dark .tit > span{
+  @apply !text-white
+}
+.tit > span {
+  @apply leading-[22px] text-[15px] text-[#141414];
+}
+
+.vi {
+  @apply flex flex-col w-full justify-center items-center relative;
+}
+.vi > em{
+  @apply absolute z-10 left-[30px] bottom-[45px]
+}
+.vi > .txt {
+  @apply w-full py-[15px] flex flex-col gap-2.5 items-center;
+}
+.vi > .txt em {
+  @apply w-[78px] h-[25px] leading-[25px] rounded-[50px] text-center bg-[#DEEBFF] text-[12px] font-bold text-[#557CFF];
+}
+.vi > .txt span {
+  @apply text-[15px] text-black leading-[23px];
+}
+.dark .vi > .txt span {
+  @apply !text-white text-center font-normal
+}
+
+.vi-sm .img {
+  @apply relative w-full h-[170px];
+}
+.vi-lg .img {
+  @apply relative w-full h-[199px];
+}
+.vi-sm .img .coin {
+  @apply absolute top-2 left-1/2 ml-[-97px];
+}
+.vi-sm .img .giftbox {
+  @apply absolute top-[-2px] left-1/2 ml-[-97px];
+}
+.vi-lg .img .coin {
+  @apply absolute top-[33px] left-1/2 ml-[-114px];
+}
+.vi-lg .img .giftbox {
+  @apply absolute top-[20px] left-1/2 ml-[-114px];
+}
+
+.button {
+  @apply flex flex-col gap-2.5 w-full items-center px-5 pt-5 fixed bottom-0 transition-all duration-500 z-20;
+}
+.button.btn-black {
+  @apply !pt-0;
+}
+.button.btn-black.hide {
+  @apply !pt-5;
+}
+.button.btn-black button {
+  @apply !bg-[#141414];
+}
+.button button {
+  @apply relative w-full h-[45px] flex justify-center items-center text-[15px] text-white bg-[#557CFF] rounded-[12px] 
+  font-bold z-20;
+}
+.button em {
+  @apply transition-all duration-150;
+}
+.button.hide {
+  @apply bottom-[-30px] bg-linear-to-b 
+  from-transparent from-0% via-white via-15% to-white to-100%;
+}
+.button.hide em {
+  @apply opacity-0;
+}
+.popOver {
+  @apply absolute top-[-20px] h-[30px] bg-[#ffe100] rounded-[6px] flex gap-[5px] items-center justify-center text-[13px] text-[#141414] px-2.5 z-20
+  after:content-[''] after:w-[9px] after:h-2 after:bg-[url(../img/union.png)] after:bg-size-[9px_8px] after:absolute after:bottom-[-6px] after:left-[50%];
+}
+section > .txt {
+  @apply w-full px-5;
+}
+section > .txt span {
+  @apply w-full text-[15px] leading-[22px] text-[#141414];
+}
+.txtBgBox {
+  @apply mx-5 w-[calc(100%-40px)] bg-[#DBE7F9] rounded-[10px] gap-[5px] p-2.5 flex items-start;
+}
+.txtBgBox span {
+  @apply text-[15px] leading-[22px] text-[#7F93D8];
+}
+#sec04 .list {
+  @apply w-full flex flex-col gap-4 px-5;
+}
+#sec04 .list .listbox {
+  @apply flex w-full p-[15px] gap-2.5 bg-white rounded-[12px] items-center;
+}
+#sec04 .list .listbox span {
+  @apply text-[15px] leading-[22px] text-[#141414];
+}
+#sec04 .txt,
+#sec05 .txt {
+  @apply text-center;
+}
+#sec0501 .list {
+  @apply w-full flex flex-col gap-4;
+}
+#sec0501 .list .listbox {
+  @apply flex flex-col w-full bg-[#F0F6FF] rounded-[12px] p-[15px] gap-2.5;
+}
+#sec0501 .list .listbox strong {
+  @apply flex w-full h-[22px] items-center bg-[url(../img/icoCheck.svg)] bg-size-[20px_20px] bg-no-repeat bg-[left_50%] text-[15px] text-[#557CFF] pl-[25px];
+}
+#sec0501 .list .listbox span {
+  @apply text-[15px] leading-[22px] text-[#141414];
+}
+#sec0502 .list {
+  @apply w-full flex flex-col gap-4;
+}
+#sec0502 .list .listbox {
+  @apply flex flex-col w-full bg-[#F9F9F9] rounded-[12px] p-[15px] gap-2.5;
+}
+#sec0502 .list .listbox strong {
+  @apply flex w-full h-[22px] items-center bg-[url(../img/icoCheckB.svg)] bg-size-[20px_20px] bg-no-repeat bg-[left_50%] text-[15px] text-[#141414] pl-[25px];
+}
+#sec0502 .list .listbox span {
+  @apply text-[15px] leading-[22px] text-[#141414];
+}
+
+.footer_title {
+  @apply flex w-full gap-[7px] items-center text-[14px] text-[#141414] font-bold;
+}
+.footer_txt {
+  @apply flex flex-col w-full gap-[7px] mt-[15px];
+}
+.footer_txt span {
+  @apply text-[14px] leading-[22px] text-[#141414] flex gap-[7px] items-start
+  before:content-[''] before:w-1 before:h-1 before:rounded-full before:bg-[#B6BCC9] before:mt-[7.5px];
+}
+.footer_txt2 {
+  @apply flex flex-col w-full gap-[7px] mt-[15px];
+}
+.footer_txt2 span {
+  @apply text-[14px] leading-[22px] text-[#141414] flex gap-[7px] items-start
+}
+
+@keyframes floatUpDown {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+}
+
+.giftbox.float {
+  animation: floatUpDown 2.5s ease-in-out infinite;
+}
+.cho_gift{
+  @apply p-[20px_0_40px] flex flex-col gap-4 w-full
+}
+.cho_gift div{
+  @apply relative p-4 rounded-[12px] bg-white w-full
+}
+.cho_gift div input{
+  @apply absolute left-[-99999em]
+}
+.cho_gift div input+label {
+  @apply flex w-full h-6 pl-[34px] items-center text-[14px] text-[#333] 
+  bg-[url(../img/bgCheck.png)] bg-size-[24px_24px] bg-no-repeat bg-position-[left_50%]
+}
+.cho_gift div input:checked+label {
+  @apply bg-[url(../img/bgCheckOn.png)] bg-size-[24px_24px] bg-no-repeat bg-position-[left_50%]
+}
+
+.modal{
+  @apply fixed inset-0 z-50 hidden
+}
+.modal.show{
+  @apply !block
+}
+.modal-dialog{
+  @apply flex w-full h-full items-center px-10 relative
+}
+.modal-content{
+  @apply w-full bg-white rounded-[25px] p-[20px_15px]
+}
+.modal-body{
+  @apply relative w-full
+}
+.modal-body .close{
+  @apply absolute top-0 right-0 text-[24px] font-light
+}
+.modal-body p{
+  @apply w-full pt-[55px] text-center text-[18px] leading-6 text-[#141414]
+}
+.modal-body .btn{
+  @apply flex justify-center pt-[30px] w-full
+}
+.modal-body .btn button{
+  @apply flex justify-center items-center w-[190px] h-10 rounded-full bg-[#6565ff] text-white text-[14px] p-0
+}
+.modal-backdrop{
+  @apply fixed inset-0 bg-[#000000] opacity-50 w-full h-full z-30
+}
+
+#r01{
+  @apply w-full h-full flex justify-center items-center
+}
+#r01 strong{
+  @apply mt-[30px] text-[#141414] text-[24px] font-bold leading-[30px] text-center
+}
+#r01 div{
+  @apply w-[calc(100%-90px)] max-w-[270px] mt-[45px] flex flex-col gap-2.5 mx-auto
+}
+#r01 div span{
+  @apply flex w-full gap-2.5 items-start text-[#141414] text-[15px] leading-[22px]
+}
+#r01 div em{
+  @apply w-[72px] h-[22px] flex justify-center items-center rounded-full bg-[#6565FF] text-[14px] text-white
+}
+#r02{
+  @apply w-full bg-[#f9f9f9] p-[40px_20px] flex flex-col gap-5
+}
+#r02 strong{
+  @apply text-[#141414] text-[20px] font-bold leading-[30px] text-center
+}
+#r02 .lbox{
+  @apply w-full flex flex-col gap-4 max-w-[320px] mx-auto
+}
+#r02 .lbox .list{
+  @apply flex flex-col w-full p-[15px] gap-2.5 bg-white rounded-[12px] items-center
+}
+#r02 .lbox .list strong{
+  @apply flex w-full h-[22px] items-center text-start bg-[url(../img/bgCheckOn.png)] bg-size-[20px_20px] bg-no-repeat bg-[left_50%] text-[15px] text-[#6565FF] pl-[25px]
+}
+#r02 .lbox .list span{
+  @apply text-[15px] leading-[22px] text-[#141414] text-start
+}
+
+#r03{
+  @apply w-full p-[40px_20px] flex flex-col gap-5
+}
+#r03 strong{
+  @apply text-[#141414] text-[20px] font-bold leading-[30px] text-center
+}
+#r03 .lbox{
+  @apply w-full flex flex-col gap-4 max-w-[320px] mx-auto
+}
+#r03 .lbox .list{
+  @apply flex flex-col w-full p-[15px] gap-2.5 bg-[#f9f9f9] rounded-[12px] items-center
+}
+#r03 .lbox .list strong{
+  @apply flex w-full min-h-[22px] items-center text-start bg-[url(../img/icoCheckB.svg)] bg-size-[20px_20px] 
+  bg-no-repeat bg-[left_2px] text-[15px] text-[#141414] pl-[25px] leading-[22px]
+}
+#r03 .lbox .list span{
+  @apply text-[15px] leading-[22px] text-[#141414] text-start
+}
+
+.footer_link{
+  @apply flex flex-col gap-2.5 pt-2.5
+}
+.footer_link a{
+  @apply before:block before:content-[''] before:w-1 before:h-1 before:rounded-full before:bg-[#B6BCC9] before:mt-[7.5px]
+  text-[14px] text-[#989eac] leading-[23px] flex gap-1
+}
+
+.newSection .tit{
+  @apply flex flex-col items-center gap-0
+}
+.newSection .tit > em{
+  @apply p-[5px_15px] leading-[18px] rounded-[50px] bg-[#465584] text-[16px] text-white font-medium
+}
+.newSection .tit > strong{
+  @apply pt-[30px] leading-[30px] text-[24px] text-[#141414] font-bold
+}
+.newSection .tit > strong em{
+  @apply text-[#557cff] font-bold
+}
+.newSection .tit > span{
+  @apply pt-[10px] text-[15px] text-center text-[#141414] font-normal leading-[22px]
+}
+.newSection .tit > span em{
+  @apply font-bold
+}
+
+.newSection .vi{
+  @apply relative w-full pt-[20px] text-center
+}
+.newSection .vi span{
+  @apply absolute top-[30px] left-1/2 w-[94px] h-[94px] flex items-center justify-center leading-5 
+  text-[14px] text-center text-[#FFEA4E] font-bold bg-[url(../img/newBullet01.png)] bg-cover bg-top-left
+  ml-[-150px]
+}
+.newSection .vi span.bg2{
+  @apply bg-[url(../img/newBullet02.png)]
+}
+.newSection .textBox{
+  @apply w-[calc(100%-40px)] bg-[#DBE7F9] rounded-[12px] mt-[-5px] p-2.5
+}
+.newSection .textBox strong{
+  @apply flex w-full gap-[5px] items-center text-[16px] text-[#141414] font-bold
+}
+.newSection .textBox span{
+  @apply leading-[22px] text-[15px] text-[#141414] font-normal mt-[5px]
+}
+
+.nsec .tit{
+  @apply gap-0
+}
+.nsec .tit em{
+  @apply p-[5px_15px] leading-[18px] rounded-[50px] bg-[#557CFF] text-[16px] text-white font-medium
+}
+.nsec .tit strong{
+  @apply pt-[30px]
+}
+.nsec .vi{
+  /* @apply pt-[30px] */
+}
+.nsec .txt{
+  @apply pt-[30px] px-0 flex flex-col text-center gap-5
+}
+.nsec .txt span{
+  @apply text-[15px] leading-[22px] text-[#141414]
+}
+.nsec .txt em{
+  @apply text-[15px] text-[#557cff] leading-[22px]
+}
+#sec06{
+  @apply py-[40px]
+}
+
+/* 악수 이미지 애니메이션 */
+.shake {
+  animation: shake 0.6s ease-in-out infinite;
+}
+@keyframes shake {
+  0%, 100% { transform: translateY(0); }
+  20%, 60% { transform: translateY(-3px); }
+  40%, 80% { transform: translateY(3px); }
+}
