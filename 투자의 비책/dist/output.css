@@ -6995,7 +6995,7 @@ input[type=radio].custom-radio:checked + label {
 .subscribe .title {
   width: 100%;
   padding-top: 15px;
-  padding-bottom: 30px;
+  padding-bottom: 10px;
   font-size: 16px;
   font-weight: 700;
   line-height: 20px;
@@ -7156,6 +7156,7 @@ input[type=radio].checkPay:checked + label {
 
 .subscribe .infoForm {
   margin-bottom: 55px;
+  margin-top: 20px;
   display: flex;
   width: 100%;
   flex-direction: column;
@@ -7196,7 +7197,7 @@ input[type=radio].checkPay:checked + label {
 }
 
 .subscribe .compared {
-  margin-bottom: 40px;
+  margin-bottom: 25px;
   display: flex;
   width: 100%;
   flex-direction: column;
@@ -7318,6 +7319,54 @@ input[type=radio].checkPay:checked + label {
 .subscribe .compared .cmp-table .column.premium .table-td:last-child {
   border-bottom-left-radius: 0px;
   border-bottom-right-radius: 16px;
+}
+
+.subscribe .contract {
+  margin-bottom: 40px;
+  width: 100%;
+}
+
+.subscribe .contract .contract-box {
+  width: 100%;
+  border-radius: 16px;
+  border-width: 1px;
+  --tw-border-opacity: 1;
+  border-color: rgb(238 238 238 / var(--tw-border-opacity));
+  padding: 20px 16px;
+}
+
+.subscribe .contract .contract-box button {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.subscribe .contract .contract-box button:first-child {
+  border-bottom-width: 1px;
+  --tw-border-opacity: 1;
+  border-color: rgb(238 238 238 / var(--tw-border-opacity));
+  padding-bottom: 10px;
+}
+
+.subscribe .contract .contract-box button:last-child {
+  padding-top: 10px;
+}
+
+.subscribe .contract .contract-box button p {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 18px;
+  --tw-text-opacity: 1;
+  color: rgb(20 20 20 / var(--tw-text-opacity));
+}
+
+.subscribe .contract .contract-box button span {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 18px;
+  --tw-text-opacity: 1;
+  color: rgb(140 140 140 / var(--tw-text-opacity));
 }
 
 /* //////////////////////// */
@@ -7645,35 +7694,153 @@ input[type=radio].checkPay:checked + label {
   padding-bottom: 50px;
 }
 
-.contractModal .modal-content {
-  padding: 55px 20px 0px;
+.contractOffcanvas {
+  max-height: 95% !important;
 }
 
-.contractModal .modal-content .title {
-  margin-bottom: 8px;
-  font-size: 16px;
-  font-weight: 700;
-  line-height: 20px;
-  --tw-text-opacity: 1;
-  color: rgb(20 20 20 / var(--tw-text-opacity));
-}
-
-.contractModal .modal-content .date {
+.contractOffcanvas .cnt-tab {
   margin-bottom: 30px;
-  font-size: 15px;
-  font-weight: 400;
-  line-height: 20px;
-  --tw-text-opacity: 1;
-  color: rgb(140 140 140 / var(--tw-text-opacity));
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 10px;
+  border-style: none;
 }
 
-.contractModal .modal-content .txt {
-  padding-bottom: 40px;
+.contractOffcanvas .cnt-tab button {
+  border-radius: 20px;
+  border-width: 1px;
+  --tw-border-opacity: 1;
+  border-color: rgb(20 20 20 / var(--tw-border-opacity));
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+  padding: 6px 15px;
   font-size: 15px;
   font-weight: 400;
-  line-height: 20px;
+  line-height: 22px;
   --tw-text-opacity: 1;
   color: rgb(20 20 20 / var(--tw-text-opacity));
+  transition-property: none;
+}
+
+.contractOffcanvas .cnt-tab button:hover {
+  --tw-border-opacity: 1;
+  border-color: rgb(20 20 20 / var(--tw-border-opacity));
+}
+
+.contractOffcanvas .cnt-tab button:focus {
+  --tw-border-opacity: 1;
+  border-color: rgb(20 20 20 / var(--tw-border-opacity));
+}
+
+.contractOffcanvas .cnt-tab button.active {
+  border-style: none;
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 80 80 / var(--tw-bg-opacity));
+  font-weight: 500;
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+
+.contractOffcanvas .tab-content .txt {
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 30px;
+  --tw-text-opacity: 1;
+  color: rgb(0 0 0 / var(--tw-text-opacity));
+}
+
+.contractOffcanvas .tab-content .txt span {
+  font-weight: 500;
+}
+
+.contractOffcanvas .tab-content .table-group {
+  margin-top: 30px;
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 30px;
+}
+
+.contractOffcanvas .tab-content .table-group .tbg {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 15px;
+}
+
+.contractOffcanvas .tab-content .table-group .tbg .title {
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 30px;
+  --tw-text-opacity: 1;
+  color: rgb(20 20 20 / var(--tw-text-opacity));
+}
+
+.contractOffcanvas .tab-content .table-group .tbg .title span {
+  font-weight: 400;
+}
+
+.contractOffcanvas .tab-content .table-group .tbg span {
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 30px;
+  --tw-text-opacity: 1;
+  color: rgb(20 20 20 / var(--tw-text-opacity));
+}
+
+.contractOffcanvas .tab-content .table-group .tbg .table-scroll {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.contractOffcanvas .tab-content .table-group .tbg table {
+  min-width: 100%;
+}
+
+.contractOffcanvas .tab-content .table-group .tbg table.table01 {
+  width: 665px;
+}
+
+.contractOffcanvas .tab-content .table-group .tbg table.table02 {
+  width: 540px;
+}
+
+.contractOffcanvas .tab-content .table-group .tbg table.table03 {
+  width: 440px;
+}
+
+.contractOffcanvas .tab-content .table-group .tbg table th {
+  height: 40px;
+  border-top-width: 1px;
+  border-bottom-width: 1px;
+  --tw-border-opacity: 1;
+  border-color: rgb(235 235 235 / var(--tw-border-opacity));
+  --tw-bg-opacity: 1;
+  background-color: rgb(250 250 250 / var(--tw-bg-opacity));
+  text-align: center;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 18px;
+  --tw-text-opacity: 1;
+  color: rgb(20 20 20 / var(--tw-text-opacity));
+}
+
+.contractOffcanvas .tab-content .table-group .tbg table td {
+  border-bottom-width: 1px;
+  --tw-border-opacity: 1;
+  border-color: rgb(235 235 235 / var(--tw-border-opacity));
+  padding: 11px 9px;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 18px;
+  --tw-text-opacity: 1;
+  color: rgb(153 153 153 / var(--tw-text-opacity));
 }
 
 /* ///////////////////////////////// */

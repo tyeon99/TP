@@ -2922,7 +2922,7 @@ input[type=radio].custom-radio:checked + label {
 }
 
 .subscribe .title{
-  @apply w-full pt-[15px] pb-[30px] text-black text-[16px] font-bold leading-[20px];
+  @apply w-full pt-[15px] pb-[10px] text-black text-[16px] font-bold leading-[20px];
 }
 
 .subscribe .box{
@@ -3004,7 +3004,7 @@ input[type=radio].checkPay:checked + label {
 }
 
 .subscribe .infoForm{
-  @apply w-full flex flex-col gap-[25px] mb-[55px];
+  @apply w-full flex flex-col gap-[25px] mb-[55px] mt-[20px];
 }
 
 .subscribe .infoForm label{
@@ -3020,7 +3020,7 @@ input[type=radio].checkPay:checked + label {
 }
 
 .subscribe .compared{
-  @apply w-full flex flex-col justify-start items-center gap-[15px] mb-[40px];
+  @apply w-full flex flex-col justify-start items-center gap-[15px] mb-[25px];
 }
 
 .subscribe .compared p{
@@ -3069,6 +3069,26 @@ input[type=radio].checkPay:checked + label {
 
 .subscribe .compared .cmp-table .column.premium .table-td{
   @apply bg-[#FFFFFF] border-[#5087FF] last:rounded-bl-none last:rounded-br-[16px];
+}
+
+.subscribe .contract{
+  @apply w-full mb-[40px];
+}
+
+.subscribe .contract .contract-box{
+  @apply w-full p-[20px_16px] rounded-[16px] border border-[#eee];
+}
+
+.subscribe .contract .contract-box button{
+  @apply w-full flex justify-between items-center first:pb-[10px] first:border-b first:border-[#eee] last:pt-[10px];
+}
+
+.subscribe .contract .contract-box button p{
+  @apply text-[14px] font-normal text-[#141414] leading-[18px];
+}
+
+.subscribe .contract .contract-box button span{
+  @apply text-[14px] font-normal leading-[18px] text-[#8c8c8c];
 }
 /* //////////////////////// */
 
@@ -3213,20 +3233,76 @@ input[type=radio].checkPay:checked + label {
   @apply w-full h-[calc(100dvh-50px)] flex justify-center items-center pb-[50px];
 }
 
-.contractModal .modal-content{
-  @apply p-[55px_20px_0px];
+.contractOffcanvas{
+  @apply !max-h-[95%];
 }
 
-.contractModal .modal-content .title{
-  @apply text-black text-[16px] font-bold leading-[20px] mb-[8px];
+.contractOffcanvas .cnt-tab{
+  @apply w-full flex justify-start items-center gap-[10px] mb-[30px] border-none;
 }
 
-.contractModal .modal-content .date{
-  @apply text-[#8c8c8c] text-[15px] font-normal leading-[20px] mb-[30px];
+.contractOffcanvas .cnt-tab button{
+  @apply p-[6px_15px] rounded-[20px] border border-[#141414] bg-[#fff] text-[#141414] font-normal text-[15px] leading-[22px] transition-none hover:border-[#141414] focus:border-[#141414];
 }
 
-.contractModal .modal-content .txt{
-  @apply text-black text-[15px] font-normal leading-[20px] pb-[40px];
+.contractOffcanvas .cnt-tab button.active{
+  @apply bg-mainColor text-[#fff] border-none font-medium;
+}
+
+.contractOffcanvas .tab-content .txt{
+  @apply text-[#000] font-normal leading-[30px] text-[15px];
+}
+
+.contractOffcanvas .tab-content .txt span{
+  @apply font-medium;
+}
+
+.contractOffcanvas .tab-content .table-group{
+  @apply w-full flex flex-col justify-start items-start gap-[30px] mt-[30px];
+}
+
+.contractOffcanvas .tab-content .table-group .tbg{
+  @apply w-full flex flex-col justify-start items-start gap-[15px];
+}
+
+.contractOffcanvas .tab-content .table-group .tbg .title{
+  @apply text-black text-[15px] font-medium leading-[30px];
+}
+
+.contractOffcanvas .tab-content .table-group .tbg .title span{
+  @apply font-normal;
+}
+
+.contractOffcanvas .tab-content .table-group .tbg span{
+  @apply text-black text-[15px] font-normal leading-[30px];
+}
+
+.contractOffcanvas .tab-content .table-group .tbg .table-scroll{
+  @apply w-full overflow-x-auto;
+}
+
+.contractOffcanvas .tab-content .table-group .tbg table{
+  @apply min-w-full;
+}
+
+.contractOffcanvas .tab-content .table-group .tbg table.table01{
+  @apply w-[665px];
+}
+
+.contractOffcanvas .tab-content .table-group .tbg table.table02{
+  @apply w-[540px];
+}
+
+.contractOffcanvas .tab-content .table-group .tbg table.table03{
+  @apply w-[440px];
+}
+
+.contractOffcanvas .tab-content .table-group .tbg table th{
+  @apply h-[40px] text-center bg-[#fafafa] border-y border-[#ebebeb] text-black font-normal text-[14px] leading-[18px];
+}
+
+.contractOffcanvas .tab-content .table-group .tbg table td{
+  @apply p-[11px_9px] text-[#999] text-[14px] font-normal leading-[18px] border-b border-[#ebebeb];
 }
 /* ///////////////////////////////// */
 
