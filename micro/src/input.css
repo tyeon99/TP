@@ -442,8 +442,16 @@
   @apply relative w-[565px] h-[575px] flex justify-center items-start max-md:items-start max-md:w-full max-md:h-[320px];
 }
 
+.thema-mainImg{
+  @apply max-w-[350px] w-[350px] max-md:w-[220px] max-md:max-w-[220px];
+}
+
 .thema-subImg{
   @apply absolute bottom-[-53px] right-[-106px] max-md:bottom-[-20px] max-md:right-[-45px];
+}
+
+.thema-subImg img{
+  @apply max-w-[318px] w-[318px] max-md:max-w-[150px] max-md:w-[150px];
 }
 /* section5 */
 
@@ -587,11 +595,11 @@
 }
 
 .bri-top .txt{
-  @apply w-full text-left font-normal text-[20px] leading-[30px] text-black mb-[12px] max-md:text-[16px] max-md:leading-[24px] max-md:mb-[19px] max-md:h-[48px];
+  @apply w-full h-[60px] text-left font-normal text-[20px] leading-[30px] text-black mb-[12px] max-md:text-[16px] max-md:leading-[24px] max-md:mb-[19px] max-md:h-[48px];
 }
 
 .bri-top .date{
-  @apply text-black w-full text-left font-normal text-[14px] leading-[18px] max-md:text-[#B5B5B6];
+  @apply text-black w-full text-left font-normal text-[14px] leading-[18px];
 }
 
 .bri-bottom{
