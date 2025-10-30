@@ -1748,7 +1748,7 @@ video {
 }
 
 .bubble-chart {
-  max-width: 565px;
+  max-width: 450px;
 }
 
 @media not all and (min-width: 801px) {
@@ -1760,8 +1760,8 @@ video {
 .thema-con {
   position: relative;
   display: flex;
-  height: 575px;
-  width: 565px;
+  height: 485px;
+  width: 450px;
   align-items: flex-start;
   justify-content: center;
 }
