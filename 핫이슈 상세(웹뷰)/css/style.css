@@ -141,3 +141,20 @@ html, body, *{
   line-height: 22px;
   color: #707987;
 }
+
+/* 다크모드 css */
+body.dark{
+  background: #18171C;
+}
+body.dark .con-title, body.dark .chart-title, body.dark .box-title{
+  color: #D1D6DE;
+}
+body.dark .con-date, body.dark .box-txt{
+  color: #5a606b;
+}
+body.dark .con-txt, body.dark .chart-txt, body.dark .chart-ex > div{
+  color: #848891;
+}
+body.dark .issueBox{
+  background: #26262C;
+}
