@@ -1,0 +1,339 @@
+body {
+  background: #f6f6f6;
+}
+
+#p-header_w {
+  display: inline-block;
+  width: 100%;
+  height: 120px;
+  background: #3d404d;
+  border-bottom: 1px solid #dadada;
+  margin-bottom: 85px;
+}
+
+#p-header_w #p-header {
+  position: relative;
+  width: 1030px;
+  min-height: 120px;
+  margin: 0 auto;
+  overflow: visible;
+  background: url(../img/header/bg_new.png) no-repeat 0 100%;
+  background-size:1030px auto;
+}
+
+#p-header_w #p-header .logo {
+  display: inline-block;
+  float: left;
+  margin: 30px 0 0 0;
+  padding: 0;
+}
+
+#p-header_w #p-header .logo a {
+  display: inline-block;
+  float: left;
+  margin: 0;
+  padding: 0;
+}
+
+#p-header_w #p-header .nav {
+  position:absolute;
+  top:75px;
+  right:0;
+  z-index:999;
+}
+
+#p-header_w #p-header .nav > ul {
+  display: flex;
+  margin: 0;
+  padding: 0;
+  justify-content: flex-end;
+  gap: 48px;
+}
+
+#p-header_w #p-header .nav > ul > li {
+  display: block;
+  margin: 0;
+}
+
+#p-header_w #p_header .nav > ul > li:first-child {
+  padding-left: 0;
+}
+#p-header_w #p_header .nav > ul > li:last-child {
+  padding-right: 0;
+}
+
+#p-header_w #p-header .nav > ul > li > a {
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+  font-family: "Noto Sans KR";
+  font-size: 18px;
+  font-weight: 300;
+  color: #fff;
+  padding-bottom: 10px;
+}
+
+#p-header_w #p-header .nav > ul > li > a:hover {
+  text-decoration: none;
+  border-bottom: 3px solid #3e72ed;
+  font-weight: 700;
+}
+
+#p-header_w #p-header .nav > ul > li > a.active {
+  border-bottom: 3px solid #3e72ed;
+  font-weight: 700;
+}
+
+#p-header_w #p-header .nav > ul > li.first {
+  padding-left: 0;
+}
+
+#p-header_w #p-header .nav > ul > li.last {
+  padding-right: 0;
+}
+
+#p-header_w #p-header .nav > ul > li .nav02depth {
+  position: absolute;
+  width: 100%;
+  top: 35px;
+  left: 0;
+  display: none;
+  box-sizing: border-box;
+}
+
+#p-header_w #p-header .nav > ul > li .nav02depth.active {
+  display: block;
+}
+
+#p-header_w #p-header .nav > ul > li .nav02depth ul {
+  display: flex;
+  width: 100%;
+  gap: 35px;
+  justify-content: flex-end;
+  padding-top: 10px;
+}
+
+#p-header_w #p-header .nav > ul > li .nav02depth ul li {
+  display: block;
+  list-style: none;
+  padding-top: 20px;
+}
+
+#p-header_w #p-header .nav > ul > li .nav02depth ul li a {
+  font-family: "Noto Sans KR";
+  font-size: 16px;
+  color: #666;
+  font-weight: 300;
+}
+
+#p-header_w #p-header .nav > ul > li .nav02depth ul li a:hover,
+#p-header_w #p-header .nav > ul > li .nav02depth ul li a.active {
+  font-weight: 700;
+  color: #3e72ed;
+  text-decoration: none;
+}
+
+#p-header_w #p-header .info {
+  position: absolute;
+  top: 20px;
+  right: 0;
+}
+
+#p-header_w #p-header .info ul {
+  display: inline-block;
+  padding: 0;
+  margin: 0;
+}
+
+#p-header_w #p-header .info ul li {
+  display: block;
+  float: left;
+  height: 20px;
+  line-height: 20px;
+}
+
+#p-header_w #p-header .info ul li::before {
+  content: "\00b7";
+  padding: 0 5px;
+  color: #c5c5c5;
+  float: left;
+}
+
+#p-header_w #p-header .info ul li.first::before {
+  content: "";
+  padding: 0;
+}
+
+#p-header_w #p-header .info ul li a {
+  display: inline-block;
+  height: 20px;
+  line-height: 20px;
+  float: left;
+  font-family: "Noto Sans KR";
+  color: #c5c5c5;
+  font-size: 13px;
+  font-weight: 300;
+}
+
+#p-content {
+  position: relative;
+  width: 1030px;
+  margin: 0 auto;
+  background: #fff;
+  border: 1px solid #d7d7d7;
+  border-radius: 10px;
+  box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.1);
+  padding: 45px 0 100px 0;
+}
+
+#p-content > table {
+  margin: 0 auto;
+}
+
+table[align="center"] {
+  margin: 0 auto;
+}
+
+#info_menu {
+  position: absolute;
+  top:0;
+  right:0;
+}
+
+#info_menu .new_info{
+  display:block;
+}
+#info_menu .new_info ul{
+  display:flex;
+  gap:30px;
+}
+#info_menu .new_info ul li a{
+  font-size:12px;
+  color:#c6c6c6;
+  line-height:18px;
+}
+#info_menu .new_info ul li.lgo a{
+  color:#ffffff;
+  font-weight:500;
+}
+
+.hidden-link{
+  position:absolute;
+  bottom:16px;
+  right:0;
+}
+.hidden-link a{
+  font-weight:500;
+  font-size:18px;
+  line-height:25px;
+  color:#fff;
+}
+
+.info_L {
+  display: inline-block;
+  float: left;
+}
+
+.info_R {
+  display: inline-block;
+  float: right;
+}
+
+.info_L span {
+  display: none;
+}
+
+.info_L ul {
+  display: inline-block;
+  float: left;
+}
+
+.info_L ul li {
+  display: inline-block;
+  float: left;
+  margin-right: 33px;
+}
+
+.info_L ul li a {
+  height: 35px;
+  line-height: 35px;
+  font-size: 12px;
+  color: #c6c6c6;
+  font-weight: 300;
+}
+
+.info_L ul li.last {
+  margin-right: 0;
+}
+
+.info_R ul {
+  display: inline-block;
+  margin-right: 10px;
+}
+
+.info_R ul li {
+  display: inline-block;
+  float: left;
+  margin-left: 20px;
+}
+
+.info_R ul li.first {
+  margin-left: 0;
+}
+
+.info_R ul li a {
+  height: 35px;
+  line-height: 35px;
+  font-size: 12px;
+  color: #c6c6c6;
+  font-weight: 300;
+}
+
+.info_R ul li.first a {
+  font-weight: 500;
+  color: #fefefe;
+}
+
+.info_R ul li.chat a {
+  padding-left: 13px;
+  background: url(../img/common/bu_chat.png) no-repeat 0 5px;
+}
+
+/* 전문가관리페이지 */
+.adminMenu {
+  position: absolute;
+  width: 100%;
+  top: 35px;
+  left: 0;
+  display: block;
+  box-sizing: border-box;
+}
+
+.adminMenu ul {
+  display: flex;
+  width: 100%;
+  gap: 35px;
+  justify-content: flex-end;
+  padding-top: 10px;
+}
+
+.adminMenu ul li {
+  display: block;
+  flex-shrink: 0;
+  list-style: none;
+  padding-top: 20px;
+}
+
+.adminMenu ul li a {
+  font-family: "Noto Sans KR";
+  font-size: 16px;
+  color: #666;
+  font-weight: 300;
+}
+
+.adminMenu ul li a:hover,
+.adminMenu ul li a.active {
+  font-weight: 700;
+  color: #3e72ed;
+  text-decoration: none;
+}
