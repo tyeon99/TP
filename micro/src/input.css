@@ -55,6 +55,9 @@
 .md-headerWrapper{
   @apply hidden max-md:block p-[10px_20px] border-b-[1px] border-[#EDEDED];
 }
+.sec01-header .md-headerWrapper{
+  @apply border-none;
+}
 
 .mdFlex{
   @apply flex justify-between items-center;
@@ -154,7 +157,7 @@
 /* swiper */
 
 .section{
-  @apply relative w-full h-[100vh] flex justify-center items-center max-md:h-full;
+  @apply relative w-full h-[100dvh] flex justify-center items-center max-md:h-full;
 }
 
 .sectionWrapper{
@@ -206,6 +209,23 @@
 }
 
 /* section1 */
+#section1{
+  @apply relative overflow-hidden;
+}
+
+.section01-bg{
+  @apply absolute w-full h-full inset-0 overflow-hidden z-0;
+}
+
+.section01-bg video{
+  @apply w-full h-full object-cover block;
+  outline: none;
+  border: 0;
+  -webkit-mask-image: -webkit-radial-gradient(white, black);
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+}
+
 .sec-maintxt{
   @apply mb-[144px] max-md:mb-[37px] max-md:text-center;
 }
@@ -259,7 +279,7 @@
 }
 
 .md-appDown{
-  @apply hidden max-md:block w-full text-center mt-[35px];
+  @apply hidden max-md:block w-full text-center mt-[350px];
 }
 
 .md-appDown button{

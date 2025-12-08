@@ -81,6 +81,11 @@
 
       <!-- section1 -->
       <div id="section1" class="section bg-bgColor">
+        <div class="section01-bg">
+          <video src="../img/sec01-video.mp4" type="video/mp4" autoplay muted loop>
+            배경비디오
+          </video>
+        </div>
 
         <div class="sectionWrapper sectionWrapper01">
 
@@ -108,12 +113,12 @@
             </div>
           </div>
 
-          <div data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100" data-aos-offset="0" class="relative max-md:flex max-md:justify-center">
+          <!-- <div data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100" data-aos-offset="0" class="relative max-md:flex max-md:justify-center">
             <div class="relative">
               <img class="w-[542px] max-md:w-[200px]" src="../img/section1-main.png" alt="section1 메인이미지">
               <div class="sec01-subImg dung"><img class="w-[367px] max-w-[367px] max-md:w-[135px] max-md:max-w-[135px]" src="../img/section1-sub.png" alt="section1 서브이미지"></div>
             </div>
-          </div>
+          </div> -->
 
           <div class="md-appDown" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200" data-aos-offset="0">
             <button>앱 다운로드</button>
@@ -136,7 +141,7 @@
                 start: "-1% top",
                 end: "99% top",
                 // markers: true,
-                toggleClass: { targets: '#header', className: 'bg-bgColor' },
+                toggleClass: { targets: '#header', className: 'sec01-header' },
               },
             });
         </script>

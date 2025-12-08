@@ -722,6 +722,10 @@ video {
   }
 }
 
+.sec01-header .md-headerWrapper {
+  border-style: none;
+}
+
 .mdFlex {
   display: flex;
   align-items: center;
@@ -923,7 +927,7 @@ video {
 .section {
   position: relative;
   display: flex;
-  height: 100vh;
+  height: 100dvh;
   width: 100%;
   align-items: center;
   justify-content: center;
@@ -1062,6 +1066,33 @@ video {
 
 /* section1 */
 
+#section1 {
+  position: relative;
+  overflow: hidden;
+}
+
+.section01-bg {
+  position: absolute;
+  inset: 0px;
+  z-index: 0;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+
+.section01-bg video {
+  display: block;
+  height: 100%;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  outline: none;
+  border: 0;
+  -webkit-mask-image: -webkit-radial-gradient(white, black);
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+}
+
 .sec-maintxt {
   margin-bottom: 144px;
 }
@@ -1192,7 +1223,7 @@ video {
 }
 
 .md-appDown {
-  margin-top: 35px;
+  margin-top: 350px;
   display: none;
   width: 100%;
   text-align: center;
