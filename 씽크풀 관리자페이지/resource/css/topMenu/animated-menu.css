@@ -1,0 +1,45 @@
+#topMenu{
+	font-family:"Lucida Grande", arial, sans-serif;
+	font-family: "Open sans", Sans-serif;
+	padding-right: 0px;
+	margin-right: 0px;
+	position:fixed; 
+	_position:absolute; 
+	overflow: hidden;
+	right: 0px;
+	z-index: 1;
+}
+
+#topMenu ul{
+	margin:0;
+	padding:0;
+}
+
+#topMenu li{
+	width:100px;
+	height:30px;
+	float:left;
+	color:#191919;
+	text-align:center;
+	overflow:hidden;
+}
+
+#topMenu a{
+	color:#FFF;
+	text-decoration:none;
+}
+
+#topMenu p{
+	padding:4px 0px;
+}
+
+#topMenu .subtext{
+	padding-top:15px;
+}
+
+/*Menu Color Classes*/
+#topMenu .green{background:#6AA63B url('images/green-item-bg.jpg') top left no-repeat;}
+#topMenu .yellow{background:#FBC700 url('images/yellow-item-bg.jpg') top left no-repeat;}
+#topMenu .red{background:#D52100 url('images/red-item-bg.jpg') top left no-repeat;}
+#topMenu .purple{background:#5122B4 url('images/purple-item-bg.jpg') top left no-repeat;}
+#topMenu .blue{background:#0292C0 url('images/blue-item-bg.jpg') top left no-repeat;}

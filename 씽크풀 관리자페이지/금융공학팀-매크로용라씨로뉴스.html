@@ -1,0 +1,1783 @@
+<html>
+
+<head>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title>씽크풀 관리자페이지 - 금융공학팀</title>
+
+
+
+
+
+
+
+  <style>
+    /* 공통 */
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    h2 {
+      padding: 0px 30px
+    }
+
+    /* 테이블 */
+    table {
+      width: 100%;
+    }
+
+    table,
+    th,
+    td {
+      border: solid 1px gray;
+    }
+
+    /* 버튼 */
+    button {
+      cursor: pointer;
+    }
+
+    /* 달력 */
+    #s_startDt,
+    #s_endDt,
+    #s_inputDt {
+      width: 75px;
+      cursor: pointer;
+    }
+
+    #s_sMonth,
+    #s_applyM {
+      width: 60px;
+      cursor: pointer;
+    }
+
+    /* tiles에서 우측 컨텐츠 영역 전체 */
+    #contentRight {
+      font-size: 13px;
+    }
+
+    /* page div */
+    #page input,
+    #page select {
+      height: 22px
+    }
+
+    #page select {
+      height: 25px
+    }
+
+    #page .searchDiv #buttonSet {
+      float: right;
+    }
+
+    /* 테이블 hover */
+    .addHover {
+      /*cursor:pointer;*/
+      background-color: #EEF2F7;
+    }
+
+    .addIputDefault {
+      font-weight: bold;
+      color: #D0D0D0;
+    }
+
+    /* 프로그레스바 */
+    #progressBar {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      margin-top: -25px;
+      margin-left: -25px;
+      width: 50px;
+      height: 50px;
+    }
+  </style>
+
+
+  <!-- 
+<link href="http://fonts.googleapis.com/css?family=Open+Sans:400,700,600" rel="stylesheet" type="text/css" />
+<link href="http://netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css"  />
+-->
+  <!-- CSS -->
+  <link href="resource/css/font/font.googleapis.css" rel="stylesheet" type="text/css"><!-- 좌측메뉴 -->
+  <link href="resource/css/font/font.awesome.css" rel="stylesheet"><!-- 좌측메뉴 -->
+  <link href="resource/css/leftMenu/app.css" rel="stylesheet" type="text/css"><!-- 좌측메뉴 -->
+  <link href="resource/css/alert/jquery-ui.css" rel="stylesheet" type="text/css"><!-- 공통 -->
+  <link href="resource/css/datepicker/jquery.ui.datepicker.css" rel="stylesheet" type="text/css"><!-- 달력 -->
+  <link href="resource/css/datepicker/jquery.ui.theme.css" rel="stylesheet" type="text/css"><!-- 공통 -->
+  <link href="resource/css/dialog/jquery.ui.dialog.css" rel="stylesheet" type="text/css"><!-- 다이얼로그 -->
+  <link href="resource/css/table/style.css" rel="stylesheet" type="text/css"><!-- 테이블 -->
+  <link href="resource/css/topMenu/animated-menu.css" rel="stylesheet" type="text/css"><!-- 상단메뉴 -->
+  <!-- JS -->
+  <script src="resource/js/jquery/1.11.1/jquery.min.js"></script><!-- 공통 -->
+  <script src="resource/js/jquery/1.11.1/jquery-ui.js"></script><!-- 공통 -->
+  <script src="resource/js/jquery/leftMenu/jquery.ssd-vertical-navigation.js"></script><!-- 좌측메뉴 -->
+  <script src="resource/js/jquery/leftMenu/app.js"></script><!-- 좌측메뉴 -->
+  <script src="resource/js/jquery/alert/dalert.jquery.min.js"></script><!-- 알럿,컨펌 -->
+  <script src="resource/js/jquery/datepicker/jquery.ui.datepicker.js"></script><!-- 달력 -->
+  <script src="resource/js/jquery/datepicker/jquery.mtz.monthpicker.js"></script><!-- 달력(월) -->
+  <script src="resource/js/jquery/dialog/jquery.ui.dialog.js"></script><!-- 다이얼로그 -->
+  <script src="resource/js/jquery/table/jquery.basictable.js"></script><!-- 테이블 -->
+  <script src="resource/js/jquery/progress/spin.js"></script>
+  <style type="text/css"></style><!-- 프로그레스바 -->
+  <script src="resource/js/jquery/common/jquery.cookie.js"></script><!-- 쿠키 -->
+  <script src="resource/js/jquery/maskmoney/jquery.maskmoney.js"></script><!-- 천단위콤마 -->
+  <script src="resource/js/date.js"></script><!-- <script> 안에서 날짜 펑션 사용 -->
+  <script src="resource/js/jquery/topMenu/animated-menu.js"></script><!-- 상단메뉴 -->
+  <script src="resource/js/jquery/topMenu/jquery.easing.1.3.js"></script><!-- 상단메뉴 -->
+
+  <script type="text/javascript">
+    $(function () {
+
+      // 다이얼로그 input css
+      $("#dialogForm input").addClass("text ui-widget-content ui-corner-all");
+      // 테이블 hover css
+      $("#page .table tr").hover(function () {
+        $(this).addClass("addHover");
+      }, function () {
+        $(this).removeClass("addHover");
+      });
+      // 버튼 css	
+      $("input[type=submit], button").button().click(function (event) {
+        event.preventDefault();
+      });
+      // 알럿에서 커서 사용
+      $(document).on('keydown', '.ui-button', handleUIButtonKeyDown);
+      function handleUIButtonKeyDown(event) {
+        if (event.keyCode == 37) {
+          //left arrow key pressed, select the previous button
+          makeButtonFocus($(this).prev(".ui-button"));
+        } else if (event.keyCode == 39) {
+          //right arrow key pressed, select the next button
+          makeButtonFocus($(this).next(".ui-button"));
+        }
+      }
+      function makeButtonFocus($button) {
+        $button.addClass("ui-state-focus");
+        $button.focus();
+      }
+      // 금액 콤마
+      $(".money").maskMoney({
+        allowNegative: true,
+        precision: 0
+      });
+
+    });
+
+    //콤마 제거
+    function removeComma() {
+      $.each($(".money"), function (i, input) {
+        $(this).val($(".money").maskMoney('unmasked')[i]);
+      });
+    }
+    // 프로그래스바
+    var spinner = new Spinner();
+    function progressBar() {
+      var target = document.getElementById("progressBar");
+      target.appendChild(spinner.spin().el);
+    }
+    function progressBarStop() {
+      spinner.stop();
+    }
+
+  </script>
+</head>
+
+<body>
+
+
+  <div id="contentWrapper">
+
+
+
+
+    <script type="text/javascript">
+      /*
+      
+        $(function(){
+        	
+          $('#btn').on('click', function(){
+            $('#testy').toastee();
+          });
+          $('#btn1').on('click', function(){
+            $('#testy').toastee({
+              type: 'success',
+              message: 'You have successfully created this Toast!!!!!',
+            });
+          });
+          $('#btn2').on('click', function() {
+            $('#testy').toastee({
+              header: 'Warning!',
+              type: 'error',
+              message: 'Oh NOez!'
+            });
+          });
+          $('#btn3').on('click', function () {
+            $('#testy').toastee({
+              type: 'success',
+                    header: 'Toastee',
+                    message: 'Got Butter?',
+                    color: 'yellow',
+                    background: '#FFBB00',
+                    width: 100,
+                    height: 200,
+                    fadeout: 500
+            });
+          });
+        	
+        });
+      
+        var webSocket = new WebSocket('ws://localhost/broadcasting2'); 
+      
+        webSocket.onerror = function(event) { 
+          onError(event) 
+        }; 
+      	
+        webSocket.onopen = function(event) { 
+          onOpen(event) 
+        }; 
+      	
+        webSocket.onmessage = function(event) { 
+          //onMessage(event)
+          $('#testy').toastee({
+            type: 'success',
+            message: event.data,
+          });
+        };
+         
+        function onOpen(event) { 
+          //textarea.value += "연결 성공\n";
+          alert("연결성공");
+        } 
+      	
+        function onError(event) { 
+          //alert(event.data);
+          alert("연결실패");
+        } 
+      	
+        function send() { 
+          textarea.value += "나 : " + inputMessage.value + "\n"; 
+          webSocket.send(inputMessage.value); 
+          inputMessage.value = ""; 
+        } 
+      
+      */
+    </script>
+
+
+
+
+    <script type="text/javascript">
+
+      function goLogout() {
+        document.location.replace("https://sign.thinkpool.com/login/logout.do?nexturl=https://sign.thinkpool.com/login/prelog.do?nexturl=http://amdt.thinkpool.com");
+      }
+
+    </script>
+
+    <div id="topMenu" style="left:220px !important;">
+      <ul>
+        <li class="green"> <!-- green, yellow, red, blue, purple -->
+          <p><a href="/">홈</a></p>
+          <p class="subtext">나의 첫페이지</p>
+        </li>
+
+        <!-- 대표메뉴 forEach -->
+
+
+        <li class="yellow">
+          <p><a href="/siteManage/home/view.do">Site관리</a></p>
+          <p class="subtext">Site관리</p>
+        </li>
+
+        <li class="purple" style="height: 30px;">
+          <p><a href="/payBusiness/home/view.do">유료사업관리</a></p>
+          <p class="subtext">유료사업관리</p>
+        </li>
+
+        <li class="red" style="height: 30px;">
+          <p><a href="/cmBill/nomem/home/view.do">결제관리</a></p>
+          <p class="subtext">결제관리</p>
+        </li>
+
+        <li class="purple" style="height: 30px;">
+          <p><a href="/community/home/view.do">커뮤니티관리</a></p>
+          <p class="subtext">커뮤니티관리</p>
+        </li>
+
+        <li class="blue">
+          <p><a href="/member/home/view.do">회원관리</a></p>
+          <p class="subtext">회원관리</p>
+        </li>
+
+        <li class="yellow" style="height: 30px;">
+          <p><a href="/financeEngineering/home/view.do">금융공학팀</a></p>
+          <p class="subtext">금융공학팀</p>
+        </li>
+
+        <li class="red">
+          <p><a href="/financeBusiness/home/view.do">금융사업팀</a></p>
+          <p class="subtext">금융사업팀</p>
+        </li>
+
+        <li class="yellow">
+          <p><a href="/contents/home/view.do">콘텐츠관리</a></p>
+          <p class="subtext">콘텐츠관리</p>
+        </li>
+
+        <li class="purple" style="height: 30px;">
+          <p><a href="/outside/home/view.do">외부관리자</a></p>
+          <p class="subtext">외부관리자</p>
+        </li>
+
+        <li class="green">
+          <p><a href="/radarstock/home/view.do">레이더스탁</a></p>
+          <p class="subtext">레이더스탁</p>
+        </li>
+
+        <li class="green">
+          <p><a href="/table/home/view.do">테이블 관리</a></p>
+          <p class="subtext">테이블 관리</p>
+        </li>
+
+        <li class="yellow">
+          <p><a href="/thinkM/home/view.do">모바일씽크풀</a></p>
+          <p class="subtext">모바일씽크풀</p>
+        </li>
+
+        <li class="red" style="height: 30px;">
+          <p><a href="/rassiSignal/home/view.do">라씨매매비서</a></p>
+          <p class="subtext">라씨매매비서</p>
+        </li>
+
+        <li class="purple" style="height: 30px;">
+          <p><a href="/rcTeam/home/view.do">RC팀</a></p>
+          <p class="subtext">RC팀</p>
+        </li>
+
+        <li class="yellow" style="height: 30px;">
+          <p><a href="/ars/home/view.do">ARS관리자</a></p>
+          <p class="subtext">ARS관리자</p>
+        </li>
+
+        <li class="purple">
+          <p><a href="/enterprise/home/view.do">기업씽크풀</a></p>
+          <p class="subtext">기업씽크풀</p>
+        </li>
+
+
+        <li class="blue">
+          <p><a href="javascript:goLogout();">로그아웃</a></p>
+          <p class="subtext">씽크풀 로그인 페이지로 이동</p>
+        </li>
+      </ul>
+    </div>
+
+    <style>
+      @keyframes blink-effect {
+        50% {
+          opacity: 0;
+        }
+      }
+
+      .blink {
+        animation: blink-effect 1s step-end infinite;
+        color: red;
+        text-align: center;
+        margin: 1.5rem 0;
+        font-weight: bold;
+      }
+    </style>
+    <div id="contentLeft">
+
+      <ul id="leftNavigation" class="master">
+
+
+        <li class="blink">이 화면은 http에 최적화되어 있음</li>
+
+
+        <!-- 대표메뉴 forEach -->
+
+
+
+        <li class="">
+          <a href="javascript:void(0)"><i class="fa fa-signal leftNavIcon"></i>시그널 트레이더</a>
+          <ul>
+            <!-- 하위메뉴 forEach -->
+
+
+
+            <li class="">
+
+              <!-- 하위메뉴의 하위메뉴가 없으면 -->
+              <a href="/financeEngineering/member/memList/view.do"><i class="fa fa-angle-right leftNavIcon"></i>전체
+                회원</a>
+
+
+
+            </li>
+
+
+
+            <li class="">
+
+              <!-- 하위메뉴의 하위메뉴가 없으면 -->
+              <a href="/financeEngineering/member/kiwoomhis/view.do"><i
+                  class="fa fa-angle-right leftNavIcon"></i>키움회원로그</a>
+
+
+
+            </li>
+
+          </ul>
+        </li>
+
+
+
+
+        <li class="active">
+          <a href="javascript:void(0)"><i class="fa  leftNavIcon"></i>문자서비스</a>
+          <ul>
+            <!-- 하위메뉴 forEach -->
+
+
+            <!-- 선택된 메뉴명 설정 -->
+
+
+            <li class="active">
+
+              <!-- 하위메뉴의 하위메뉴가 없으면 -->
+              <a href="/financeEngineering/jrbs/settleMem/view.do"><i class="fa fa-angle-right leftNavIcon"></i>회원관리</a>
+
+
+
+            </li>
+
+
+
+            <li class="">
+
+              <!-- 하위메뉴의 하위메뉴가 없으면 -->
+              <a href="/financeEngineering/jrbs/settleList/view.do"><i
+                  class="fa fa-angle-right leftNavIcon"></i>결제리스트</a>
+
+
+
+            </li>
+
+
+
+            <li class="">
+
+              <!-- 하위메뉴의 하위메뉴가 없으면 -->
+              <a href="/financeEngineering/jrbs/refundPreList/view.do"><i
+                  class="fa fa-angle-right leftNavIcon"></i>환불대기리스트</a>
+
+
+
+            </li>
+
+
+
+            <li class="">
+
+              <!-- 하위메뉴의 하위메뉴가 없으면 -->
+              <a href="/financeEngineering/jrbs/refundList/view.do"><i
+                  class="fa fa-angle-right leftNavIcon"></i>환불완료리스트</a>
+
+
+
+            </li>
+
+
+
+            <li class="">
+
+              <!-- 하위메뉴의 하위메뉴가 없으면 -->
+              <a href="/financeEngineering/jrbs/static/view.do"><i class="fa fa-angle-right leftNavIcon"></i>결제수단별통계</a>
+
+
+
+            </li>
+
+
+
+            <li class="">
+
+              <!-- 하위메뉴의 하위메뉴가 없으면 -->
+              <a href="/financeEngineering/jrbs/memList/view.do"><i class="fa fa-angle-right leftNavIcon"></i>신청리스트</a>
+
+
+
+            </li>
+
+
+
+            <li class="">
+
+              <!-- 하위메뉴의 하위메뉴가 없으면 -->
+              <a href="/financeEngineering/jrbs/autoList/view.do"><i
+                  class="fa fa-angle-right leftNavIcon"></i>자동결제리스트</a>
+
+
+
+            </li>
+
+
+
+            <li class="">
+
+              <!-- 하위메뉴의 하위메뉴가 없으면 -->
+              <a href="/financeEngineering/jrbs/cpcodeList/view.do"><i
+                  class="fa fa-angle-right leftNavIcon"></i>채널코드관리</a>
+
+
+
+            </li>
+
+
+
+            <li class="">
+
+              <!-- 하위메뉴의 하위메뉴가 없으면 -->
+              <a href="/financeEngineering/jrbs/mmsSend/view.do"><i class="fa fa-angle-right leftNavIcon"></i>문자발송</a>
+
+
+
+            </li>
+
+
+
+            <li class="">
+
+              <!-- 하위메뉴의 하위메뉴가 없으면 -->
+              <a href="/financeEngineering/jrbs/subMent/view.do"><i class="fa fa-angle-right leftNavIcon"></i>서브문구수정</a>
+
+
+
+            </li>
+
+          </ul>
+        </li>
+
+
+
+
+        <li class="">
+          <a href="javascript:void(0)"><i class="fa  leftNavIcon"></i>테크나와</a>
+          <ul>
+            <!-- 하위메뉴 forEach -->
+
+
+
+            <li class="">
+
+              <!-- 하위메뉴의 하위메뉴가 없으면 -->
+              <a href="/financeEngineering/technawa/bannerList/view.do"><i
+                  class="fa fa-angle-right leftNavIcon"></i>연결페이지관리</a>
+
+
+
+            </li>
+
+          </ul>
+        </li>
+
+
+
+
+        <li class="">
+          <a href="javascript:void(0)"><i class="fa  leftNavIcon"></i>텔레그램서비스</a>
+          <ul>
+            <!-- 하위메뉴 forEach -->
+
+
+
+            <li class="">
+
+              <!-- 하위메뉴의 하위메뉴가 없으면 -->
+              <a href="/financeEngineering/ussignalt/prizeManage/view.do"><i
+                  class="fa fa-angle-right leftNavIcon"></i>결제금액관리</a>
+
+
+
+            </li>
+
+          </ul>
+        </li>
+
+
+
+
+      </ul>
+
+    </div>
+    <div id="contentRight">
+      <h2 id="heading">
+
+
+
+        <span>매크로용라씨로뉴스</span>
+
+
+      </h2>
+
+
+
+      <style>
+        #dialogForm input {}
+
+        ul.ui-autocomplete {
+          z-index: 1100;
+        }
+      </style>
+
+      <script src="resource/js/jquery/dialog/dialogCheck.js"></script>
+      <script src="resource/js/common.js"></script>
+      <script type="text/javascript">
+
+        $(document).ready(function () {
+
+          // 종목 검색 autocomplet
+          $("#itemCode").autocomplete({
+            autoFocus: true,
+            source: function (request, response) {
+              $.ajax({
+                url: "/main/rsCodeAjax.do",
+                dataType: "json",
+                data: {
+                  "pCode": request.term
+                },
+                method: "post",
+                success: function (data) {
+                  response($.map(data, function (item) {
+                    return {
+                      label: item.nameAndCode,
+                      value: item.code, // item.name
+                      key: item.name
+                    };
+                  }));
+                }
+              });
+
+            },
+            minLength: 2, //조회를 위한 최소글자수
+            focus: function (event, ui) {
+              return false;
+            },
+            select: function (event, ui) {
+              //alert(ui.item.key);
+              $("#itemCode").val(ui.item ? ui.item.key : "");
+              $("#itemName").val(ui.item.key);
+            }
+          });
+
+          // 입력 시작일.
+          $("#input-dialog #sdate").datepicker({
+            changeMonth: true,
+            changeYear: true,
+            showMonthAfterYear: true,
+            dateFormat: "yy.mm.dd",
+            dayNamesMin: ['일', '월', '화', '수', '목', '금', '토'],
+            monthNamesShort: ['1월', '2월', '3월', '4월', '5월', '6월', '7월', '8월', '9월', '10월', '11월', '12월'],
+            showOtherMonths: true, // 다른 달의 표시여부 설정.
+            selectOtherMonths: true // 달 선택을 할 수 있는 기능의 사용여부.
+          });
+
+          // 입력 종료일.
+          $("#input-dialog #edate").datepicker({
+            changeMonth: true,
+            changeYear: true,
+            showMonthAfterYear: true,
+            dateFormat: "yy.mm.dd",
+            dayNamesMin: ['일', '월', '화', '수', '목', '금', '토'],
+            monthNamesShort: ['1월', '2월', '3월', '4월', '5월', '6월', '7월', '8월', '9월', '10월', '11월', '12월'],
+            showOtherMonths: true, // 다른 달의 표시여부 설정.
+            selectOtherMonths: true // 달 선택을 할 수 있는 기능의 사용여부.
+          });
+
+          // 수정 시작일.
+          $("#edit-dialog #sdate_edit").datepicker({
+            changeMonth: true,
+            changeYear: true,
+            showMonthAfterYear: true,
+            dateFormat: "yy.mm.dd",
+            dayNamesMin: ['일', '월', '화', '수', '목', '금', '토'],
+            monthNamesShort: ['1월', '2월', '3월', '4월', '5월', '6월', '7월', '8월', '9월', '10월', '11월', '12월'],
+            showOtherMonths: true, // 다른 달의 표시여부 설정.
+            selectOtherMonths: true // 달 선택을 할 수 있는 기능의 사용여부.
+          });
+
+          // 수정 종료일.
+          $("#edit-dialog #edate_edit").datepicker({
+            changeMonth: true,
+            changeYear: true,
+            showMonthAfterYear: true,
+            dateFormat: "yy.mm.dd",
+            dayNamesMin: ['일', '월', '화', '수', '목', '금', '토'],
+            monthNamesShort: ['1월', '2월', '3월', '4월', '5월', '6월', '7월', '8월', '9월', '10월', '11월', '12월'],
+            showOtherMonths: true, // 다른 달의 표시여부 설정.
+            selectOtherMonths: true // 달 선택을 할 수 있는 기능의 사용여부.
+          });
+
+        });
+
+        $(function () {
+
+          // 회원 등록
+          $("#input-dialog").dialog({
+            autoOpen: false,
+            height: 500,
+            width: 350,
+            modal: true,
+            buttons: {
+              "확인": function () {
+
+                if ($("#input-dialog #hpno").val() == null || $("#input-dialog #hpno").val() == '') {
+                  alert('휴대폰번호를 입력해주세요.');
+                  return;
+                }
+
+                if ($("#input-dialog #hpAuthFlag").val() == 'N') {
+                  alert('휴대폰인증을 해주세요.');
+                  return;
+                }
+
+                if ($("#input-dialog #svcterm").val() == null || $("#input-dialog #svcterm").val() == '') {
+                  alert('시작날짜를 입력해주세요!');
+                  return;
+                }
+
+                dalert.confirm("등록하시겠습니까?", "확인", function (result) {
+                  if (result) {
+                    progressBar();
+                    setTimeout(function () {
+                      procJrbsMemAjax('inputDialogForm');
+                    }, 500);
+                  }
+                });
+              },
+              "취소": function () {
+                $(this).dialog("close");
+              }
+            }
+          });
+
+          // 회원 수정
+          $("#edit-dialog").dialog({
+            autoOpen: false,
+            height: 500,
+            width: 350,
+            modal: true,
+            buttons: {
+              "확인": function () {
+
+                if ($("#edit-dialog #hpno").val() == null || $("#edit-dialog #hpno").val() == '') {
+                  alert('휴대폰번호를 입력해주세요!');
+                  return;
+                }
+
+                if ($("#edit-dialog #hpno").val() != $("#edit-dialog #hpno_old").val()) {
+                  if ($("#edit-dialog #hpAuthFlag").val() == 'N') {
+                    alert('휴대폰인증을 해주세요.');
+                    return;
+                  }
+                }
+
+                if ($("#edit-dialog #sdate_edit").val() == null || $("#edit-dialog #sdate_edit").val() == '') {
+                  alert('시작날짜를 입력해주세요!');
+                  return;
+                }
+
+                if ($("#edit-dialog #edate_edit").val() == null || $("#edit-dialog #edate_edit").val() == '') {
+                  alert('종료날짜를 입력해주세요!');
+                  return;
+                }
+
+                dalert.confirm("수정하시겠습니까?", "확인", function (result) {
+                  if (result) {
+                    progressBar();
+                    setTimeout(function () {
+                      procJrbsMemAjax('editDialogForm');
+                    }, 500);
+                  }
+                });
+              },
+              "취소": function () {
+                $(this).dialog("close");
+              }
+            }
+          });
+
+          // 전략변경
+          $("#logicEdit-dialog").dialog({
+            autoOpen: false,
+            height: 200,
+            width: 300,
+            modal: true,
+            buttons: {
+              "확인": function () {
+
+                dalert.confirm("전략변경 하시겠습니까?", "확인", function (result) {
+                  if (result) {
+                    progressBar();
+                    setTimeout(function () {
+                      procJrbsSetLogicAjax();
+                    }, 500);
+                  }
+                });
+              },
+              "취소": function () {
+                $(this).dialog("close");
+              }
+            }
+          });
+
+          // 종목변경
+          $("#itemEdit-dialog").dialog({
+            autoOpen: false,
+            height: 500,
+            width: 350,
+            modal: true,
+            buttons: {
+              "종목삭제": function () {
+
+                dalert.confirm("종목삭제 하시겠습니까?", "확인", function (result) {
+                  if (result) {
+                    progressBar();
+                    setTimeout(function () {
+                      delete_row();
+                    }, 500);
+                  }
+                });
+              },
+              "종목저장": function () {
+
+                dalert.confirm("종목저장 하시겠습니까?", "확인", function (result) {
+                  if (result) {
+                    progressBar();
+                    setTimeout(function () {
+                      procJrbsSetItemAjax();
+                    }, 500);
+                  }
+                });
+              },
+              "닫기": function () {
+                $(this).dialog("close");
+              }
+            }
+          });
+
+          function procJrbsMemAjax(formName) {
+
+            var formData = $("#" + formName).serialize();
+            $.ajax({
+              url: "/financeEngineering/jrbs/api/procJrbsMemAjax.do",
+              data: formData,
+              type: "post",
+              dataType: "text",
+              cache: false,
+              async: false,
+              timeout: 30000,
+              success: function (result) {
+
+                progressBarStop();
+
+                if (result == 'success') {
+                  dalert.alert("처리완료", "알림", function () {
+                    location.reload();
+                  });
+                } else {
+                  dalert.alert("처리시 에러", "알림", function () {
+                    location.reload();
+                  });
+                }
+              },
+              error: function (xhr, textStatus, errorThrown) {
+                progressBarStop();
+                dalert.alert("페이지를 새로고침 해주세요.", "알림");
+              }
+            });
+          }
+
+          function procJrbsSetLogicAjax() {
+            var formData = $("#logicEditDialogForm").serialize();
+            $.ajax({
+              url: "/financeEngineering/jrbs/api/procJrbsSetLogicAjax.do",
+              data: formData,
+              type: "post",
+              dataType: "text",
+              cache: false,
+              async: false,
+              timeout: 30000,
+              success: function (result) {
+
+                progressBarStop();
+
+                if (result == 'success') {
+                  dalert.alert("처리완료", "알림", function () {
+                    location.reload();
+                  });
+                } else {
+                  dalert.alert("처리시 에러", "알림", function () {
+                    location.reload();
+                  });
+                }
+              },
+              error: function (xhr, textStatus, errorThrown) {
+                progressBarStop();
+                dalert.alert("페이지를 새로고침 해주세요.", "알림");
+              }
+            });
+          }
+
+
+          function procJrbsSetItemAjax() {
+            var my_tbody = document.getElementById('my-tbody');
+            var l_cnt = my_tbody.rows.length;
+            var temp = "";
+            var count = 0;
+            for (var i = 0; i < l_cnt; i++) {
+              temp = $("input:radio[name=sms" + i + "]:checked").val();
+
+              if (temp.indexOf('Y') != -1) {
+                count++;
+              }
+            }
+
+            if (count == 0) {
+              alert('SMS 수신 종목이 없습니다.');
+              return;
+            } else if (count > 3) {
+              alert('SMS 수신은 3종목까지 가능합니다.\n\n수신 종목 변경을 원하시면\n기존수신 종목을 미수신으로 바꾸신 후\n신규수신 종목을 선택하세요.');
+              return;
+            }
+
+            var formData = $("#itemEditDialogForm").serialize();
+            alert(formData);
+            progressBar();
+            setTimeout(function () {
+              $.ajax({
+                url: "/financeEngineering/jrbs/api/updateProcCAjax.do",
+                data: formData,
+                type: "post",
+                dataType: "text",
+                cache: false,
+                timeout: 30000,
+                success: function (result) {
+                  progressBarStop();
+                  if (result == "Y") {
+                    alert("정상적으로 처리 되었습니다.");
+                  } else {
+                    alert("오류가 발생하였습니다.");
+                  }
+                },
+                error: function (request, status, error) {
+                  progressBarStop();
+                  alert("에러");
+                }
+              });
+            }, 500);
+          }
+
+          function procJrbsSetItemAjaxOld() {
+            var formData = $("#itemEditDialogForm").serialize();
+            $.ajax({
+              url: "/financeEngineering/jrbs/api/procJrbsSetItemAjax.do",
+              data: formData,
+              type: "post",
+              dataType: "text",
+              cache: false,
+              async: false,
+              timeout: 30000,
+              success: function (result) {
+
+                progressBarStop();
+
+                if (result == 'success') {
+                  dalert.alert("처리완료", "알림", function () {
+                    location.reload();
+                  });
+                } else {
+                  dalert.alert("처리시 에러", "알림", function () {
+                    location.reload();
+                  });
+                }
+              },
+              error: function (xhr, textStatus, errorThrown) {
+                progressBarStop();
+                dalert.alert("페이지를 새로고침 해주세요.", "알림");
+              }
+            });
+          }
+
+          $("#editDialogForm #enroll").click(function () {
+            smsSend("editDialogForm");
+          });
+
+          $("#inputDialogForm #enroll").click(function () {
+            smsSend("inputDialogForm");
+          });
+
+          $("#editDialogForm #enroll2").click(function () {
+            smsAuthCheck("editDialogForm");
+          });
+
+          $("#inputDialogForm #enroll2").click(function () {
+            smsAuthCheck("inputDialogForm");
+          });
+
+        });
+
+        //회원 무료등록
+        function memInput() {
+          $("#input-dialog").dialog("option", "title", "무료등록");
+          $("#input-dialog").dialog("open");
+        }
+
+        //회원 수정
+        function editView(billsn) {
+          // 데이타 정보
+          $.ajax({
+            url: "/financeEngineering/jrbs/api/getJrbsMemInfoAjax.do",
+            data: { "billsn": billsn },
+            type: "post",
+            dataType: "json",
+            cache: false,
+            timeout: 30000,
+            success: function (result) {
+              var gubun = result.gubun;
+              if (gubun == 'NODATA') {
+                alert("해당데이타가 존재하지 않습니다.");
+              } else {
+                $("#editDialogForm #seqno").val(result.seqno);
+                $("#editDialogForm #billsn").val(result.billsn);
+                $("#editDialogForm #hpno").val(result.hpno);
+                $("#editDialogForm #hpno_old").val(result.hpno);
+                $("#editDialogForm #memo").val(result.memo);
+                $("#editDialogForm #sdate_edit").val(result.sdate);
+                $("#editDialogForm #edate_edit").val(result.edate);
+                $("#editDialogForm #cpcode").val(result.cpcode).prop("selected", true);
+                $("#editDialogForm #marketing_sms_f").val(result.marketing_sms_f).prop("selected", true);
+                $("#editDialogForm #svcterm").val(result.svcterm).prop("selected", true);
+
+              }
+            },
+            error: function (xhr, textStatus, errorThrown) {
+              //dalert.alert("페이지를 새로고침 해주세요.", "알림");
+            }
+          });
+
+          $("#edit-dialog").dialog("option", "title", "회원수정");
+          $("#edit-dialog").dialog("open");
+        }
+
+        //전략변경
+        function logicEditView(seqno) {
+          // 데이타 정보
+          $.ajax({
+            url: "/financeEngineering/jrbs/api/getJrbsLogicInfoAjax.do",
+            data: { "seqno": seqno, "gubun": "LOGIC" },
+            type: "post",
+            dataType: "json",
+            cache: false,
+            timeout: 30000,
+            success: function (result) {
+              var gubun = result.gubun;
+              if (gubun == 'NODATA') {
+                alert("해당데이타가 존재하지 않습니다.");
+              } else {
+                $("#logicEditDialogForm #seqno").val(result.seqno);
+                $("#logicEditDialogForm #item").val(result.item).prop("selected", true);
+              }
+            },
+            error: function (xhr, textStatus, errorThrown) {
+              //dalert.alert("페이지를 새로고침 해주세요.", "알림");
+            }
+          });
+
+          $("#logicEdit-dialog").dialog("option", "title", "전략변경");
+          $("#logicEdit-dialog").dialog("open");
+        }
+
+        //종목변경
+        function itemEditView(seqno) {
+          // 데이타 정보
+          $.ajax({
+            url: "/financeEngineering/jrbs/api/getJrbsItemInfoAjax.do",
+            data: { "seqno": seqno, "gubun": "CODE" },
+            type: "post",
+            dataType: "json",
+            cache: false,
+            timeout: 30000,
+            success: function (result) {
+              var gubun = result.gubun;
+              if (gubun == 'NODATA') {
+                alert("해당데이타가 존재하지 않습니다.");
+              } else {
+                $("#itemEditDialogForm #seqno").val(seqno);
+                var html = "";
+                var listObj = $("#my-tbody");
+                listObj.empty();
+                var i2 = 0;
+                $(result).each(function (i, vo) {
+                  html = "<tr>";
+                  html += "	<td><input type=\"checkbox\" name=\"ckNo\"></td>";
+                  html += "	<td>" + vo.item_name + "</td>";
+                  html += "	<td><input type=\"radio\" id=\"smsY" + (i2) + "\" name=\"sms" + (i2) + "\" value=\"" + vo.item + "_Y\" " + (vo.sms_f == "Y" ? "checked" : "") + "></td>";
+                  html += "	<td><input type=\"radio\" id=\"smsN" + (i2) + "\" name=\"sms" + (i2) + "\" value=\"" + vo.item + "_N\" " + (vo.sms_f == "N" ? "checked" : "") + "></td>";
+                  html += "</tr>";
+
+                  listObj.append(html);
+                  i2 = i2 + 1;
+                });
+              }
+            },
+            error: function (xhr, textStatus, errorThrown) {
+              //dalert.alert("페이지를 새로고침 해주세요.", "알림");
+            }
+          });
+
+          $("#itemEdit-dialog").dialog("option", "title", "종목변경");
+          $("#itemEdit-dialog").dialog("open");
+        }
+
+        var authpos = smsAuthPosNum();
+        function smsSend(formName) {
+
+          var hpno = $('#' + formName + ' #hpno').val();
+          if (!hpno) {
+            alert("휴대폰번호를 입력해주세요!")
+            $('#' + formName + ' #hpno').focus();
+            return;
+          }
+
+          var chkHp = isValidHp(hpno.substring(0, 3), hpno.substring(3));
+          if (chkHp == false) {
+            $('#' + formName + ' #hpno').focus();
+            return;
+          }
+
+          progressBar();
+          setTimeout(function () {
+            $.ajax({
+              url: "/financeEngineering/jrbs/api/sendSMSAuthNumAjax.do",
+              data: { "inputNum": hpno, "pos": authpos, "posName": "jrbsSMSLogin" },
+              type: "post",
+              dataType: "text",
+              cache: false,
+              timeout: 30000,
+              success: function (result) {
+                progressBarStop();
+                if (result == "success") {
+                  alert("인증번호를 발송하였습니다.");
+                } else if (result == "fail") {
+                  alert("1일 인증 제한 횟수가 초과하였습니다. 관리자에게 문의.");
+                } else {
+                  alert("인증번호 발송에러.");
+                }
+              },
+              error: function (request, status, error) {
+                progressBarStop();
+                alert("에러");
+              }
+            });
+          }, 500);
+        }
+
+        function smsAuthCheck(formName) {
+
+          var hpno = $('#' + formName + ' #hpno').val();
+          if (!hpno) {
+            alert("휴대폰번호를 입력해주세요!")
+            $('#' + formName + ' #hpno').focus();
+            return;
+          }
+
+          var smsAuthNum = $('#' + formName + ' #smsAuthNum').val();
+          if (smsAuthNum == "") {
+            alert("인증번호를 입력하세요!");
+            $('#' + formName + ' #smsAuthNum').focus();
+            return;
+          }
+
+          alert($('#' + formName + ' #mdiv').val());
+
+          progressBar();
+          setTimeout(function () {
+            $.ajax({
+              url: "/financeEngineering/jrbs/api/sendSMSAuthNumProcAjax.do",
+              data: { "inputNum": hpno, "pos": authpos, "posName": "jrbsSMSLogin", "smsAuthNum": smsAuthNum },
+              type: "post",
+              dataType: "text",
+              cache: false,
+              timeout: 30000,
+              success: function (result) {
+                progressBarStop();
+                if (result == "success") {
+                  alert("휴대폰 인증완료되었습니다.");
+                  $('#' + formName + ' #hpAuthFlag').val('Y');
+                } else if (result == "smsAuthChkFail") {
+                  alert("잘못된 인증번호 입니다. 다시 확인하시고 입력하세요");
+                } else if (result == "smsAuth3Fail") {
+                  alert("인증가능횟수를 초과하였습니다. 고객센타로 연락하시기 바랍니다.");
+                  document.location.reload();
+                } else {
+                  alert("처리시 에러발생하였습니다. 고객센타로 연락하시기 바랍니다.");
+                }
+              },
+              error: function (request, status, error) {
+                //alert("code:"+request.status+"\n"+"message:"+request.responseText+"\n"+"error:"+error);
+                progressBarStop();
+                alert("에러");
+              }
+            });
+          }, 500);
+        }
+
+        function add_row() {
+          var input01_code = $('#itemCode').val();
+
+          if (input01_code == "") {
+            alert('종목을 선택해 주세요.');
+          } else {
+            var my_tbody = document.getElementById('my-tbody');
+            var l_cnt = my_tbody.rows.length;
+            var temp = "";
+
+            if (l_cnt == 1) {
+              temp = $('#smsY0').val();
+              if (temp == undefined) {
+                my_tbody.deleteRow(0);
+                l_cnt = my_tbody.rows.length;
+              }
+              temp = "";
+            }
+
+            if (l_cnt > 9) {
+              alert('10종목까지 추가 가능합니다.');
+            } else {
+              for (var i = 0; i < l_cnt; i++) {
+                temp = $('#smsY' + i).val();
+                if ((input01_code + '_Y') == temp) {
+                  alert('중복등록은 불가능합니다.');
+                  return false;
+                }
+              }
+
+              var row = my_tbody.insertRow(my_tbody.rows.length); // 하단에 추가
+              var cell1 = row.insertCell(0);
+              var cell2 = row.insertCell(1);
+              var cell3 = row.insertCell(2);
+              var cell4 = row.insertCell(3);
+
+              cell1.innerHTML = '<input type="checkbox" name="ckNo">';
+              cell2.innerHTML = $('#itemName').val();
+              cell3.innerHTML = '<input type="radio" id="smsY' + l_cnt + '" name="sms' + l_cnt + '" value="' + input01_code + '_Y">';
+              cell4.innerHTML = '<input type="radio" id="smsN' + l_cnt + '" name="sms' + l_cnt + '" value="' + input01_code + '_N" checked>';
+            }
+
+            $('#itemCode').val('');
+            $('#itemName').val('');
+          }
+        }
+
+        function delete_row() {
+          var my_tbody = document.getElementById('my-tbody');
+          if (my_tbody.rows.length < 1) {
+            return;
+          }
+
+          var ckNo = $("input[name='ckNo']");
+          var checkCount = ckNo.size();
+          var dcount = 0;
+
+          for (var i = 0; i < checkCount; i++) {
+            if (ckNo.eq(i).is(":checked")) {
+              ckNo.eq(i).parent().parent().remove();
+              for (var k = i - dcount + 1; k < checkCount; k++) {
+                $('#smsY' + k).attr('name', 'sms' + (k - 1));
+                $('#smsN' + k).attr('name', 'sms' + (k - 1));
+                $('#smsY' + k).attr('id', 'smsY' + (k - 1));
+                $('#smsN' + k).attr('id', 'smsN' + (k - 1));
+              }
+              dcount++;
+            }
+          }
+
+          my_tbody = document.getElementById('my-tbody');
+          if (my_tbody.rows.length < 1) {
+            var str = "<tr>";
+            str += '	<td colspan="4">';
+            str += '		<span class="empthy">등록된 종목이 없습니다.</span>';
+            str += '	</td>';
+            str += '</tr>';
+
+            $("#my-tbody").append(str);
+            return;
+          }
+        }
+      </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+      <style>
+        #s_customer {
+          width: 8em;
+        }
+
+        #s_itemName {
+          width: 10em;
+        }
+
+        #s_itemCode {
+          width: 4em;
+        }
+
+        #calendar {
+          max-width: 700px;
+          margin: 40px auto;
+          text-align: left;
+          /*padding: 0 400px;*/
+        }
+      </style>
+
+      <script type="text/javascript">
+        $(function () {
+          $("#s_search").click(function () {
+            goPage();
+          });
+
+          $("#s_memInput").click(function () {
+            memInput();
+          });
+
+          $("#s_viewExcel").click(function () {
+            progressBar();
+            setTimeout(function () {
+              $("#searchForm").attr("method", "post");
+              $("#searchForm").attr("target", "_blank");
+              $("#searchForm").attr("action", "/financeEngineering/jrbs/settleMem/viewExcel.do");
+              $("#searchForm").submit();
+              progressBarStop();
+            }, 300);
+          });
+        });
+
+        function goPage() {
+          progressBar();
+          setTimeout(function () {
+            $("#searchForm").attr("method", "get");
+            $("#searchForm").attr("action", "/financeEngineering/jrbs/settleMem/view.do");
+            $("#searchForm").submit();
+          }, 300);
+        }
+
+        //전화번호확인
+        function getSeqnoHpnoView(seqno) {
+          // 데이타 정보
+          $.ajax({
+            url: "/financeEngineering/jrbs/api/getSeqnoHpnoAjax.do",
+            data: { "seqno": seqno },
+            type: "post",
+            dataType: "text",
+            cache: false,
+            timeout: 30000,
+            success: function (result) {
+              if (result == null || result == '') {
+                alert("해당데이타가 존재하지 않습니다.");
+              } else {
+                alert(result);
+              }
+            },
+            error: function (xhr, textStatus, errorThrown) {
+              //dalert.alert("페이지를 새로고침 해주세요.", "알림");
+            }
+          });
+        }
+      </script>
+      <div id="page">
+        <!-- 매크로용라씨로뉴스 -->
+
+        <p>※ 라씨로 콘텐츠 URL조회하기(메크로용)</p>
+        
+        <br>
+
+        <div class="searchDiv">
+          <form method="get" action="macroView.jsp" id="aform" name="aform">
+            <div class="searchDiv">
+              카테고리&nbsp;&nbsp;&nbsp;:&nbsp;&nbsp;&nbsp;
+              <input type="text" name="ctg" id="ctg" value="" style="height:30px; padding:4px; color:#666;">
+              &nbsp;&nbsp;&nbsp;&nbsp;
+              <input type="text" name="sdate" id="sdate" value="2026.01.09" style="height:30px; padding:4px; color:#666;">
+              &nbsp;&nbsp;&nbsp;~&nbsp;&nbsp;&nbsp;
+              <input type="text" name="edate" id="edate" value="2026.01.09" style="height:30px; padding:4px; color:#666;">
+              <span id="buttonSet">
+                <button id="s_search" class="selected ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only"
+                  role="button">
+                  <span class="ui-button-text">
+                    검색
+                  </span>
+                </button>
+              </span>
+            </div>
+          </form>
+        </div>
+
+        <table>
+          <thead>
+            <tr style="height:40px;">
+              <th class="center" width="100">CTG</th>
+              <th class="center" width="*">URL</th>
+              <th class="center" width="60">완료</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr style="height:40px;">
+              <td class="center">SSMR01</td>
+              <td class="center">http://spot.rassiro.com/rd/20260109/31962</td>
+              <td class="center">완료</td>
+            </tr>
+            <tr style="height:40px;">
+              <td class="center">SSMR01</td>
+              <td class="center">http://spot.rassiro.com/rd/20260109/31962</td>
+              <td class="center">완료</td>
+            </tr>
+            <tr style="height:40px;">
+              <td class="center">SSMR01</td>
+              <td class="center">http://spot.rassiro.com/rd/20260109/31962</td>
+              <td class="center">완료</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <!-- 매크로용라씨로뉴스 -->
+
+
+      </div>
+    </div>
+
+
+
+
+    <script type="text/javascript">
+      $(function () {
+        // 권한 관리자 리스트 다이얼로그
+        $("#pageAuthDialog").dialog({
+          autoOpen: false,
+          show: {
+            effect: "blind",
+            duration: 300
+          },
+          hide: {
+            effect: "blind",
+            duration: 300
+          },
+          width: "15%"
+
+        });
+        // 권한 관리자 리스트 오픈
+        $("#viewPageAuth").click(function () {
+          $("#pageAuthDialog").dialog("open");
+        });
+      })
+    </script>
+
+    <!-- 권한 관리자 리스트 영역 -->
+
+
+  </div>
+
+  <!-- 로딩바 영역 -->
+  <div id="progressBar"></div>
+
+
+  <ul class="ui-autocomplete ui-front ui-menu ui-widget ui-widget-content" id="ui-id-1" tabindex="0"
+    style="display: none;"></ul><span role="status" aria-live="assertive" aria-relevant="additions"
+    class="ui-helper-hidden-accessible"></span>
+  <div id="ui-datepicker-div" class="ui-datepicker ui-widget ui-widget-content ui-helper-clearfix ui-corner-all"></div>
+  <div class="ui-dialog ui-widget ui-widget-content ui-corner-all ui-draggable ui-resizable ui-dialog-buttons"
+    tabindex="-1" style="display: none; outline: 0px; z-index: 1000; position: absolute;" role="dialog"
+    aria-labelledby="ui-id-2">
+    <div class="ui-dialog-titlebar ui-widget-header ui-corner-all ui-helper-clearfix ui-draggable-handle"><span
+        id="ui-id-2" class="ui-dialog-title">&nbsp;</span><a href="#" class="ui-dialog-titlebar-close ui-corner-all"
+        role="button"><span class="ui-icon ui-icon-closethick">close</span></a></div>
+    <div id="input-dialog" class="dialog-form ui-dialog-content ui-widget-content">
+      <form id="inputDialogForm" method="post">
+        <input type="hidden" name="hpAuthFlag" id="hpAuthFlag" value="N">
+        <input type="hidden" name="cmd" id="cmd" value="input">
+        <fieldset>
+          <label for="loanDivName">*상품</label>
+          <select id="mdiv" name="mdiv">
+
+            <option value="J">주비서(J)</option>
+
+          </select>
+          <label for="loanDivName">*유입경로</label>
+          <select id="cpcode" name="cpcode">
+
+            <option value="GR">초보컨셉</option>
+
+            <option value="HH">테스트</option>
+
+            <option value="SR">추천주컨셉</option>
+
+            <option value="TR">삼성전자 주요 컨셉</option>
+
+            <option value="UR">SK하이닉스 등 삼성전자외</option>
+
+          </select>
+          <label for="bankCode">*전화번호</label>
+          <input type="text" name="hpno" id="hpno">
+          <button type="button" id="enroll"
+            class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only" role="button"><span
+              class="ui-button-text">인증요청</span></button>
+          <label for="bankCode">*인증번호</label>
+          <input type="text" name="smsAuthNum" id="smsAuthNum">
+          <button type="button" id="enroll2"
+            class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only" role="button"><span
+              class="ui-button-text">인증확인</span></button>
+          <label for="loanDivName">*결제기간</label>
+          <select id="svcterm" name="svcterm">
+            <option value="1">1개월</option>
+            <option value="3">3개월</option>
+            <option value="6">6개월</option>
+          </select>
+          <label for="bankCode">*시작날짜</label>
+          <input type="text" name="sdate" id="sdate" readonly="readonly" class="hasDatepicker">
+          <label for="bankCode">*종료날짜</label>
+          <input type="text" name="edate" id="edate" readonly="readonly" class="hasDatepicker">
+          <label for="bankCode">*특이사항 코드입력</label>
+          <input type="text" name="reason" id="reason">
+          <label for="bankCode">*특이사항</label>
+          <textarea name="memo" id="memo" rows="5"></textarea>
+          <label for="loanDivName">*광고수신동의</label>
+          <select id="marketing_sms_f" name="marketing_sms_f">
+            <option value="Y">동의</option>
+            <option value="N">미동의</option>
+          </select>
+        </fieldset>
+      </form>
+    </div>
+    <div class="ui-resizable-handle ui-resizable-n" style="z-index: 90;"></div>
+    <div class="ui-resizable-handle ui-resizable-e" style="z-index: 90;"></div>
+    <div class="ui-resizable-handle ui-resizable-s" style="z-index: 90;"></div>
+    <div class="ui-resizable-handle ui-resizable-w" style="z-index: 90;"></div>
+    <div class="ui-resizable-handle ui-resizable-se ui-icon ui-icon-gripsmall-diagonal-se ui-icon-grip-diagonal-se"
+      style="z-index: 90;"></div>
+    <div class="ui-resizable-handle ui-resizable-sw" style="z-index: 90;"></div>
+    <div class="ui-resizable-handle ui-resizable-ne" style="z-index: 90;"></div>
+    <div class="ui-resizable-handle ui-resizable-nw" style="z-index: 90;"></div>
+    <div class="ui-dialog-buttonpane ui-widget-content ui-helper-clearfix">
+      <div class="ui-dialog-buttonset"><button type="button"
+          class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only" role="button"><span
+            class="ui-button-text">확인</span></button><button type="button"
+          class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only" role="button"><span
+            class="ui-button-text">취소</span></button></div>
+    </div>
+  </div>
+  <div class="ui-dialog ui-widget ui-widget-content ui-corner-all ui-draggable ui-resizable ui-dialog-buttons"
+    tabindex="-1" style="display: none; outline: 0px; z-index: 1000; position: absolute;" role="dialog"
+    aria-labelledby="ui-id-3">
+    <div class="ui-dialog-titlebar ui-widget-header ui-corner-all ui-helper-clearfix ui-draggable-handle"><span
+        id="ui-id-3" class="ui-dialog-title">&nbsp;</span><a href="#" class="ui-dialog-titlebar-close ui-corner-all"
+        role="button"><span class="ui-icon ui-icon-closethick">close</span></a></div>
+    <div id="edit-dialog" class="dialog-form ui-dialog-content ui-widget-content">
+      <form id="editDialogForm" method="post">
+        <input type="hidden" name="hpAuthFlag" id="hpAuthFlag" value="N">
+        <input type="hidden" name="hpno_old" id="hpno_old">
+        <input type="hidden" name="billsn" id="billsn">
+        <input type="hidden" name="seqno" id="seqno">
+        <input type="hidden" name="cmd" id="cmd" value="edit">
+        <fieldset>
+          <label for="loanDivName">*상품</label>
+          <select id="mdiv" name="mdiv">
+
+            <option value="J">주비서(J)</option>
+
+          </select>
+          <label for="loanDivName">*유입경로</label>
+          <select id="cpcode" name="cpcode">
+
+            <option value="GR">초보컨셉</option>
+
+            <option value="HH">테스트</option>
+
+            <option value="SR">추천주컨셉</option>
+
+            <option value="TR">삼성전자 주요 컨셉</option>
+
+            <option value="UR">SK하이닉스 등 삼성전자외</option>
+
+          </select>
+          <input type="text" name="hpno" id="hpno">
+          <button type="button" id="enroll"
+            class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only" role="button"><span
+              class="ui-button-text">인증요청</span></button>
+          <label for="bankCode">*인증번호</label>
+          <input type="text" name="smsAuthNum" id="smsAuthNum">
+          <button type="button" id="enroll2"
+            class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only" role="button"><span
+              class="ui-button-text">인증확인</span></button>
+          <label for="loanDivName">*결제기간</label>
+          <select id="svcterm" name="svcterm">
+            <option value="1">1개월</option>
+            <option value="3">3개월</option>
+            <option value="6">6개월</option>
+          </select>
+          <label for="bankCode">*시작날짜</label>
+          <input type="text" name="sdate" id="sdate_edit" readonly="readonly" class="hasDatepicker">
+          <label for="bankCode">*종료날짜</label>
+          <input type="text" name="edate" id="edate_edit" readonly="readonly" class="hasDatepicker">
+          <label for="bankCode">*특이사항 코드입력</label>
+          <input type="text" name="reason" id="reason">
+          <label for="bankCode">*특이사항</label>
+          <textarea name="memo" id="memo" rows="5"></textarea>
+          <label for="loanDivName">광고수신동의</label>
+          <select id="marketing_sms_f" name="marketing_sms_f">
+            <option value="Y">동의</option>
+            <option value="N">미동의</option>
+          </select>
+        </fieldset>
+      </form>
+    </div>
+    <div class="ui-resizable-handle ui-resizable-n" style="z-index: 90;"></div>
+    <div class="ui-resizable-handle ui-resizable-e" style="z-index: 90;"></div>
+    <div class="ui-resizable-handle ui-resizable-s" style="z-index: 90;"></div>
+    <div class="ui-resizable-handle ui-resizable-w" style="z-index: 90;"></div>
+    <div class="ui-resizable-handle ui-resizable-se ui-icon ui-icon-gripsmall-diagonal-se ui-icon-grip-diagonal-se"
+      style="z-index: 90;"></div>
+    <div class="ui-resizable-handle ui-resizable-sw" style="z-index: 90;"></div>
+    <div class="ui-resizable-handle ui-resizable-ne" style="z-index: 90;"></div>
+    <div class="ui-resizable-handle ui-resizable-nw" style="z-index: 90;"></div>
+    <div class="ui-dialog-buttonpane ui-widget-content ui-helper-clearfix">
+      <div class="ui-dialog-buttonset"><button type="button"
+          class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only" role="button"><span
+            class="ui-button-text">확인</span></button><button type="button"
+          class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only" role="button"><span
+            class="ui-button-text">취소</span></button></div>
+    </div>
+  </div>
+  <div class="ui-dialog ui-widget ui-widget-content ui-corner-all ui-draggable ui-resizable ui-dialog-buttons"
+    tabindex="-1" style="display: none; outline: 0px; z-index: 1000; position: absolute;" role="dialog"
+    aria-labelledby="ui-id-4">
+    <div class="ui-dialog-titlebar ui-widget-header ui-corner-all ui-helper-clearfix ui-draggable-handle"><span
+        id="ui-id-4" class="ui-dialog-title">&nbsp;</span><a href="#" class="ui-dialog-titlebar-close ui-corner-all"
+        role="button"><span class="ui-icon ui-icon-closethick">close</span></a></div>
+    <div id="logicEdit-dialog" class="dialog-form ui-dialog-content ui-widget-content">
+      <form id="logicEditDialogForm" method="post">
+        <input type="hidden" name="seqno" id="seqno">
+        <label for="loanDivName">*로직선택</label>
+        <select id="item" name="item">
+          <option value="L101">빅데이터</option>
+          <option value="L102">액티브형</option>
+          <option value="L103">슈퍼밸류</option>
+          <option value="L104">패턴AI</option>
+        </select>
+      </form>
+    </div>
+    <div class="ui-resizable-handle ui-resizable-n" style="z-index: 90;"></div>
+    <div class="ui-resizable-handle ui-resizable-e" style="z-index: 90;"></div>
+    <div class="ui-resizable-handle ui-resizable-s" style="z-index: 90;"></div>
+    <div class="ui-resizable-handle ui-resizable-w" style="z-index: 90;"></div>
+    <div class="ui-resizable-handle ui-resizable-se ui-icon ui-icon-gripsmall-diagonal-se ui-icon-grip-diagonal-se"
+      style="z-index: 90;"></div>
+    <div class="ui-resizable-handle ui-resizable-sw" style="z-index: 90;"></div>
+    <div class="ui-resizable-handle ui-resizable-ne" style="z-index: 90;"></div>
+    <div class="ui-resizable-handle ui-resizable-nw" style="z-index: 90;"></div>
+    <div class="ui-dialog-buttonpane ui-widget-content ui-helper-clearfix">
+      <div class="ui-dialog-buttonset"><button type="button"
+          class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only" role="button"><span
+            class="ui-button-text">확인</span></button><button type="button"
+          class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only" role="button"><span
+            class="ui-button-text">취소</span></button></div>
+    </div>
+  </div>
+  <div class="ui-dialog ui-widget ui-widget-content ui-corner-all ui-draggable ui-resizable ui-dialog-buttons"
+    tabindex="-1" style="display: none; outline: 0px; z-index: 1000; position: absolute;" role="dialog"
+    aria-labelledby="ui-id-5">
+    <div class="ui-dialog-titlebar ui-widget-header ui-corner-all ui-helper-clearfix ui-draggable-handle"><span
+        id="ui-id-5" class="ui-dialog-title">&nbsp;</span><a href="#" class="ui-dialog-titlebar-close ui-corner-all"
+        role="button"><span class="ui-icon ui-icon-closethick">close</span></a></div>
+    <div id="itemEdit-dialog" class="dialog-form ui-dialog-content ui-widget-content">
+      <form id="itemEditDialogForm" method="post">
+        <input type="hidden" name="seqno" id="seqno">
+        <label for="loanDivName">*종목검색</label>
+        <input type="text" id="itemCode" name="itemCode" placeholder="종목명/종목코드" class="ui-autocomplete-input"
+          autocomplete="off">
+        <input type="hidden" name="itemName" id="itemName">
+        <span>&nbsp;</span>
+        <a href="#" onclick="add_row()">추가</a>
+        <div class="ly_table" style="width: 100%">
+          <table>
+            <colgroup>
+              <col width="5%">
+              <col width="*">
+              <col width="18%">
+              <col width="18%">
+            </colgroup>
+            <thead>
+              <tr>
+                <th scope="row"></th>
+                <th scope="row">종목명</th>
+                <th scope="row">수신</th>
+                <th scope="row">미수신</th>
+              </tr>
+            </thead>
+            <tbody id="my-tbody">
+            </tbody>
+          </table>
+        </div>
+      </form>
+    </div>
+    <div class="ui-resizable-handle ui-resizable-n" style="z-index: 90;"></div>
+    <div class="ui-resizable-handle ui-resizable-e" style="z-index: 90;"></div>
+    <div class="ui-resizable-handle ui-resizable-s" style="z-index: 90;"></div>
+    <div class="ui-resizable-handle ui-resizable-w" style="z-index: 90;"></div>
+    <div class="ui-resizable-handle ui-resizable-se ui-icon ui-icon-gripsmall-diagonal-se ui-icon-grip-diagonal-se"
+      style="z-index: 90;"></div>
+    <div class="ui-resizable-handle ui-resizable-sw" style="z-index: 90;"></div>
+    <div class="ui-resizable-handle ui-resizable-ne" style="z-index: 90;"></div>
+    <div class="ui-resizable-handle ui-resizable-nw" style="z-index: 90;"></div>
+    <div class="ui-dialog-buttonpane ui-widget-content ui-helper-clearfix">
+      <div class="ui-dialog-buttonset"><button type="button"
+          class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only" role="button"><span
+            class="ui-button-text">종목삭제</span></button><button type="button"
+          class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only" role="button"><span
+            class="ui-button-text">종목저장</span></button><button type="button"
+          class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only" role="button"><span
+            class="ui-button-text">닫기</span></button></div>
+    </div>
+  </div>
+  <div class="ui-dialog ui-widget ui-widget-content ui-corner-all ui-draggable ui-resizable" tabindex="-1"
+    style="display: none; outline: 0px; z-index: 1000; position: absolute;" role="dialog" aria-labelledby="ui-id-6">
+    <div class="ui-dialog-titlebar ui-widget-header ui-corner-all ui-helper-clearfix ui-draggable-handle"><span
+        id="ui-id-6" class="ui-dialog-title">회원관리 권한</span><a href="#" class="ui-dialog-titlebar-close ui-corner-all"
+        role="button"><span class="ui-icon ui-icon-closethick">close</span></a></div>
+    <div id="pageAuthDialog" class="ui-dialog-content ui-widget-content">
+
+    </div>
+    <div class="ui-resizable-handle ui-resizable-n" style="z-index: 90;"></div>
+    <div class="ui-resizable-handle ui-resizable-e" style="z-index: 90;"></div>
+    <div class="ui-resizable-handle ui-resizable-s" style="z-index: 90;"></div>
+    <div class="ui-resizable-handle ui-resizable-w" style="z-index: 90;"></div>
+    <div class="ui-resizable-handle ui-resizable-se ui-icon ui-icon-gripsmall-diagonal-se ui-icon-grip-diagonal-se"
+      style="z-index: 90;"></div>
+    <div class="ui-resizable-handle ui-resizable-sw" style="z-index: 90;"></div>
+    <div class="ui-resizable-handle ui-resizable-ne" style="z-index: 90;"></div>
+    <div class="ui-resizable-handle ui-resizable-nw" style="z-index: 90;"></div>
+  </div>
+</body>
+
+</html>
