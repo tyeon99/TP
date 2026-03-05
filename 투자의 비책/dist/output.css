@@ -1822,6 +1822,11 @@ em {
   color: rgb(255 255 255 / var(--tw-text-opacity));
 }
 
+.alarmModal#certificationModal .modal-body .check button {
+  --tw-bg-opacity: 1;
+  background-color: rgb(62 114 237 / var(--tw-bg-opacity));
+}
+
 .alarmModal .modal-body .period {
   width: 100%;
   border-radius: 10px;
@@ -7407,7 +7412,7 @@ input[type=radio].checkPay:checked + label {
   width: 190px;
   border-radius: 18px;
   --tw-bg-opacity: 1;
-  background-color: rgb(255 80 80 / var(--tw-bg-opacity));
+  background-color: rgb(62 114 237 / var(--tw-bg-opacity));
   font-size: 14px;
   font-weight: 400;
   --tw-text-opacity: 1;
@@ -7454,7 +7459,7 @@ input[type=radio].checkPay:checked + label {
 
 .diagnosis .gauge span.active {
   --tw-bg-opacity: 1;
-  background-color: rgb(255 80 80 / var(--tw-bg-opacity));
+  background-color: rgb(62 114 237 / var(--tw-bg-opacity));
 }
 
 .diagnosis .question .score {
@@ -7472,7 +7477,7 @@ input[type=radio].checkPay:checked + label {
   font-weight: 700;
   line-height: 25px;
   --tw-text-opacity: 1;
-  color: rgb(255 80 80 / var(--tw-text-opacity));
+  color: rgb(62 114 237 / var(--tw-text-opacity));
 }
 
 .diagnosis .question .title {
@@ -7514,13 +7519,13 @@ input[type=radio].checkPay:checked + label {
 }
 
 .diagnosis .question .answer .answer-rdo input:checked + label {
-  border-width: 2px;
+  border-width: 1px;
   --tw-border-opacity: 1;
-  border-color: rgb(255 80 80 / var(--tw-border-opacity));
+  border-color: rgb(62 114 237 / var(--tw-border-opacity));
   --tw-bg-opacity: 1;
-  background-color: rgb(255 234 234 / var(--tw-bg-opacity));
+  background-color: rgb(226 233 251 / var(--tw-bg-opacity));
   --tw-text-opacity: 1;
-  color: rgb(255 80 80 / var(--tw-text-opacity));
+  color: rgb(62 114 237 / var(--tw-text-opacity));
 }
 
 .diagnosis .bottom {
@@ -7562,26 +7567,26 @@ input[type=radio].checkPay:checked + label {
   border-radius: 6px;
   border-width: 1px;
   --tw-border-opacity: 1;
-  border-color: rgb(255 80 80 / var(--tw-border-opacity));
+  border-color: rgb(62 114 237 / var(--tw-border-opacity));
   font-size: 14px;
   font-weight: 400;
   line-height: 18px;
   --tw-text-opacity: 1;
-  color: rgb(255 80 80 / var(--tw-text-opacity));
+  color: rgb(62 114 237 / var(--tw-text-opacity));
 }
 
 .diagnosis .btn-group button:last-child {
   width: 75%;
   border-style: none;
   --tw-bg-opacity: 1;
-  background-color: rgb(255 80 80 / var(--tw-bg-opacity));
+  background-color: rgb(62 114 237 / var(--tw-bg-opacity));
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
 }
 
 .diagnosis .btn-group button.disabled {
   --tw-bg-opacity: 1;
-  background-color: rgb(255 195 195 / var(--tw-bg-opacity));
+  background-color: rgb(226 233 251 / var(--tw-bg-opacity));
 }
 
 .result {
@@ -7623,7 +7628,7 @@ input[type=radio].checkPay:checked + label {
 
 .result .box .title span {
   --tw-text-opacity: 1;
-  color: rgb(255 80 80 / var(--tw-text-opacity));
+  color: rgb(62 114 237 / var(--tw-text-opacity));
 }
 
 .result .box .box-img {
@@ -7651,7 +7656,7 @@ input[type=radio].checkPay:checked + label {
 
 .result .box .txt span {
   --tw-text-opacity: 1;
-  color: rgb(255 80 80 / var(--tw-text-opacity));
+  color: rgb(62 114 237 / var(--tw-text-opacity));
 }
 
 .result .btn-group {
@@ -7676,7 +7681,7 @@ input[type=radio].checkPay:checked + label {
 .result .btn-group button.active {
   border-radius: 50px;
   --tw-bg-opacity: 1;
-  background-color: rgb(255 80 80 / var(--tw-bg-opacity));
+  background-color: rgb(62 114 237 / var(--tw-bg-opacity));
   padding: 9px 27px;
   font-size: 14px;
   font-weight: 400;

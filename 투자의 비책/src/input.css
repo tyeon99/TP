@@ -603,6 +603,10 @@ em{
   @apply w-[190px] h-[40px] rounded-[18px] bg-mainColor text-white text-[14px] font-normal;
 }
 
+.alarmModal#certificationModal .modal-body .check button{
+  @apply bg-[#3E72ED];
+}
+
 .alarmModal .modal-body .period{
   @apply w-full py-[10px] rounded-[10px] bg-[#F3F3F4] text-center text-[#000] text-[16px] font-normal leading-[20px];
 }
@@ -3110,7 +3114,7 @@ input[type=radio].checkPay:checked + label {
 }
 
 .guideModal .modal-body .check button{
-  @apply w-[190px] h-[40px] rounded-[18px] bg-mainColor text-white text-[14px] font-normal;
+  @apply w-[190px] h-[40px] rounded-[18px] bg-[#3E72ED] text-white text-[14px] font-normal;
 }
 
 .diagnosis{
@@ -3130,7 +3134,7 @@ input[type=radio].checkPay:checked + label {
 }
 
 .diagnosis .gauge span.active{
-  @apply bg-[#FF5050];
+  @apply bg-[#3E72ED];
 }
 
 .diagnosis .question .score{
@@ -3138,7 +3142,7 @@ input[type=radio].checkPay:checked + label {
 }
 
 .diagnosis .question .score strong{
-  @apply text-mainColor text-[20px] font-bold leading-[25px];
+  @apply text-[#3E72ED] text-[20px] font-bold leading-[25px];
 }
 
 .diagnosis .question .title{
@@ -3158,7 +3162,7 @@ input[type=radio].checkPay:checked + label {
 }
 
 .diagnosis .question .answer .answer-rdo input:checked + label{
-  @apply bg-[#ffeaea] text-mainColor border-[2px] border-mainColor;
+  @apply bg-[#E2E9FB] text-[#3E72ED] border border-[#3E72ED];
 }
 
 .diagnosis .bottom{
@@ -3178,11 +3182,11 @@ input[type=radio].checkPay:checked + label {
 }
 
 .diagnosis .btn-group button{
-  @apply h-[45px] w-[21%] rounded-[6px] border border-mainColor text-mainColor text-[14px] font-normal leading-[18px] last:w-[75%] last:bg-mainColor last:border-none last:text-[#fff];
+  @apply h-[45px] w-[21%] rounded-[6px] border border-[#3E72ED] text-[#3E72ED] text-[14px] font-normal leading-[18px] last:w-[75%] last:bg-[#3E72ED] last:border-none last:text-[#fff];
 }
 
 .diagnosis .btn-group button.disabled{
-  @apply bg-[#FFC3C3];
+  @apply bg-[#E2E9FB];
 }
 
 .result{
@@ -3198,7 +3202,7 @@ input[type=radio].checkPay:checked + label {
 }
 
 .result .box .title span{
-  @apply text-mainColor;
+  @apply text-[#3E72ED];
 }
 
 .result .box .box-img{
@@ -3214,7 +3218,7 @@ input[type=radio].checkPay:checked + label {
 }
 
 .result .box .txt span{
-  @apply text-mainColor;
+  @apply text-[#3E72ED];
 }
 
 .result .btn-group{
@@ -3226,7 +3230,7 @@ input[type=radio].checkPay:checked + label {
 }
 
 .result .btn-group button.active{
-  @apply p-[9px_27px] rounded-[50px] bg-mainColor text-white text-[14px] font-normal leading-[22px];
+  @apply p-[9px_27px] rounded-[50px] bg-[#3E72ED] text-white text-[14px] font-normal leading-[22px];
 }
 
 .identification{
