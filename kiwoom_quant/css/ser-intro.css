@@ -3,7 +3,7 @@
 .ser-main{
   width: 100%;
   padding: 15px 25px 30px;
-  background: #6A61E0;
+  background: linear-gradient(143.3deg, #8C72E9 42.28%, #FD947A 98.52%);
 }
 
 .ser-main-top{
@@ -19,10 +19,11 @@
 }
 
 .head-top{
-  font-weight: 400;
-  font-size: 22px;
-  line-height: 30px;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 34px;
   color: #fff;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.25);
 }
 
 .head-top span{
@@ -38,7 +39,7 @@
 }
 
 .head-txt{
-  margin-top: 12px;
+  margin-top: 20px;
   display: flex;
   justify-content: start;
   align-items: center;
@@ -46,21 +47,21 @@
 
 .head-txt span{
   display: inline-block;
-  padding: 1px 12px;
+  padding: 3px 12px;
   border-radius: 100px;
   background: #282550;  
   color: #DC75FF;
-  font-size: 22px;
+  font-size: 19px;
   font-weight: 700;
-  line-height: normal;
+  line-height: 24px;
   margin-right: 10px;
 }
 
 .head-txt strong{
-  font-weight: 700;
-  font-size: 40px;
-  line-height: 50px;
-  color: #fff;
+  font-weight: 500;
+  font-size: 26px;
+  line-height: 33px;
+  color: #FFD8DE;
 }
 
 .body-icn{
@@ -73,7 +74,7 @@
   font-weight: 400;
   font-size: 13px;
   line-height: 17px;
-  color: #DAD8F2;
+  color: #FFFFFF;
 }
 
 .body-icn img{
@@ -91,9 +92,10 @@
 }
 
 .ser_app button{
-  padding: 8px 88px;
-  background: #423C9A;
-  border-radius: 6px;
+  width: 290px;
+  height: 42px;
+  background: #4F3FC6;
+  border-radius: 100px;
   border: none;
   font-weight: 500;
   font-size: 16px;
@@ -712,7 +714,7 @@ button.splide__arrow{
 }
 
 .ai-slide.ai1 .ai-top{
-  color: #6A61E0;
+  color: #EE6D4D;
 }
 
 .ai-slide.ai1 .ai-tsub{
@@ -724,15 +726,39 @@ button.splide__arrow{
 }
 
 .ai-slide.ai1 .ai-bot strong{
-  color: #212121;
+  color: #EE6D4D;
+}
+
+.ai-slide.ai2 .ai-top{
+  color: #37AF85;
+}
+
+.ai-slide.ai2 .ai-tsub{
+  color: #666666;
+}
+
+.ai-slide.ai2 .ai-bot{
+  color: #666666;
+}
+
+.ai-slide.ai2 .ai-bot strong{
+  color: #37AF85;
+}
+
+.ai-slide.ai3 .ai-top{
+  color: #7D68D8;
 }
 
 .ai-slide.ai3 .ai-tsub{
-  color: #E2F3E6;
+  color: #666666;
 }
 
 .ai-slide.ai3 .ai-bot{
-  color: #E2F3E6;
+  color: #666666;
+}
+
+.ai-slide.ai3 .ai-bot strong{
+  color: #7D68D8;
 }
 
 .ai-slide.ai1{
@@ -740,11 +766,11 @@ button.splide__arrow{
 }
 
 .ai-slide.ai2{
-  background: #5EB5AF;
+  background: #fff;
 }
 
 .ai-slide.ai3{
-  background: #79B286;
+  background: #fff;
 }
 
 .ai-swiper .swiper-pagination{
@@ -1182,11 +1208,13 @@ table{
 .head-top.pc{
   font-size: 35px;
   line-height: 46px;
+  margin-bottom: 33px;
 }
 
 .head-txt.pc span {
-  font-size: 33px;
-  padding: 0px 15px;
+  font-size: 27px;
+  line-height: 34px;
+  padding: 3px 15px;
   margin-right: 20px;
 }
 
@@ -1195,7 +1223,9 @@ table{
 }
 
 .head-txt.pc strong{
-  font-size: 50px;
+  font-weight: 500;
+  font-size: 38px;
+  line-height: 48px;
 }
 
 .ser-main-top.pc{

@@ -20,6 +20,11 @@
   align-items: center;
 }
 
+.content-header.q-header{
+  background: #FFFFFFB2;
+  backdrop-filter: blur(10px);
+}
+
 .content-nav{
   line-height: 48px;
   display: flex;
@@ -46,7 +51,7 @@
   width: 70px;
   height: 30px;
   padding: 0;
-  background: #fff;
+  background: none;
   border: 1px solid #666;
   border-radius: 100px;
   color: #666;
@@ -62,16 +67,20 @@
 /* section1 */
 
 .sec-main{
+  position: relative;
   width: 100%;
-  padding: 25px 16px 40px;
+  padding: 70px 16px 20px;
+  overflow: hidden;
 }
 
 .main-top{
+  position: relative;
   width: 100%;
   padding: 0px 10px;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin-bottom: 20px;
 }
 
 .main-txt span{
@@ -80,42 +89,55 @@
   font-weight: 400;
   color: #fff;
   line-height: 28px;
+  letter-spacing: -2.5%;
+  margin-bottom: 20px;
+}
+
+.main-txt span strong{
+  display: block;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 28px;
+  letter-spacing: -2.5%;
   margin-bottom: 10px;
 }
 
 .main-txt button{
   border: none;
   background: none;
-  font-size: 13px;
-  font-weight: 400;
-  line-height: 17px;
+  font-size: 14px;
+  line-height: 18px;
+  font-weight: 400; 
   position: relative;
+  padding: 7px 32px 7px 12px;
+  border-radius: 100px;
 }
 
 .main-txt button::before{
   position: absolute;
-  top: 5px;
-  right: -15px;
+  top: 12px;
+  right: 16px;
   content: "";
-  width: 8px;
-  height: 8px;
-  border: 1.5px solid #333C6A;
+  width: 6.67px;
+  height: 6.67px;
   border-left: 0;
   border-bottom: 0;
   transform: rotate(45deg);
 }
 
 .chart1{
-  margin-left: 5px;
+  position: absolute;
+  right: -12px;
+  top: 0px;
+  z-index: 0;
 }
 
 .chart1 img{
-  width: 80px;
+  width: 170px;
 }
 
 .main-bot{
   width: 100%;
-  margin-top: 19px;
 }
 
 .main-box{
@@ -159,14 +181,16 @@
 
 .bot-box{
   width: 100%;
-  background: rgba(235, 239, 242, 0.3);
+  background: #F6F8FF;
   border-radius: 6px;
-  padding: 13px 10px;
+  padding: 24px 10px;
 }
 
 .bot-boxt{
-  margin-bottom: 18px;
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
 }
 
 .bot-boxt span{
@@ -175,7 +199,6 @@
   font-weight: 400;
   color: #141414;
   line-height: 17.53px;
-  margin-bottom: 7px;
 }
 
 .bot-boxt strong{
@@ -203,7 +226,7 @@
 /* section2 */
 
 .rate{
-  padding: 40px 16px 20px;
+  padding: 20px 16px 20px;
 }
 
 .rate-header{
@@ -456,13 +479,11 @@ ul.dropdown-menu li a.dropdown-item{
 }
 
 .sig-slide{
-  height: 205px;
-  border: none;
   text-align: left;
   width: 100%;
-  padding: 20px;
   border-radius: 12px;
-  color: #fff;
+  background: #fff;
+  box-shadow: 0px 4px 10px 0px #00000026;
 }
 
 .swiper .swiper-pagination {
@@ -478,6 +499,7 @@ ul.dropdown-menu li a.dropdown-item{
 
 .sig-top{
   position: relative;
+  padding: 20px 20px 16px;
 }
 
 .sig-name{
@@ -485,6 +507,7 @@ ul.dropdown-menu li a.dropdown-item{
   font-weight: 700;
   font-size: 18px;
   line-height: 24px;
+  color: #333333;
 }
 
 .sig-top span{
@@ -492,19 +515,21 @@ ul.dropdown-menu li a.dropdown-item{
   font-weight: 400;
   font-size: 12px;
   line-height: 16px;
+  color: #666666;
 }
 
 .alarm{
   position: absolute;
-  right: 0;
-  top: 5px;
+  right: 20px;
+  top: 23px;
   border-radius: 100px;
-  padding: 7px 10px;
+  padding: 5px 10px;
   font-size: 13px;
   font-weight: 400;
   line-height: 17px;
-  display: flex;
   align-items: center;
+  color: #fff;
+  display: flex;
 }
 
 .alarm::before{
@@ -515,13 +540,13 @@ ul.dropdown-menu li a.dropdown-item{
   vertical-align:middle;
   width: 20px;
   height: 20px;
-  margin-right: 7px;
+  margin-right: 5px;
 }
 
 .red-check{
   position: absolute;
-  right: 0;
-  top: 5px;
+  right: 20px;
+  top: 23px;
   background: #fff;
   border-radius: 100px;
   padding: 7px 10px;
@@ -545,8 +570,8 @@ ul.dropdown-menu li a.dropdown-item{
 
 .blue-check{
   position: absolute;
-  right: 0;
-  top: 5px;
+  right: 20px;
+  top: 23px;
   background: #fff;
   border-radius: 100px;
   padding: 7px 10px;
@@ -569,18 +594,19 @@ ul.dropdown-menu li a.dropdown-item{
 }
 
 .sig-bot{
-  margin-top: 40px;
+  width: 100%;
+  padding: 16px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  border-radius: 0px 0px 12px 12px;
 }
 
 .sig-txt{
   font-weight: 400;
   font-size: 14px;
-  line-height: 18px;
-  margin-bottom: 8px;
-}
-
-.sig-txt:last-child{
-  margin-bottom: 0;
+  line-height: 17px;
+  color: #333333;
 }
 
 .sig-txt::before{
@@ -590,10 +616,9 @@ ul.dropdown-menu li a.dropdown-item{
   display: inline-block;
   vertical-align: middle;
   font-weight: 700;
-  line-height: 25px;
   text-align: center;
-  margin-top: -2px;
-  margin-right: 5px;
+  margin-top: -3px;
+  margin-right: 2px;
 }
 
 .swiper-slide.sig-no-slide{
@@ -611,7 +636,7 @@ ul.dropdown-menu li a.dropdown-item{
   font-size: 16px;
   line-height: 40px;
   text-align: center;
-  color: #fff;
+  color: #212121;
   position: relative;
 
   /* animation */
@@ -811,6 +836,7 @@ ul.dropdown-menu li a.dropdown-item{
   font-weight: 500;
   font-size: 16px;
   line-height: 22px;
+  color: #212121;
 }
 
 .list-per{
@@ -1379,7 +1405,6 @@ ul.dropdown-menu li a.dropdown-item{
 .buy-txt span em{
   font-weight: 400;
   font-size: 12px;
-  color: #141414;
 }
 
 .buy-name{

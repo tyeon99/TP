@@ -25,27 +25,32 @@
 
       <div id="content">
 
-        <div class="content-header al_intro-header nodo-icn00000840">
+        <div class="content-header al_intro-header header-00000840">
 
           <button class="back-btn"><img src="img/al-intro/back-btn.png" alt="back-btn"></button>
-          <div class="header-txt white">시장추구 알고리즘 소개</div>
+          <div class="header-txt white">시장추종 알고리즘 소개</div>
+
+          <script>
+            window.addEventListener('scroll', () => {
+              document.querySelector('.content-header').classList.toggle('fixed', window.scrollY > 0);
+            });
+          </script>
 
         </div>
-
-        <div class="pt-50"></div>
 
         <section class="alintro-section1">
 
           <div class="gro-main nodo-icn00000840">
 
             <div class="main-txt">
-              <div class="txt1">퀀트 2.0 <br> 시장추구 알고리즘은</div>
+              <span class="tag">퀀트 2.0</span>
+              <div class="txt1">시장추구 알고리즘은</div>
               <div class="txt2">안정적인 종목으로 <br> 큰 수익을 내기 위해</div>
               <div class="txt3">시총대비 저평가된 종목 중, <br> 실적 모멘텀이 발생한 종목을 <br> 학습하여 추천합니다.</div>
             </div>
 
             <div class="main-img">
-              <img src="img/al-intro/main-chart00000840.png" alt="main-chart2">
+              <img class="img-chart3" src="img/al-home/chart00000840.png" alt="chart3">
               <img class="img-cir" src="img/al-intro/main-img.png" alt="mian-img">
             </div>
 
