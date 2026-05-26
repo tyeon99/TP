@@ -468,11 +468,11 @@ button.more{
 	background: linear-gradient(360deg, #D46360 0%, #FDAB79 100%) !important;
 }
 
-.nodo-icn00000839 .qal-header .al_conhead{
+.header-00000839 .al_conhead{
 	background: #C94946 !important;
 }
 
-.nodo-icn00000839 .qal-header .content-nav a.active{
+.qal-header.header-00000839 .content-nav a.active{
 	color: #C94946;
 }
 
@@ -489,11 +489,11 @@ button.more{
 	background: linear-gradient(180deg, #ADAEF2 0%, #605DC5 100%) !important;
 }
 
-.nodo-icn00000840 .qal-header .al_conhead{
+.header-00000840 .al_conhead{
 	background: #27246C !important;
 }
 
-.nodo-icn00000840 .qal-header .content-nav a.active{
+.qal-header.header-00000840 .content-nav a.active{
 	color: #27246C;
 }
 
@@ -510,11 +510,11 @@ button.more{
 	background: linear-gradient(180deg, #D3AAA3 0%, #A25E51 100%) !important;
 }
 
-.nodo-icn00000841 .qal-header .al_conhead{
+.header-00000841 .al_conhead{
 	background: #83473B !important;
 }
 
-.nodo-icn00000841 .qal-header .content-nav a.active{
+.qal-header.header-00000841 .content-nav a.active{
 	color: #83473B;
 }
 
