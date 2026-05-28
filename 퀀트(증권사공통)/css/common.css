@@ -361,7 +361,7 @@ button.more{
 }
 
 .icn-bg1{
-	background: #AEC6EA !important;
+	background: #DBBF98 !important;
 }
 
 .icn-bg2{
@@ -369,7 +369,27 @@ button.more{
 }
 
 .icn-bg3{
+	background: #EBB8B3 !important;
+}
+
+.icn-bg4{
 	background: #95D5D9 !important;
+}
+
+.icn-bg5{
+	background: #AEC6EA !important;
+}
+
+.icn-bg6{
+	background: #C4BDEB !important;
+}
+
+.icn-bg7{
+	background: #EAAEBB !important;
+}
+
+.icn-bg8{
+	background: #EACAAE !important;
 }
 
 .alarm-bg-red{
