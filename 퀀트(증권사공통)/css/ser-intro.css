@@ -71,7 +71,7 @@
   align-items: center;
   text-align: center;
   flex-wrap: wrap;
-  gap: 30px;
+  gap: 70px;
   font-weight: 400;
   font-size: 13px;
   line-height: 17px;
@@ -1237,7 +1237,7 @@ table{
 }
 
 .body-icn.pc{
-  gap: 50px;
+  gap: 80px;
 }
 
 .body-icn.pc img{
