@@ -877,6 +877,17 @@ button.splide__arrow{
   content: "";
 }
 
+.accordion-body ul li.img-txt{
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 10px;
+}
+
+.accordion-body ul li.img-txt img{
+  width: 40px;
+}
+
 .body-title{
   font-weight: 700;
   font-size: 14px;
@@ -1532,6 +1543,17 @@ table{
   font-size: 16px;
   line-height: 20.03px;
   color: #FDFF8C;
+}
+
+.pc_notice ul li.img-txt{
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 10px;
+}
+
+.pc_notice ul li.img-txt img{
+  width: 40px;
 }
 
 
