@@ -727,6 +727,7 @@ button{
   color: #fff;
 }
 .event02 .main-section02 .box .box-bot{
+  position: relative;
   width: 100%;
   padding: 20px;
   background: #fff;
@@ -736,6 +737,17 @@ button{
   align-items: center;
   gap: 10px;
   text-align: center;
+}
+.event02 .main-section02 .box .box-bot::after{
+  content: '';
+  width: 30px;
+  height: 30px;
+  background: #F5F7F9;
+  border-radius: 100%;
+  position: absolute;
+  bottom: -20px;
+  left: 50%;
+  transform: translateX(-50%);
 }
 .event02 .main-section02 .box .box-bot .txt{
   font-weight: 700;
@@ -776,18 +788,71 @@ button{
   color: #fff;
 }
 .event02 .main-section02 .box .box-bot .guide{
+  width: 100%;
+  border-radius: 12px;
+  background: #FBFBFB;
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+}
+.event02 .main-section02 .box .box-bot .guide p{
   font-weight: 400;
   font-size: 11px;
-  line-height: 17px;
+  line-height: 13px;
   color: #788591;
+}
+.event02 .main-section02 .box .box-bot .guide strong{
+  font-weight: 500;
+  font-size: 11px;
+  line-height: 13px;
+  color: #ff9657;
 }
 
 /* section03 */
+.event02 .main-section03 .section03-img{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 30px;
+}
 .event02 .main-section03 .txt-box{
   color: #FF9657;
+  background: #FFF4ED;
+  font-size: 15px;
+  line-height: 23px;
+  letter-spacing: -3%;
+}
+.event02 .main-section03 .txt{
+  font-size: 13px;
+  line-height: 20px;
 }
 .event02 .main-section03 .box-group .box:last-child {
   background: #CD5A15;
+}
+.event02 .light-float{
+  animation: lightBulbFloat 1.5s ease-in-out infinite;
+}
+@keyframes lightBulbFloat {
+  0% {
+    transform: translateY(0) rotate(0deg);
+    filter: drop-shadow(0 0 2px rgba(255, 223, 0, 0.2));
+  }
+  50% {
+    transform: translateY(-8px) rotate(3deg);
+    filter: drop-shadow(0 0 10px rgba(255, 223, 0, 0.6));
+  }
+  100% {
+    transform: translateY(0) rotate(0deg);
+    filter: drop-shadow(0 0 2px rgba(255, 223, 0, 0.2));
+  }
+}
+.event02 .main-section03 .txt strong{
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 26px;
 }
 
 /* section04 */
@@ -896,6 +961,12 @@ button{
   font-size: 16px;
   line-height: 24px;
   color: #364350;
+}
+
+/* 배너 */
+.event02 .main-banner{
+  height: 112px;
+  padding: 0px 20px;
 }
 
 /* 플로팅 버튼 */
