@@ -911,11 +911,15 @@ button{
   padding: 16px;
   border-radius: 16px;
   background: #fff;
+  min-width: 0;
+}
+.event02 .main-section04 .result .tab-content .tab-pane .box-group .box.chart img{
+  width: 100%;
 }
 .event02 .main-section04 .result .tab-content .tab-pane .box-group .box-grid{
   width: 100%;
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 16px;
 }
 .event02 .main-section04 .result .tab-content .tab-pane .box-group .box-grid .box .top{
@@ -938,17 +942,23 @@ button{
   justify-content: flex-start;
   align-items: flex-start;
   gap: 4px;
+  min-width: 0;
 }
 .event02 .main-section04 .result .tab-content .tab-pane .box-group .box-grid .box .bot strong{
+  display: block;
+  width: 100%;
   font-weight: 700;
   font-size: 16px;
   line-height: 24px;
   color: #202632;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 .event02 .main-section04 .result .tab-content .tab-pane .box-group .box-grid .box .bot p{
   font-weight: 400;
-  font-size: 13px;
-  line-height: 20px;
+  font-size: 11px;
+  line-height: 17px;
   color: #788591;
 }
 .event02 .main-section04 .result .tab-content .tab-pane button{
